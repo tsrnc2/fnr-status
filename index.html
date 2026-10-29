@@ -133,6 +133,13 @@
       <h3 style="font-size:1rem">Per-generation change vs previous</h3>
       <div style="max-height:320px;overflow-y:auto"><table id="gen_delta" style="width:100%;font-size:.85em"></table></div>
     </section>
+    <section class="card" style="margin-top:1rem" id="card-domain">
+      <h2>Areas of expertise — per-domain solve rate <span style="font-size:.7em;color:var(--warn)">EXPERIMENTAL / not FNR-000</span></h2>
+      <div id="dom_meta" style="font-size:.85em;color:var(--muted)"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start"><div id="dom_radar"></div><div style="flex:1;min-width:320px"><table id="dom_tbl" style="width:100%;font-size:.85em"></table></div></div>
+      <h3 style="font-size:1rem">Domain mean by generation</h3><div id="dom_gen" style="overflow-x:auto"></div>
+      <div id="dom_pending" style="font-size:.8em;color:var(--muted);margin-top:.4rem"></div>
+    </section>
     <section class="card" style="margin-top:1rem" id="card-tiered">
       <h2>Tiered eval (EXPERIMENTAL / not FNR-000)</h2>
       <div id="tiered_meta"></div>
@@ -194,6 +201,7 @@
     function render(d) {
       try {
         try{renderGen(d.eval_history||{});}catch(e){console.error(e)}
+        try{renderDomains(d.eval_history||{}, d.domain_suite);}catch(e){console.error(e)}
         const te = d.tiered_eval || {}; const tn = te.tiers || {};
         document.getElementById("tiered_meta").textContent = (te.label||"") + " · suite " + (te.suite_sha256_12||"—") +
           " · composite = 100×(0.1·T1+0.2·T2+0.3·T3+0.4·T4) · T4 tight budget";
@@ -395,6 +403,28 @@ function renderGen(eh){
   let rows="<tr><th>Gen</th><th>Source</th><th>Hub</th><th>T4 solved</th><th>ΔT4</th><th>Composite</th><th>ΔComposite</th><th>Best so far</th></tr>"; best=-1;
   gens.forEach((p,i)=>{best=Math.max(best,p.composite);const q=gens[i-1];rows+=`<tr><td>${i}</td><td>${genLabel(p.run_id)}${p.reconstructed?" <i>(recon)</i>":""}</td><td><code>${p.hub_sha||"—"}</code></td><td>${p.solved.T4}/${N.T4}</td>${q?d(p.solved.T4,q.solved.T4):"<td>—</td>"}<td>${p.composite}</td>${q?d(p.composite,q.composite):"<td>—</td>"}<td>${best}</td></tr>`;});
   document.getElementById("gen_delta").innerHTML=rows;}
+
+function renderDomains(eh, ds){
+  ds=ds||{}; const pts=(eh.points||[]).filter(p=>p.domains&&p.decision!=="REJECTED").sort((a,b)=>a.t.slice(0,19)<b.t.slice(0,19)?-1:1);
+  document.getElementById("dom_meta").textContent=`Frozen, seeded, checker-verified domain suites (suite ${ds.suite_sha256_12||"—"}), easy→very_hard, never in training. ${pts.length} hub generations scored.`;
+  document.getElementById("dom_pending").textContent="Pending (substrate has no axioms for these yet — proposal only, no unverified items): "+(ds.pending_domains||[]).join(", ");
+  if(!pts.length) return; const last=pts[pts.length-1], first=pts[0], doms=Object.keys(last.domains), R=110, C=140, n=doms.length;
+  const pt=(i,v)=>{const a=-Math.PI/2+2*Math.PI*i/n;return [C+R*v*Math.cos(a),C+R*v*Math.sin(a)]};
+  let svg=`<svg width="${2*C}" height="${2*C}" style="background:#0e1626;border-radius:8px">`;
+  [.25,.5,.75,1].forEach(r=>svg+=`<polygon points="${doms.map((_,i)=>pt(i,r).join(",")).join(" ")}" fill="none" stroke="#243047"/>`);
+  doms.forEach((d,i)=>{const [x,y]=pt(i,1.12);svg+=`<text x="${x}" y="${y}" fill="#9bb0d0" font-size="9" text-anchor="middle">${d}</text>`});
+  const poly=(p,c,o)=>`<polygon points="${doms.map((d,i)=>pt(i,p.domains[d].solved/p.domains[d].n).join(",")).join(" ")}" fill="${c}" fill-opacity="${o}" stroke="${c}"><title>${genLabel(p.run_id)} hub ${p.hub_sha}</title></polygon>`;
+  if(first!==last) svg+=poly(first,"#9bb0d0",.08); svg+=poly(last,"#3ddc97",.25)+"</svg>";
+  document.getElementById("dom_radar").innerHTML=svg+`<div style="font-size:.8em"><span style="color:#3ddc97">■ latest ${genLabel(last.run_id)}</span> · <span style="color:#9bb0d0">□ earliest scored ${genLabel(first.run_id)}</span></div>`;
+  const lv=ds.levels||["easy","medium","hard","very_hard"], prev=pts[pts.length-2];
+  let rows=`<tr><th>Domain</th><th>Solved</th>${lv.map(l=>`<th>${l}</th>`).join("")}<th>Δ vs prev gen</th></tr>`;
+  doms.forEach(d=>{const v=last.domains[d], bl=(ds.domains||{})[d]?.by_level||{}; const dd=prev&&prev.domains[d]?v.solved-prev.domains[d].solved:null;
+    rows+=`<tr><td>${d}</td><td>${v.solved}/${v.n} (${(100*v.solved/v.n).toFixed(0)}%)</td>${lv.map(l=>`<td>${v.by_level[l]??"—"}/${bl[l]??"?"}</td>`).join("")}<td style="color:${dd>0?"#3ddc97":dd<0?"#ff6b6b":"#9bb0d0"}">${dd===null?"—":(dd>0?"+":"")+dd}</td></tr>`});
+  document.getElementById("dom_tbl").innerHTML=rows+`<tr><td colspan="${lv.length+3}">Domain mean ${last.domain_mean}% · hub <code>${last.hub_sha}</code></td></tr>`;
+  const W=Math.max(600,pts.length*40+60),H=140,x=i=>40+(pts.length<2?0:i*(W-60)/(pts.length-1)),y=v=>10+(100-v)*1.1;
+  document.getElementById("dom_gen").innerHTML=`<svg width="${W}" height="${H}" style="background:#0e1626;border-radius:8px"><polyline fill="none" stroke="#6ea8fe" stroke-width="2" points="${pts.map((p,i)=>x(i)+","+y(p.domain_mean)).join(" ")}"/>`+
+    pts.map((p,i)=>`<circle cx="${x(i)}" cy="${y(p.domain_mean)}" r="3.5" fill="${p.reconstructed?"#0e1626":"#6ea8fe"}" stroke="#6ea8fe"><title>${genLabel(p.run_id)} hub ${p.hub_sha} — domain mean ${p.domain_mean}%</title></circle>`).join("")+
+    [0,25,50,75,100].map(v=>`<text x="4" y="${y(v)+4}" fill="#9bb0d0" font-size="9">${v}%</text>`).join("")+"</svg>";}
 </script>
 </body>
 </html>
