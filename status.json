@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-10-29 04:09:41 PDT (America/Los_Angeles)",
+  "last_updated_pt": "2026-10-29 04:13:45 PDT (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -24,14 +24,14 @@
     "runtime_flag": "lanes/lineage-hub/ONE_LANE_POLICY.json"
   },
   "hub": {
-    "recommended_sha256": "985a4067b74b8ac766ee80dd2192466e4cf1dde04c1671434e1ffd844da10513",
-    "recommended_sha256_short": "985a4067b74b\u2026",
-    "last_publish_run_id": "e2b-lineage-t98u-g20",
-    "last_publish_pt": "2026-10-29 04:07:03 PDT",
+    "recommended_sha256": "3e1eceef31a9182b478e829a265f553b9c514aba72f2ac759b999f4a70ec31df",
+    "recommended_sha256_short": "3e1eceef31a9\u2026",
+    "last_publish_run_id": "e2b-lineage-t98u-g21",
+    "last_publish_pt": "2026-10-29 04:10:57 PDT",
     "w_old": 0.65,
     "w_new": 0.35,
-    "observed_at_pt": "2026-10-29 04:07:03 PDT",
-    "observation_age_seconds": 158,
+    "observed_at_pt": "2026-10-29 04:10:57 PDT",
+    "observation_age_seconds": 168,
     "observation_age_human": "2m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
@@ -64,8 +64,8 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 29381,
-      "observation_age_human": "8h 9m",
+      "observation_age_seconds": 29625,
+      "observation_age_human": "8h 13m",
       "label": "EXPERIMENTAL / not FNR-000"
     },
     "history": [
@@ -132,15 +132,15 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 29381,
-    "observation_age_human": "8h 9m"
+    "observation_age_seconds": 29625,
+    "observation_age_human": "8h 13m"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-10-29 04:09:41 PDT (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-10-29 04:13:45 PDT (America/Los_Angeles)",
     "hub_publish": {
-      "observed_at_pt": "2026-10-29 04:07:03 PDT",
+      "observed_at_pt": "2026-10-29 04:10:57 PDT",
       "age_human": "2m",
-      "age_seconds": 158
+      "age_seconds": 168
     },
     "latest_letter_metrics": {
       "letter": null,
@@ -151,13 +151,13 @@
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "8h 9m",
-      "age_seconds": 29381
+      "age_human": "8h 13m",
+      "age_seconds": 29625
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "8h 9m",
-      "age_seconds": 29381
+      "age_human": "8h 13m",
+      "age_seconds": 29625
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -686,6 +686,19 @@
           "T2": 60,
           "T3": 109,
           "T4": 54
+        },
+        "fa": 0
+      },
+      {
+        "t": "2026-10-29T04:11:40.295349",
+        "run_id": "e2b-lineage-t98u-g21",
+        "hub_sha": "3e1eceef31a9\u2026",
+        "composite": 87.23,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
         },
         "fa": 0
       }
@@ -1470,6 +1483,59 @@
         "time_approx": true
       },
       {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 0,
+            "n": 64,
+            "by_level": {
+              "easy": 0,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 14,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 8,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 28.63,
         "t": "2026-10-28T09:10:02-07:00",
         "run_id": "hub post H+I",
         "decision": "FOLDED",
@@ -1486,6 +1552,59 @@
         "time_approx": true
       },
       {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 0,
+            "n": 64,
+            "by_level": {
+              "easy": 0,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 14,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 8,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 28.63,
         "t": "2026-10-28T09:53:46-07:00",
         "run_id": "hub post J+E2B t76u",
         "decision": "FOLDED",
@@ -1952,6 +2071,73 @@
         },
         "fa": 0,
         "hub_sha": "985a4067b74b"
+      },
+      {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 0,
+            "n": 64,
+            "by_level": {
+              "easy": 0,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 14,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 8,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 28.63,
+        "t": "2026-10-29T04:10:56.774277-07:00",
+        "run_id": "e2b-lineage-t98u-g21",
+        "decision": "FOLDED",
+        "composite": 87.23,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "3e1eceef31a9"
       }
     ]
   }
