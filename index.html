@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FNR Training Status — EXPERIMENTAL / not FNR-000</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: #121a2b;
+      --line: #243047;
+      --text: #e8eefc;
+      --muted: #9bb0d0;
+      --good: #3ddc97;
+      --warn: #f0c14b;
+      --bad: #ff6b6b;
+      --accent: #6ea8fe;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #1a2744, var(--bg));
+      color: var(--text); line-height: 1.45;
+    }
+    header, main { max-width: 980px; margin: 0 auto; padding: 1.25rem; }
+    .banner {
+      background: #3a1d0f; border: 1px solid #8a4b1f; color: #ffd7a8;
+      padding: .85rem 1rem; border-radius: 10px; font-weight: 600;
+    }
+    h1 { font-size: 1.55rem; margin: 1rem 0 .35rem; }
+    .sub { color: var(--muted); margin-bottom: 1rem; }
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 1rem;
+    }
+    .card h2 { font-size: .95rem; margin: 0 0 .6rem; color: var(--accent); letter-spacing: .02em; text-transform: uppercase; }
+    .kv { display: grid; grid-template-columns: 7.5rem 1fr; gap: .25rem .6rem; font-size: .92rem; }
+    .k { color: var(--muted); }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .85rem; word-break: break-all; }
+    table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    th, td { text-align: left; padding: .4rem .35rem; border-bottom: 1px solid var(--line); }
+    th { color: var(--muted); font-weight: 600; }
+    .pill { display: inline-block; padding: .15rem .55rem; border-radius: 999px; font-size: .78rem; font-weight: 700; }
+    .pill-ok { background: #143528; color: var(--good); }
+    .pill-warn { background: #3a3010; color: var(--warn); }
+    .pill-bad { background: #3a1515; color: var(--bad); }
+    a { color: var(--accent); }
+    footer { color: var(--muted); font-size: .85rem; margin: 1.5rem 0 2rem; }
+    #err { color: var(--bad); white-space: pre-wrap; }
+    .fresh { font-size: .85rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="banner">EXPERIMENTAL / not FNR-000 — published snapshot only. Not admission. Not a T7 ALLOW. Checker owns proof.</div>
+    <h1>Formal Neural Reasoner — training status</h1>
+    <p class="sub">One-lane lineage hub + Linode continuous. AWS ≤1 Continue-only burst. Auto-refreshes <code>status.json</code>.</p>
+    <p class="fresh">Last updated (page data): <strong id="last_updated">loading…</strong>
+      · Client poll: <span id="poll_age">—</span>
+      · <span id="fetch_state">fetching</span></p>
+  </header>
+  <main>
+    <div id="err"></div>
+    <div class="grid">
+      <section class="card" id="card-admission">
+        <h2>Admission</h2>
+        <div class="kv" id="admission"></div>
+      </section>
+      <section class="card" id="card-lane">
+        <h2>One lane</h2>
+        <div class="kv" id="lane"></div>
+      </section>
+      <section class="card" id="card-hub">
+        <h2>Lineage hub</h2>
+        <div class="kv" id="hub"></div>
+      </section>
+      <section class="card" id="card-latest">
+        <h2>Latest letter metrics</h2>
+        <div class="kv" id="latest"></div>
+      </section>
+      <section class="card" id="card-aws">
+        <h2>AWS burst</h2>
+        <div class="kv" id="aws"></div>
+      </section>
+      <section class="card" id="card-linode">
+        <h2>Linode continuous</h2>
+        <div class="kv" id="linode"></div>
+      </section>
+      <section class="card" id="card-kitt">
+        <h2>KITT trainer</h2>
+        <div class="kv" id="kitt"></div>
+      </section>
+      <section class="card" id="card-curriculum">
+        <h2>Curriculum</h2>
+        <div class="kv" id="curriculum"></div>
+      </section>
+    </div>
+
+    <section class="card" style="margin-top:1rem">
+      <h2>Recent letters (from published artifacts)</h2>
+      <div style="overflow-x:auto">
+        <table>
+          <thead>
+            <tr><th>Letter</th><th>Hard neural</th><th>Avg nodes</th><th>False accept</th></tr>
+          </thead>
+          <tbody id="letters"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:1rem">
+      <h2>Links</h2>
+      <div id="links"></div>
+    </section>
+
+    <footer>
+      <p id="disclaimer"></p>
+      <p>Source: <span class="mono" id="source_repo"></span> → Pages: <span class="mono">tsrnc2/fnr-status</span>. Updates via publish script after hub folds, GitHub Actions schedule/push, and this page’s client fetch.</p>
+    </footer>
+  </main>
+  <script>
+    const POLL_MS = 60000;
+    function esc(s) {
+      return String(s ?? "").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+    function kv(el, rows) {
+      el.innerHTML = rows.map(([k,v]) => `<div class="k">${esc(k)}</div><div>${v}</div>`).join("");
+    }
+    function pill(text, kind) {
+      return `<span class="pill pill-${kind}">${esc(text)}</span>`;
+    }
+    function render(d) {
+      document.getElementById("last_updated").textContent = d.last_updated_pt || "unknown";
+      document.getElementById("disclaimer").textContent = d.disclaimer || "";
+      document.getElementById("source_repo").textContent = d.source_repo || "";
+      const adm = d.fnr_000_admission ? pill("ADMITTED?", "bad") : pill("not FNR-000", "ok");
+      kv(document.getElementById("admission"), [
+        ["Label", pill(d.label || "EXPERIMENTAL", "warn")],
+        ["FNR-000", adm],
+        ["T7 ALLOW", pill(d.t7_allow || "NOT_WRITTEN", "warn")],
+        ["Canonical", esc(d.canonical_fnr_000 || "BLOCKED")],
+      ]);
+      const ol = d.one_lane || {};
+      kv(document.getElementById("lane"), [
+        ["Enabled", ol.enabled ? pill("yes", "ok") : pill("no", "bad")],
+        ["Designated", esc(ol.designated)],
+        ["AWS role", esc(ol.aws_role)],
+        ["E2B/Daytona", esc(ol.e2b_daytona)],
+      ]);
+      const hub = d.hub || {};
+      kv(document.getElementById("hub"), [
+        ["SHA", `<span class="mono">${esc(hub.recommended_sha256_short || hub.recommended_sha256 || "—")}</span>`],
+        ["Last publish", esc(hub.last_publish_pt || "—")],
+        ["Run id", `<span class="mono">${esc(hub.last_publish_run_id || "—")}</span>`],
+        ["Mix w_old/w_new", esc(`${hub.w_old ?? "—"} / ${hub.w_new ?? "—"}`)],
+      ]);
+      const L = d.latest_letter_metrics || {};
+      kv(document.getElementById("latest"), [
+        ["Letter", esc(L.letter || "—")],
+        ["Hard neural", L.hard_neural ? pill(L.hard_neural, "ok") : "—"],
+        ["Avg nodes", esc(L.avg_nodes != null ? Number(L.avg_nodes).toFixed(2) : "—")],
+        ["False accept", esc(L.false_accept || "—")],
+      ]);
+      const aws = d.aws_burst || {};
+      const done = aws.latest_DONE || {};
+      kv(document.getElementById("aws"), [
+        ["Role", esc(aws.role)],
+        ["Soft cap", esc(aws.soft_cap)],
+        ["Instance file", `<span class="mono">${esc(aws.instance_id || "—")}</span>`],
+        ["Latest DONE run", `<span class="mono">${esc(done.run || "—")}</span>`],
+        ["Hint", esc(aws.current_hint || (aws.live_probe_burst_lane && JSON.stringify(aws.live_probe_burst_lane)) || "—")],
+      ]);
+      const lin = d.linode_continuous || {};
+      kv(document.getElementById("linode"), [
+        ["Host", esc(lin.host_label)],
+        ["Status", esc(lin.host_status || "—")],
+        ["AUTO_CONTINUE", lin.AUTO_CONTINUE ? pill("1", "ok") : pill("0", "warn")],
+        ["Hub mirror", esc(lin.hub_mirror)],
+      ]);
+      const k = d.kitt_trainer || {};
+      kv(document.getElementById("kitt"), [
+        ["Live trainer", k.live || k.kitt_is_live_trainer ? pill("YES", "bad") : pill("no", "ok")],
+        ["Gate", pill(k.status || "NOT_YET_PROVEN", "warn")],
+        ["Doc", esc(k.gate_doc || "")],
+      ]);
+      const c = d.curriculum || {};
+      kv(document.getElementById("curriculum"), [
+        ["AES goal", esc(c.aes_long_term)],
+        ["Good vs bad", esc(c.good_vs_bad_math_forms)],
+        ["Pairs", esc((c.contrast_pairs || []).join("; "))],
+        ["Cryptanalysis", c.cryptanalysis ? pill("yes?", "bad") : pill("no", "ok")],
+      ]);
+      const tb = document.getElementById("letters");
+      const rows = (d.recent_letters || []).slice().reverse();
+      tb.innerHTML = rows.length ? rows.map(r => `<tr>
+        <td>${esc(r.letter)}</td>
+        <td>${esc(r.hard_neural)}</td>
+        <td>${esc(r.avg_nodes != null ? Number(r.avg_nodes).toFixed(2) : "—")}</td>
+        <td>${esc(r.false_accept)}</td>
+      </tr>`).join("") : `<tr><td colspan="4">No letter artifacts in snapshot</td></tr>`;
+      const links = d.links || {};
+      document.getElementById("links").innerHTML = Object.entries(links).map(([k,v]) =>
+        `<div><span class="k">${esc(k)}</span> · <a href="${esc(v)}" rel="noopener">${esc(v)}</a></div>`
+      ).join("");
+    }
+    let lastFetch = 0;
+    async function refresh() {
+      const st = document.getElementById("fetch_state");
+      try {
+        st.textContent = "fetching…";
+        const res = await fetch("status.json?ts=" + Date.now(), { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const d = await res.json();
+        render(d);
+        lastFetch = Date.now();
+        document.getElementById("err").textContent = "";
+        st.textContent = "ok";
+      } catch (e) {
+        st.textContent = "error";
+        document.getElementById("err").textContent = "Failed to load status.json: " + e;
+      }
+    }
+    setInterval(() => {
+      if (lastFetch) {
+        const s = Math.round((Date.now() - lastFetch) / 1000);
+        document.getElementById("poll_age").textContent = s + "s ago";
+      }
+    }, 1000);
+    refresh();
+    setInterval(refresh, POLL_MS);
+  </script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "label": "EXPERIMENTAL / not FNR-000",
+  "fnr_000_admission": false,
+  "t7_allow": "NOT_WRITTEN",
+  "canonical_fnr_000": "BLOCKED",
+  "forges_allow": false,
+  "disclaimer": "EXPERIMENTAL training status snapshot published from multi-cloud-train. Not FNR-000 admission. Not a T7 ALLOW. Checker owns proof. This page reflects the latest published snapshot; live EC2/Linode health still needs a same-turn probe for operational decisions.",
+  "last_updated_pt": "2026-10-28 17:08:15 PDT (America/Los_Angeles)",
+  "source_repo": "tsrnc2/multi-cloud-train",
+  "status_repo": "tsrnc2/fnr-status",
+  "one_lane": {
+    "enabled": true,
+    "designated": "linode-continuous+lineage-hub",
+    "aws_role": "optional_continue_only_burst_leq_1_ec2",
+    "e2b_daytona": "parked_no_parallel_spawn",
+    "policy_doc": "ONE_LANE_POLICY_T87U.md",
+    "runtime_flag": "lanes/lineage-hub/ONE_LANE_POLICY.json"
+  },
+  "hub": {
+    "recommended_sha256": "f6a2eddb489b9bfa3557f661d6894dbbabee03f6321e338302fb9f51992e7fb2",
+    "recommended_sha256_short": "f6a2eddb489b\u2026",
+    "last_publish_run_id": "aws-next-1793232340",
+    "last_publish_pt": "2026-10-28 17:06:35 PDT",
+    "w_old": 0.65,
+    "w_new": 0.35,
+    "label": "EXPERIMENTAL / not FNR-000"
+  },
+  "latest_letter_metrics": {
+    "letter": "X17",
+    "hard_neural": "106/110",
+    "hard_solve_rate": 0.9636363636363636,
+    "avg_nodes": 28.945454545454545,
+    "false_accept": "0/613",
+    "false_accept_rate": 0.0,
+    "fnr_000_admission": false,
+    "label": "EXPERIMENTAL / not FNR-000",
+    "train_acc": null,
+    "val_acc": 0.6521084337349398,
+    "artifact_dir": "v15_lineage_warm_x17"
+  },
+  "recent_letters": [
+    {
+      "letter": "H5",
+      "hard_neural": "87/110",
+      "hard_solve_rate": 0.7909090909090909,
+      "avg_nodes": 32.03636363636364,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "train_acc": null,
+      "val_acc": 0.5798192771084337,
+      "artifact_dir": "v15_lineage_warm_h5"
+    },
+    {
+      "letter": "I6",
+      "hard_neural": "107/110",
+      "hard_solve_rate": 0.9727272727272728,
+      "avg_nodes": 28.80909090909091,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "train_acc": null,
+      "val_acc": 0.5933734939759037,
+      "artifact_dir": "v15_lineage_warm_i6"
+    },
+    {
+      "letter": "J7",
+      "hard_neural": "79/110",
+      "hard_solve_rate": 0.7181818181818181,
+      "avg_nodes": 34.58181818181818,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "train_acc": null,
+      "val_acc": 0.5647590361445783,
+      "artifact_dir": "v15_lineage_warm_j7"
+    },
+    {
+      "letter": "K8",
+      "hard_neural": "82/110",
+      "hard_solve_rate": 0.7454545454545455,
+      "avg_nodes": 32.96363636363636,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "train_acc": null,
+      "val_acc": 0.6295180722891566,
+      "artifact_dir": "v15_lineage_warm_k8"
+    },
+    {
+      "letter": "L9",
+      "hard_neural": "110/110",
+      "hard_solve_rate": 1.0,
+      "avg_nodes": 29.40909090909091,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "train_acc": null,
+      "val_acc": 0.6114457831325302,
+      "artifact_dir": "v15_lineage_warm_l9"
+    },
+    {
+      "letter": "X10",
+      "hard_neural": "107/110",
+      "hard_solve_rate": 0.9727272727272728,
+      "avg_nodes": 28.145454545454545,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "train_acc": null,
+      "val_acc": 0.6325301204819277,
+      "artifact_dir": "v15_lineage_warm_x10"
+    },
+    {
+      "letter": "X11",
+      "hard_neural": "100/110",
+      "hard_solve_rate": 0.9090909090909091,
+      "avg_nodes": 33.445454545454545,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "train_acc": null,
+      "val_acc": 0.6385542168674698,
+      "artifact_dir": "v15_lineage_warm_x11"
+    },
+    {
+      "letter": "X13",
+      "hard_neural": "110/110",
+      "hard_solve_rate": 1.0,
+      "avg_nodes": 29.545454545454547,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "train_acc": null,
+      "val_acc": 0.6641566265060241,
+      "artifact_dir": "v15_lineage_warm_x13"
+    },
+    {
+      "letter": "X14",
+      "hard_neural": "110/110",
+      "hard_solve_rate": 1.0,
+      "avg_nodes": 25.381818181818183,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "train_acc": null,
+      "val_acc": 0.6265060240963856,
+      "artifact_dir": "v15_lineage_warm_x14"
+    },
+    {
+      "letter": "X15",
+      "hard_neural": "110/110",
+      "hard_solve_rate": 1.0,
+      "avg_nodes": 31.263636363636362,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "train_acc": null,
+      "val_acc": 0.5963855421686747,
+      "artifact_dir": "v15_lineage_warm_x15"
+    },
+    {
+      "letter": "X16",
+      "hard_neural": "110/110",
+      "hard_solve_rate": 1.0,
+      "avg_nodes": 29.01818181818182,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "train_acc": null,
+      "val_acc": 0.5933734939759037,
+      "artifact_dir": "v15_lineage_warm_x16"
+    },
+    {
+      "letter": "X17",
+      "hard_neural": "106/110",
+      "hard_solve_rate": 0.9636363636363636,
+      "avg_nodes": 28.945454545454545,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "train_acc": null,
+      "val_acc": 0.6521084337349398,
+      "artifact_dir": "v15_lineage_warm_x17"
+    }
+  ],
+  "aws_burst": {
+    "role": "optional_continue_only_burst_leq_1_ec2",
+    "soft_cap": "\u22641 EC2",
+    "instance_id": "i-0c8fcad1aff0bca9e",
+    "from_registry_t90": {
+      "x16_folded": true,
+      "hub_sha_after": "cf223d5a3a05\u2026",
+      "auto_next_letter": "SKIPPED_ONE_LANE"
+    },
+    "live_probe_burst_lane": {
+      "letter": "X16",
+      "state": "terminated_after_DONE_fold",
+      "soft_cap_clear": true
+    },
+    "latest_DONE": {
+      "lane": "AWS-X",
+      "run": "v15-lineage-warm-20261027-x17",
+      "finished_utc": "2026-10-29T00:04:37Z",
+      "instance_id": "i-0c8fcad1aff0bca9e",
+      "label": "EXPERIMENTAL-not-FNR-000"
+    },
+    "label": "EXPERIMENTAL / not FNR-000",
+    "current_hint": "X17 Continue-authorized burst may be instance i-0c8fcad1aff0bca9e (see T90U_CONTINUE.md); re-probe for live state"
+  },
+  "linode_continuous": {
+    "role": "designated_always_on_continuous",
+    "host_label": "lax-kitt",
+    "host_status": "running",
+    "AUTO_CONTINUE": true,
+    "hub_mirror": "mirrored_on_publish",
+    "note": "Point-in-time from last REGISTRY probe; GitHub snapshot \u2260 sole live health proof",
+    "label": "EXPERIMENTAL / not FNR-000"
+  },
+  "curriculum": {
+    "aes_long_term": "AES-128/AES-256 reasoning model",
+    "aes_doc": "LONG_TERM_BENCHMARK_AES_REASONING_MODEL_T81U.md",
+    "good_vs_bad_math_forms": "good vs bad math-form discrimination",
+    "good_vs_bad_doc": "CURRICULUM_GOOD_VS_BAD_MATH_FORMS_T86U.md",
+    "contrast_pairs": [
+      "AES vs Blowfish (form/structure)",
+      "EC vs Dual_EC_DRBG / dual elliptic (found-out-bad)"
+    ],
+    "cryptanalysis": false,
+    "on_lane_only": true,
+    "label": "EXPERIMENTAL / not FNR-000"
+  },
+  "kitt_trainer": {
+    "live": false,
+    "kitt_is_live_trainer": false,
+    "status": "NOT_YET_PROVEN",
+    "gate_doc": "KITT_TRAINER_TAKEOVER_GATE_T89U.md",
+    "role": "aspirational_after_gate",
+    "label": "EXPERIMENTAL / not FNR-000"
+  },
+  "links": {
+    "multi_cloud_train": "https://github.com/tsrnc2/multi-cloud-train",
+    "fnr_status_repo": "https://github.com/tsrnc2/fnr-status",
+    "pages": "https://tsrnc2.github.io/fnr-status/",
+    "kitt_191_blocked": "https://github.com/tsrnc2/kitt/issues/191",
+    "one_lane_policy": "https://github.com/tsrnc2/multi-cloud-train/blob/main/ONE_LANE_POLICY_T87U.md",
+    "curriculum": "https://github.com/tsrnc2/multi-cloud-train/blob/main/CURRICULUM_GOOD_VS_BAD_MATH_FORMS_T86U.md",
+    "kitt_gate": "https://github.com/tsrnc2/multi-cloud-train/blob/main/KITT_TRAINER_TAKEOVER_GATE_T89U.md"
+  },
+  "jobo_turns_recent": {
+    "t83u": {
+      "pt": "2026-10-28 15:01 PDT",
+      "note": "Continue + improvement MIXED; X14 folded; X15 running"
+    },
+    "t87u": {
+      "pt": "2026-10-28 15:50 PDT",
+      "note": "ONE LANE: Linode continuous + hub; park sandboxes; AWS burst-only; X16 finish then wind down parallel"
+    },
+    "t89u": {
+      "pt": "2026-10-28 15:56 PDT",
+      "note": "KITT trainer takeover gated on proven AWS+other-cloud spawn + goal maintain; NOT live trainer yet"
+    },
+    "t91u": {
+      "pt": "2026-10-28",
+      "note": "Google Sites live FNR training/progress page"
+    },
+    "t92u": {
+      "pt": "2026-10-28",
+      "note": "Or GitHub Sites \u2014 preferred; fnr-status Pages"
+    },
+    "t93u": {
+      "pt": "2026-10-28",
+      "note": "Status site must auto-update"
+    }
+  },
+  "continue_tip": "T90U_CONTINUE.md",
+  "build": {
+    "builder": "scripts/build_fnr_status_snapshot.py",
+    "registry_bytes": 89165,
+    "registry_sha256_12": "482740d4ec4a\u2026"
+  }
+}
