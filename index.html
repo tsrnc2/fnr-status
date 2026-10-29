@@ -16,6 +16,7 @@
       --warn: #f0c14b;
       --bad: #ff6b6b;
       --accent: #6ea8fe;
+      --info: #7dd3fc;
     }
     * { box-sizing: border-box; }
     body {
@@ -28,6 +29,10 @@
       background: #3a1d0f; border: 1px solid #8a4b1f; color: #ffd7a8;
       padding: .85rem 1rem; border-radius: 10px; font-weight: 600;
     }
+    .banner-info {
+      background: #0c2a3a; border: 1px solid #1e5a78; color: #b8e7ff;
+      padding: .75rem 1rem; border-radius: 10px; margin-top: .65rem; font-weight: 500; font-size: .92rem;
+    }
     h1 { font-size: 1.55rem; margin: 1rem 0 .35rem; }
     .sub { color: var(--muted); margin-bottom: 1rem; }
     .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
@@ -35,34 +40,52 @@
       background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 1rem;
     }
     .card h2 { font-size: .95rem; margin: 0 0 .6rem; color: var(--accent); letter-spacing: .02em; text-transform: uppercase; }
-    .kv { display: grid; grid-template-columns: 7.5rem 1fr; gap: .25rem .6rem; font-size: .92rem; }
+    .card.val-acc {
+      border-color: #2a5a8a;
+      background: linear-gradient(160deg, #15253a, var(--card));
+    }
+    .card.val-acc h2 { color: var(--info); }
+    .val-big { font-size: 2rem; font-weight: 800; letter-spacing: .02em; margin: .2rem 0 .35rem; }
+    .kv { display: grid; grid-template-columns: 8.2rem 1fr; gap: .25rem .6rem; font-size: .92rem; }
     .k { color: var(--muted); }
     .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .85rem; word-break: break-all; }
+    .age { color: var(--info); font-size: .82rem; }
     table { width: 100%; border-collapse: collapse; font-size: .88rem; }
-    th, td { text-align: left; padding: .4rem .35rem; border-bottom: 1px solid var(--line); }
+    th, td { text-align: left; padding: .4rem .35rem; border-bottom: 1px solid var(--line); vertical-align: top; }
     th { color: var(--muted); font-weight: 600; }
     .pill { display: inline-block; padding: .15rem .55rem; border-radius: 999px; font-size: .78rem; font-weight: 700; }
     .pill-ok { background: #143528; color: var(--good); }
     .pill-warn { background: #3a3010; color: var(--warn); }
     .pill-bad { background: #3a1515; color: var(--bad); }
+    .pill-info { background: #0c2a3a; color: var(--info); }
     a { color: var(--accent); }
     footer { color: var(--muted); font-size: .85rem; margin: 1.5rem 0 2rem; }
     #err { color: var(--bad); white-space: pre-wrap; }
     .fresh { font-size: .85rem; color: var(--muted); }
+    .muted { color: var(--muted); font-size: .85rem; }
   </style>
 </head>
 <body>
   <header>
     <div class="banner">EXPERIMENTAL / not FNR-000 — published snapshot only. Not admission. Not a T7 ALLOW. Checker owns proof.</div>
+    <div class="banner-info" id="refresh_banner">
+      UI auto-refresh reloads the <strong>published</strong> <code>status.json</code> only — it does <strong>not</strong> stream live EC2/Linode training telemetry.
+    </div>
     <h1>Formal Neural Reasoner — training status</h1>
-    <p class="sub">One-lane lineage hub + Linode continuous. AWS ≤1 Continue-only burst. Auto-refreshes <code>status.json</code>.</p>
-    <p class="fresh">Last updated (page data): <strong id="last_updated">loading…</strong>
-      · Client poll: <span id="poll_age">—</span>
-      · <span id="fetch_state">fetching</span></p>
+    <p class="sub">One-lane lineage hub + Linode continuous. AWS ≤1 Continue-only burst. Producer-reported metrics.</p>
+    <p class="fresh">Snapshot built: <strong id="last_updated">loading…</strong>
+      · Published data fetched: <span id="poll_age">—</span>
+      · <span id="fetch_state">fetching</span>
+      · schema <span id="schema_ver">—</span></p>
   </header>
   <main>
     <div id="err"></div>
     <div class="grid">
+      <section class="card val-acc" id="card-val">
+        <h2>Validation accuracy</h2>
+        <div class="val-big" id="val_big">—</div>
+        <div class="kv" id="val_acc"></div>
+      </section>
       <section class="card" id="card-admission">
         <h2>Admission</h2>
         <div class="kv" id="admission"></div>
@@ -80,12 +103,17 @@
         <div class="kv" id="latest"></div>
       </section>
       <section class="card" id="card-aws">
-        <h2>AWS burst</h2>
+        <h2>AWS burst — current letter</h2>
         <div class="kv" id="aws"></div>
+        <p class="muted" id="aws_note" style="margin:.6rem 0 0"></p>
       </section>
       <section class="card" id="card-linode">
         <h2>Linode continuous</h2>
         <div class="kv" id="linode"></div>
+      </section>
+      <section class="card" id="card-ages">
+        <h2>Observation ages</h2>
+        <div class="kv" id="ages"></div>
       </section>
       <section class="card" id="card-kitt">
         <h2>KITT trainer</h2>
@@ -98,11 +126,23 @@
     </div>
 
     <section class="card" style="margin-top:1rem">
-      <h2>Recent letters (from published artifacts)</h2>
+      <h2>AWS letter history (completed — not current)</h2>
       <div style="overflow-x:auto">
         <table>
           <thead>
-            <tr><th>Letter</th><th>Hard neural</th><th>Avg nodes</th><th>False accept</th></tr>
+            <tr><th>Letter</th><th>State</th><th>Hard</th><th>Val acc</th><th>FA</th><th>Observed</th></tr>
+          </thead>
+          <tbody id="aws_history"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:1rem">
+      <h2>Recent letters (published artifacts)</h2>
+      <div style="overflow-x:auto">
+        <table>
+          <thead>
+            <tr><th>Letter</th><th>Hard neural</th><th>Val acc</th><th>Avg nodes</th><th>False accept</th><th>Observed (age)</th></tr>
           </thead>
           <tbody id="letters"></tbody>
         </table>
@@ -116,7 +156,8 @@
 
     <footer>
       <p id="disclaimer"></p>
-      <p>Source: <span class="mono" id="source_repo"></span> → Pages: <span class="mono">tsrnc2/fnr-status</span>. Updates via publish script after hub folds, GitHub Actions schedule/push, and this page’s client fetch.</p>
+      <p>Source: <span class="mono" id="source_repo"></span> → Pages: <span class="mono">tsrnc2/fnr-status</span>.
+        Snapshot republished after hub folds / Continue / weekday Actions — the 60s client poll only reloads that published file.</p>
     </footer>
   </main>
   <script>
@@ -130,10 +171,34 @@
     function pill(text, kind) {
       return `<span class="pill pill-${kind}">${esc(text)}</span>`;
     }
+    function ageSpan(human, at) {
+      if (!human && !at) return "—";
+      const parts = [];
+      if (human) parts.push(`<span class="age">${esc(human)} ago</span>`);
+      if (at) parts.push(`<span class="muted">(${esc(at)})</span>`);
+      return parts.join(" ");
+    }
     function render(d) {
       document.getElementById("last_updated").textContent = d.last_updated_pt || "unknown";
       document.getElementById("disclaimer").textContent = d.disclaimer || "";
       document.getElementById("source_repo").textContent = d.source_repo || "";
+      document.getElementById("schema_ver").textContent = d.schema_version ?? "—";
+      const ui = d.ui_refresh || {};
+      if (ui.banner) {
+        document.getElementById("refresh_banner").innerHTML = esc(ui.banner);
+      }
+
+      const va = d.validation_accuracy || {};
+      const L = d.latest_letter_metrics || {};
+      const valPct = va.val_acc_pct || L.val_acc_pct || (L.val_acc != null ? (Number(L.val_acc) * 100).toFixed(2) + "%" : null);
+      document.getElementById("val_big").textContent = valPct || "—";
+      kv(document.getElementById("val_acc"), [
+        ["Letter", esc(va.letter || L.letter || "—")],
+        ["Source", pill("producer-reported", "info")],
+        ["Observed", ageSpan(va.observation_age_human || L.observation_age_human, va.observed_at_pt || L.observed_at_pt)],
+        ["Note", esc(va.note || "final_val_acc from published train_metrics")],
+      ]);
+
       const adm = d.fnr_000_admission ? pill("ADMITTED?", "bad") : pill("not FNR-000", "ok");
       kv(document.getElementById("admission"), [
         ["Label", pill(d.label || "EXPERIMENTAL", "warn")],
@@ -152,32 +217,76 @@
       kv(document.getElementById("hub"), [
         ["SHA", `<span class="mono">${esc(hub.recommended_sha256_short || hub.recommended_sha256 || "—")}</span>`],
         ["Last publish", esc(hub.last_publish_pt || "—")],
+        ["Age", ageSpan(hub.observation_age_human, hub.observed_at_pt)],
         ["Run id", `<span class="mono">${esc(hub.last_publish_run_id || "—")}</span>`],
         ["Mix w_old/w_new", esc(`${hub.w_old ?? "—"} / ${hub.w_new ?? "—"}`)],
       ]);
-      const L = d.latest_letter_metrics || {};
       kv(document.getElementById("latest"), [
         ["Letter", esc(L.letter || "—")],
         ["Hard neural", L.hard_neural ? pill(L.hard_neural, "ok") : "—"],
+        ["Val acc", valPct ? `<strong>${esc(valPct)}</strong>` : "—"],
         ["Avg nodes", esc(L.avg_nodes != null ? Number(L.avg_nodes).toFixed(2) : "—")],
         ["False accept", esc(L.false_accept || "—")],
+        ["Observed", ageSpan(L.observation_age_human, L.observed_at_pt)],
+        ["Producer", L.producer_reported !== false ? pill("reported", "info") : "—"],
       ]);
+
       const aws = d.aws_burst || {};
-      const done = aws.latest_DONE || {};
-      kv(document.getElementById("aws"), [
-        ["Role", esc(aws.role)],
-        ["Soft cap", esc(aws.soft_cap)],
-        ["Instance file", `<span class="mono">${esc(aws.instance_id || "—")}</span>`],
-        ["Latest DONE run", `<span class="mono">${esc(done.run || "—")}</span>`],
-        ["Hint", esc(aws.current_hint || (aws.live_probe_burst_lane && JSON.stringify(aws.live_probe_burst_lane)) || "—")],
-      ]);
+      const cur = aws.current || null;
+      if (cur) {
+        kv(document.getElementById("aws"), [
+          ["Letter", pill(cur.letter || "?", "info")],
+          ["State", esc(cur.state || "—")],
+          ["Instance", `<span class="mono">${esc(cur.instance_id || "—")}</span>`],
+          ["Run", `<span class="mono">${esc(cur.run_id || cur.name || "—")}</span>`],
+          ["Soft cap", esc(aws.soft_cap_occupancy || aws.soft_cap || "—")],
+          ["Observed", ageSpan(cur.observation_age_human, cur.observed_at_pt)],
+          ["Source", esc(cur.source || "—")],
+        ]);
+      } else {
+        kv(document.getElementById("aws"), [
+          ["Letter", pill("none running", "warn")],
+          ["Soft cap", esc(aws.soft_cap_occupancy || "0/1")],
+          ["Role", esc(aws.role || "—")],
+          ["Latest DONE", esc((aws.latest_DONE || {}).letter || (aws.latest_DONE || {}).run || "—")],
+        ]);
+      }
+      const notes = [];
+      if (aws.data_note) notes.push(aws.data_note);
+      if (aws.stale_probe_suppressed) notes.push(aws.stale_probe_suppressed);
+      document.getElementById("aws_note").textContent = notes.join(" ");
+
+      const hist = aws.history || [];
+      document.getElementById("aws_history").innerHTML = hist.length ? hist.slice().reverse().map(h => `<tr>
+        <td>${esc(h.letter)}</td>
+        <td>${esc(h.state || "—")}</td>
+        <td>${esc(h.hard_neural || "—")}</td>
+        <td>${esc(h.val_acc_pct || "—")}</td>
+        <td>${esc(h.false_accept || h.fa || "—")}</td>
+        <td>${esc(h.metrics_observed_at_pt || h.observed_at_pt || "—")}</td>
+      </tr>`).join("") : `<tr><td colspan="6">No completed AWS letters in snapshot history</td></tr>`;
+
       const lin = d.linode_continuous || {};
       kv(document.getElementById("linode"), [
         ["Host", esc(lin.host_label)],
         ["Status", esc(lin.host_status || "—")],
         ["AUTO_CONTINUE", lin.AUTO_CONTINUE ? pill("1", "ok") : pill("0", "warn")],
         ["Hub mirror", esc(lin.hub_mirror)],
+        ["Observed", ageSpan(lin.observation_age_human, lin.observed_at_pt)],
       ]);
+
+      const ages = d.observation_ages || {};
+      kv(document.getElementById("ages"), [
+        ["Snapshot built", esc(ages.snapshot_built_at_pt || d.last_updated_pt || "—")],
+        ["Hub publish", ageSpan((ages.hub_publish || {}).age_human, (ages.hub_publish || {}).observed_at_pt)],
+        ["Latest metrics", ageSpan((ages.latest_letter_metrics || {}).age_human, (ages.latest_letter_metrics || {}).observed_at_pt)
+          + ((ages.latest_letter_metrics || {}).letter ? ` · ${esc(ages.latest_letter_metrics.letter)}` : "")],
+        ["AWS current", ageSpan((ages.aws_current || {}).age_human, (ages.aws_current || {}).observed_at_pt)
+          + ((ages.aws_current || {}).letter ? ` · ${esc(ages.aws_current.letter)}` : "")],
+        ["Linode", ageSpan((ages.linode || {}).age_human, (ages.linode || {}).observed_at_pt)],
+        ["UI poll", pill("published JSON only", "info")],
+      ]);
+
       const k = d.kitt_trainer || {};
       kv(document.getElementById("kitt"), [
         ["Live trainer", k.live || k.kitt_is_live_trainer ? pill("YES", "bad") : pill("no", "ok")],
@@ -193,12 +302,17 @@
       ]);
       const tb = document.getElementById("letters");
       const rows = (d.recent_letters || []).slice().reverse();
-      tb.innerHTML = rows.length ? rows.map(r => `<tr>
+      tb.innerHTML = rows.length ? rows.map(r => {
+        const vp = r.val_acc_pct || (r.val_acc != null ? (Number(r.val_acc) * 100).toFixed(2) + "%" : "—");
+        return `<tr>
         <td>${esc(r.letter)}</td>
         <td>${esc(r.hard_neural)}</td>
+        <td><strong>${esc(vp)}</strong></td>
         <td>${esc(r.avg_nodes != null ? Number(r.avg_nodes).toFixed(2) : "—")}</td>
         <td>${esc(r.false_accept)}</td>
-      </tr>`).join("") : `<tr><td colspan="4">No letter artifacts in snapshot</td></tr>`;
+        <td>${ageSpan(r.observation_age_human, r.observed_at_pt)}</td>
+      </tr>`;
+      }).join("") : `<tr><td colspan="6">No letter artifacts in snapshot</td></tr>`;
       const links = d.links || {};
       document.getElementById("links").innerHTML = Object.entries(links).map(([k,v]) =>
         `<div><span class="k">${esc(k)}</span> · <a href="${esc(v)}" rel="noopener">${esc(v)}</a></div>`
@@ -208,14 +322,14 @@
     async function refresh() {
       const st = document.getElementById("fetch_state");
       try {
-        st.textContent = "fetching…";
+        st.textContent = "fetching published snapshot…";
         const res = await fetch("status.json?ts=" + Date.now(), { cache: "no-store" });
         if (!res.ok) throw new Error("HTTP " + res.status);
         const d = await res.json();
         render(d);
         lastFetch = Date.now();
         document.getElementById("err").textContent = "";
-        st.textContent = "ok";
+        st.textContent = "ok (published snapshot)";
       } catch (e) {
         st.textContent = "error";
         document.getElementById("err").textContent = "Failed to load status.json: " + e;
@@ -224,7 +338,7 @@
     setInterval(() => {
       if (lastFetch) {
         const s = Math.round((Date.now() - lastFetch) / 1000);
-        document.getElementById("poll_age").textContent = s + "s ago";
+        document.getElementById("poll_age").textContent = s + "s ago (not live telemetry)";
       }
     }, 1000);
     refresh();
