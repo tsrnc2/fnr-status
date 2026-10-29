@@ -6,7 +6,7 @@
   "canonical_fnr_000": "BLOCKED",
   "forges_allow": false,
   "disclaimer": "EXPERIMENTAL training status snapshot published from multi-cloud-train. Not FNR-000 admission. Not a T7 ALLOW. Checker owns proof. This page reflects the latest published snapshot; live EC2/Linode health still needs a same-turn probe for operational decisions.",
-  "last_updated_pt": "2026-10-28 17:20:53 PDT (America/Los_Angeles)",
+  "last_updated_pt": "2026-10-28 17:57:27 PDT (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -18,41 +18,28 @@
     "runtime_flag": "lanes/lineage-hub/ONE_LANE_POLICY.json"
   },
   "hub": {
-    "recommended_sha256": "44de57405f269f927dcf8e79d22e2dafd5d384d8d3525974c7a616e9f01c4ffa",
-    "recommended_sha256_short": "44de57405f26\u2026",
-    "last_publish_run_id": "aws-next-1793232872",
-    "last_publish_pt": "2026-10-28 17:14:59 PDT",
+    "recommended_sha256": "36a31a18cecef10fed752b7e7521b4adff8b3a6222d24ad00f68b8728411f698",
+    "recommended_sha256_short": "36a31a18cece\u2026",
+    "last_publish_run_id": "aws-next-1793235411",
+    "last_publish_pt": "2026-10-28 17:57:22 PDT",
     "w_old": 0.65,
     "w_new": 0.35,
     "label": "EXPERIMENTAL / not FNR-000"
   },
   "latest_letter_metrics": {
-    "letter": "X17",
-    "hard_neural": "106/110",
-    "hard_solve_rate": 0.9636363636363636,
-    "avg_nodes": 28.945454545454545,
+    "letter": "X18",
+    "hard_neural": "99/110",
+    "hard_solve_rate": 0.9,
+    "avg_nodes": 29.09090909090909,
     "false_accept": "0/613",
     "false_accept_rate": 0.0,
     "fnr_000_admission": false,
     "label": "EXPERIMENTAL / not FNR-000",
     "train_acc": null,
-    "val_acc": 0.6521084337349398,
-    "artifact_dir": "v15_lineage_warm_x17"
+    "val_acc": 0.5753012048192772,
+    "artifact_dir": "v15_lineage_warm_x18"
   },
   "recent_letters": [
-    {
-      "letter": "H5",
-      "hard_neural": "87/110",
-      "hard_solve_rate": 0.7909090909090909,
-      "avg_nodes": 32.03636363636364,
-      "false_accept": "0/613",
-      "false_accept_rate": 0.0,
-      "fnr_000_admission": false,
-      "label": "EXPERIMENTAL / not FNR-000",
-      "train_acc": null,
-      "val_acc": 0.5798192771084337,
-      "artifact_dir": "v15_lineage_warm_h5"
-    },
     {
       "letter": "I6",
       "hard_neural": "107/110",
@@ -195,6 +182,19 @@
       "train_acc": null,
       "val_acc": 0.6521084337349398,
       "artifact_dir": "v15_lineage_warm_x17"
+    },
+    {
+      "letter": "X18",
+      "hard_neural": "99/110",
+      "hard_solve_rate": 0.9,
+      "avg_nodes": 29.09090909090909,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "train_acc": null,
+      "val_acc": 0.5753012048192772,
+      "artifact_dir": "v15_lineage_warm_x18"
     }
   ],
   "aws_burst": {
@@ -213,9 +213,9 @@
     },
     "latest_DONE": {
       "lane": "AWS-X",
-      "run": "v15-lineage-warm-20261027-x17",
-      "finished_utc": "2026-10-29T00:04:37Z",
-      "instance_id": "i-0c8fcad1aff0bca9e",
+      "run": "v15-lineage-warm-20261027-x18",
+      "finished_utc": "2026-10-29T00:49:01Z",
+      "instance_id": "i-0664acf60ba217335",
       "label": "EXPERIMENTAL-not-FNR-000"
     },
     "label": "EXPERIMENTAL / not FNR-000",
