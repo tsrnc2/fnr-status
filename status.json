@@ -6,7 +6,7 @@
   "canonical_fnr_000": "BLOCKED",
   "forges_allow": false,
   "disclaimer": "EXPERIMENTAL training status snapshot published from multi-cloud-train. Not FNR-000 admission. Not a T7 ALLOW. Checker owns proof. This page reflects the latest published snapshot; live EC2/Linode health still needs a same-turn probe for operational decisions.",
-  "last_updated_pt": "2026-10-28 17:08:15 PDT (America/Los_Angeles)",
+  "last_updated_pt": "2026-10-28 17:15:04 PDT (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -18,10 +18,10 @@
     "runtime_flag": "lanes/lineage-hub/ONE_LANE_POLICY.json"
   },
   "hub": {
-    "recommended_sha256": "f6a2eddb489b9bfa3557f661d6894dbbabee03f6321e338302fb9f51992e7fb2",
-    "recommended_sha256_short": "f6a2eddb489b\u2026",
-    "last_publish_run_id": "aws-next-1793232340",
-    "last_publish_pt": "2026-10-28 17:06:35 PDT",
+    "recommended_sha256": "44de57405f269f927dcf8e79d22e2dafd5d384d8d3525974c7a616e9f01c4ffa",
+    "recommended_sha256_short": "44de57405f26\u2026",
+    "last_publish_run_id": "aws-next-1793232872",
+    "last_publish_pt": "2026-10-28 17:14:59 PDT",
     "w_old": 0.65,
     "w_new": 0.35,
     "label": "EXPERIMENTAL / not FNR-000"
