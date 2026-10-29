@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-10-28 18:44:35 PDT (America/Los_Angeles)",
+  "last_updated_pt": "2026-10-28 18:45:47 PDT (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -31,8 +31,8 @@
     "w_old": 0.65,
     "w_new": 0.35,
     "observed_at_pt": "2026-10-28 18:44:30 PDT",
-    "observation_age_seconds": 4,
-    "observation_age_human": "4s",
+    "observation_age_seconds": 77,
+    "observation_age_human": "1m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
   "latest_letter_metrics": {
@@ -50,8 +50,8 @@
     "label": "EXPERIMENTAL / not FNR-000",
     "producer_reported": true,
     "observed_at_pt": "2026-10-28 18:43:09 PDT",
-    "observation_age_seconds": 86,
-    "observation_age_human": "1m",
+    "observation_age_seconds": 158,
+    "observation_age_human": "2m",
     "artifact_dir": "v15_lineage_warm_x19"
   },
   "validation_accuracy": {
@@ -60,7 +60,7 @@
     "val_acc_pct": "60.24%",
     "producer_reported": true,
     "observed_at_pt": "2026-10-28 18:43:09 PDT",
-    "observation_age_human": "1m",
+    "observation_age_human": "2m",
     "note": "From train_metrics final_val_acc on published letter artifacts"
   },
   "recent_letters": [
@@ -79,8 +79,8 @@
       "label": "EXPERIMENTAL / not FNR-000",
       "producer_reported": true,
       "observed_at_pt": "2026-10-28 09:38:36 PDT",
-      "observation_age_seconds": 32759,
-      "observation_age_human": "9h 5m",
+      "observation_age_seconds": 32831,
+      "observation_age_human": "9h 7m",
       "artifact_dir": "v15_lineage_warm_j7"
     },
     {
@@ -98,8 +98,8 @@
       "label": "EXPERIMENTAL / not FNR-000",
       "producer_reported": true,
       "observed_at_pt": "2026-10-28 10:25:26 PDT",
-      "observation_age_seconds": 29949,
-      "observation_age_human": "8h 19m",
+      "observation_age_seconds": 30021,
+      "observation_age_human": "8h 20m",
       "artifact_dir": "v15_lineage_warm_k8"
     },
     {
@@ -117,8 +117,8 @@
       "label": "EXPERIMENTAL / not FNR-000",
       "producer_reported": true,
       "observed_at_pt": "2026-10-28 10:56:50 PDT",
-      "observation_age_seconds": 28065,
-      "observation_age_human": "7h 47m",
+      "observation_age_seconds": 28137,
+      "observation_age_human": "7h 48m",
       "artifact_dir": "v15_lineage_warm_l9"
     },
     {
@@ -136,8 +136,8 @@
       "label": "EXPERIMENTAL / not FNR-000",
       "producer_reported": true,
       "observed_at_pt": "2026-10-28 11:37:02 PDT",
-      "observation_age_seconds": 25653,
-      "observation_age_human": "7h 7m",
+      "observation_age_seconds": 25725,
+      "observation_age_human": "7h 8m",
       "artifact_dir": "v15_lineage_warm_x10"
     },
     {
@@ -155,8 +155,8 @@
       "label": "EXPERIMENTAL / not FNR-000",
       "producer_reported": true,
       "observed_at_pt": "2026-10-28 12:11:05 PDT",
-      "observation_age_seconds": 23610,
-      "observation_age_human": "6h 33m",
+      "observation_age_seconds": 23682,
+      "observation_age_human": "6h 34m",
       "artifact_dir": "v15_lineage_warm_x11"
     },
     {
@@ -174,8 +174,8 @@
       "label": "EXPERIMENTAL / not FNR-000",
       "producer_reported": true,
       "observed_at_pt": "2026-10-28 13:11:31 PDT",
-      "observation_age_seconds": 19984,
-      "observation_age_human": "5h 33m",
+      "observation_age_seconds": 20056,
+      "observation_age_human": "5h 34m",
       "artifact_dir": "v15_lineage_warm_x13"
     },
     {
@@ -193,8 +193,8 @@
       "label": "EXPERIMENTAL / not FNR-000",
       "producer_reported": true,
       "observed_at_pt": "2026-10-28 14:59:56 PDT",
-      "observation_age_seconds": 13478,
-      "observation_age_human": "3h 44m",
+      "observation_age_seconds": 13550,
+      "observation_age_human": "3h 45m",
       "artifact_dir": "v15_lineage_warm_x14"
     },
     {
@@ -212,8 +212,8 @@
       "label": "EXPERIMENTAL / not FNR-000",
       "producer_reported": true,
       "observed_at_pt": "2026-10-28 15:31:51 PDT",
-      "observation_age_seconds": 11564,
-      "observation_age_human": "3h 12m",
+      "observation_age_seconds": 11636,
+      "observation_age_human": "3h 13m",
       "artifact_dir": "v15_lineage_warm_x15"
     },
     {
@@ -231,8 +231,8 @@
       "label": "EXPERIMENTAL / not FNR-000",
       "producer_reported": true,
       "observed_at_pt": "2026-10-28 16:04:57 PDT",
-      "observation_age_seconds": 9578,
-      "observation_age_human": "2h 39m",
+      "observation_age_seconds": 9650,
+      "observation_age_human": "2h 40m",
       "artifact_dir": "v15_lineage_warm_x16"
     },
     {
@@ -250,8 +250,8 @@
       "label": "EXPERIMENTAL / not FNR-000",
       "producer_reported": true,
       "observed_at_pt": "2026-10-28 17:04:36 PDT",
-      "observation_age_seconds": 5999,
-      "observation_age_human": "1h 39m",
+      "observation_age_seconds": 6071,
+      "observation_age_human": "1h 41m",
       "artifact_dir": "v15_lineage_warm_x17"
     },
     {
@@ -269,8 +269,8 @@
       "label": "EXPERIMENTAL / not FNR-000",
       "producer_reported": true,
       "observed_at_pt": "2026-10-28 17:49:00 PDT",
-      "observation_age_seconds": 3335,
-      "observation_age_human": "55m",
+      "observation_age_seconds": 3407,
+      "observation_age_human": "56m",
       "artifact_dir": "v15_lineage_warm_x18"
     },
     {
@@ -288,8 +288,8 @@
       "label": "EXPERIMENTAL / not FNR-000",
       "producer_reported": true,
       "observed_at_pt": "2026-10-28 18:43:09 PDT",
-      "observation_age_seconds": 86,
-      "observation_age_human": "1m",
+      "observation_age_seconds": 158,
+      "observation_age_human": "2m",
       "artifact_dir": "v15_lineage_warm_x19"
     }
   ],
@@ -315,9 +315,9 @@
       "val_acc_pct": "60.24%",
       "false_accept": "0/613",
       "metrics_observed_at_pt": "2026-10-28 18:43:09 PDT",
-      "metrics_observation_age_human": "1m",
-      "observation_age_seconds": 2795,
-      "observation_age_human": "46m",
+      "metrics_observation_age_human": "2m",
+      "observation_age_seconds": 2867,
+      "observation_age_human": "47m",
       "label": "EXPERIMENTAL / not FNR-000"
     },
     "history": [
@@ -339,7 +339,7 @@
         "val_acc_pct": "57.53%",
         "false_accept": "0/613",
         "metrics_observed_at_pt": "2026-10-28 17:49:00 PDT",
-        "metrics_observation_age_human": "55m"
+        "metrics_observation_age_human": "56m"
       },
       {
         "letter": "X19",
@@ -361,13 +361,13 @@
       "instance_id": "i-0ed2d52b738301da6",
       "label": "EXPERIMENTAL-not-FNR-000",
       "observed_at_pt": "2026-10-28 18:43:12 PDT",
-      "observation_age_seconds": 83,
-      "observation_age_human": "1m",
+      "observation_age_seconds": 155,
+      "observation_age_human": "2m",
       "note": "Completed fold receipt \u2014 not the live AWS letter unless current.state says running"
     },
     "stale_probe_suppressed": "Ignored stale probe letter X16 (probe @ 2026-10-28 16:25 PDT); current letter is X19",
-    "instance_id_file": "i-0ed2d52b738301da6",
-    "instance_id_file_observed_at_pt": "2026-10-28 17:58:04 PDT",
+    "instance_id_file": "i-0ca6c0c780c562218",
+    "instance_id_file_observed_at_pt": "2026-10-28 18:45:16 PDT",
     "registry_burn_updated_pt": "2026-10-28 17:58 PDT",
     "data_note": "aws_burst.current is the only live letter claim in this snapshot. history / latest_DONE are completed letters and must not be read as current AWS status. Snapshot \u2260 live EC2 DescribeInstances.",
     "label": "EXPERIMENTAL / not FNR-000"
@@ -381,32 +381,32 @@
     "observed_at_pt": "2026-10-28 17:58 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 2795,
-    "observation_age_human": "46m"
+    "observation_age_seconds": 2867,
+    "observation_age_human": "47m"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-10-28 18:44:35 PDT (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-10-28 18:45:47 PDT (America/Los_Angeles)",
     "hub_publish": {
       "observed_at_pt": "2026-10-28 18:44:30 PDT",
-      "age_human": "4s",
-      "age_seconds": 4
+      "age_human": "1m",
+      "age_seconds": 77
     },
     "latest_letter_metrics": {
       "letter": "X19",
       "observed_at_pt": "2026-10-28 18:43:09 PDT",
-      "age_human": "1m",
-      "age_seconds": 86
+      "age_human": "2m",
+      "age_seconds": 158
     },
     "aws_current": {
       "letter": "X19",
       "observed_at_pt": "2026-10-28 17:58 PDT",
-      "age_human": "46m",
-      "age_seconds": 2795
+      "age_human": "47m",
+      "age_seconds": 2867
     },
     "linode": {
       "observed_at_pt": "2026-10-28 17:58 PDT",
-      "age_human": "46m",
-      "age_seconds": 2795
+      "age_human": "47m",
+      "age_seconds": 2867
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -485,7 +485,7 @@
       "validation_accuracy prominent",
       "ui_refresh = published snapshot only"
     ],
-    "registry_bytes": 90515,
-    "registry_sha256_12": "494d4b2d6fee\u2026"
+    "registry_bytes": 92103,
+    "registry_sha256_12": "ad63161f2e82\u2026"
   }
 }
