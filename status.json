@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-10-29 03:56:53 PDT (America/Los_Angeles)",
+  "last_updated_pt": "2026-10-29 03:58:43 PDT (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -31,8 +31,8 @@
     "w_old": 0.65,
     "w_new": 0.35,
     "observed_at_pt": "2026-10-29 03:56:13 PDT",
-    "observation_age_seconds": 39,
-    "observation_age_human": "39s",
+    "observation_age_seconds": 150,
+    "observation_age_human": "2m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
   "latest_letter_metrics": null,
@@ -64,8 +64,8 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 28613,
-      "observation_age_human": "7h 56m",
+      "observation_age_seconds": 28723,
+      "observation_age_human": "7h 58m",
       "label": "EXPERIMENTAL / not FNR-000"
     },
     "history": [
@@ -132,15 +132,15 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 28613,
-    "observation_age_human": "7h 56m"
+    "observation_age_seconds": 28723,
+    "observation_age_human": "7h 58m"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-10-29 03:56:53 PDT (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-10-29 03:58:43 PDT (America/Los_Angeles)",
     "hub_publish": {
       "observed_at_pt": "2026-10-29 03:56:13 PDT",
-      "age_human": "39s",
-      "age_seconds": 39
+      "age_human": "2m",
+      "age_seconds": 150
     },
     "latest_letter_metrics": {
       "letter": null,
@@ -151,13 +151,13 @@
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "7h 56m",
-      "age_seconds": 28613
+      "age_human": "7h 58m",
+      "age_seconds": 28723
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "7h 56m",
-      "age_seconds": 28613
+      "age_human": "7h 58m",
+      "age_seconds": 28723
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -662,6 +662,19 @@
           "T4": 55
         },
         "fa": 0
+      },
+      {
+        "t": "2026-10-29T03:56:53.470464",
+        "run_id": "e2b-lineage-t98u-g19",
+        "hub_sha": "b311663a690b\u2026",
+        "composite": 86.73,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 54
+        },
+        "fa": 0
       }
     ]
   },
@@ -961,6 +974,59 @@
         "time_approx": true
       },
       {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 0,
+            "n": 64,
+            "by_level": {
+              "easy": 0,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 14,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 8,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 28.63,
         "t": "2026-10-27T18:40:49-07:00",
         "run_id": "seed AWS-C v14",
         "decision": "SEED",
@@ -1421,6 +1487,73 @@
         },
         "fa": 0,
         "hub_sha": "2082b07d9593"
+      },
+      {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 0,
+            "n": 64,
+            "by_level": {
+              "easy": 0,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 17,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 11,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 29.85,
+        "t": "2026-10-29T03:56:12.369040-07:00",
+        "run_id": "e2b-lineage-t98u-g19",
+        "decision": "FOLDED",
+        "composite": 86.73,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 54
+        },
+        "fa": 0,
+        "hub_sha": "b311663a690b"
       }
     ]
   }
