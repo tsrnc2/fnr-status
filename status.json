@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-10-29 03:58:43 PDT (America/Los_Angeles)",
+  "last_updated_pt": "2026-10-29 04:09:41 PDT (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -24,14 +24,14 @@
     "runtime_flag": "lanes/lineage-hub/ONE_LANE_POLICY.json"
   },
   "hub": {
-    "recommended_sha256": "b311663a690b1e75b1b74152efa42a93aabcf3cc85969b4ae0f4bdb1dbd65727",
-    "recommended_sha256_short": "b311663a690b\u2026",
-    "last_publish_run_id": "e2b-lineage-t98u-g19",
-    "last_publish_pt": "2026-10-29 03:56:13 PDT",
+    "recommended_sha256": "985a4067b74b8ac766ee80dd2192466e4cf1dde04c1671434e1ffd844da10513",
+    "recommended_sha256_short": "985a4067b74b\u2026",
+    "last_publish_run_id": "e2b-lineage-t98u-g20",
+    "last_publish_pt": "2026-10-29 04:07:03 PDT",
     "w_old": 0.65,
     "w_new": 0.35,
-    "observed_at_pt": "2026-10-29 03:56:13 PDT",
-    "observation_age_seconds": 150,
+    "observed_at_pt": "2026-10-29 04:07:03 PDT",
+    "observation_age_seconds": 158,
     "observation_age_human": "2m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
@@ -64,8 +64,8 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 28723,
-      "observation_age_human": "7h 58m",
+      "observation_age_seconds": 29381,
+      "observation_age_human": "8h 9m",
       "label": "EXPERIMENTAL / not FNR-000"
     },
     "history": [
@@ -132,15 +132,15 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 28723,
-    "observation_age_human": "7h 58m"
+    "observation_age_seconds": 29381,
+    "observation_age_human": "8h 9m"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-10-29 03:58:43 PDT (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-10-29 04:09:41 PDT (America/Los_Angeles)",
     "hub_publish": {
-      "observed_at_pt": "2026-10-29 03:56:13 PDT",
+      "observed_at_pt": "2026-10-29 04:07:03 PDT",
       "age_human": "2m",
-      "age_seconds": 150
+      "age_seconds": 158
     },
     "latest_letter_metrics": {
       "letter": null,
@@ -151,13 +151,13 @@
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "7h 58m",
-      "age_seconds": 28723
+      "age_human": "8h 9m",
+      "age_seconds": 29381
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "7h 58m",
-      "age_seconds": 28723
+      "age_human": "8h 9m",
+      "age_seconds": 29381
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -675,6 +675,19 @@
           "T4": 54
         },
         "fa": 0
+      },
+      {
+        "t": "2026-10-29T04:07:45.505124",
+        "run_id": "e2b-lineage-t98u-g20",
+        "hub_sha": "985a4067b74b\u2026",
+        "composite": 86.73,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 54
+        },
+        "fa": 0
       }
     ]
   },
@@ -1043,6 +1056,59 @@
         "time_approx": true
       },
       {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 0,
+            "n": 64,
+            "by_level": {
+              "easy": 0,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 14,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 8,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 28.63,
         "t": "2026-10-27T18:41:23-07:00",
         "run_id": "hub equal A+B+C",
         "decision": "FOLDED",
@@ -1059,6 +1125,59 @@
         "time_approx": true
       },
       {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 0,
+            "n": 64,
+            "by_level": {
+              "easy": 0,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 12,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 6,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 27.81,
         "t": "2026-10-27T18:41:23-07:00",
         "run_id": "hub hard-weighted A+C",
         "decision": "FOLDED",
@@ -1075,6 +1194,59 @@
         "time_approx": true
       },
       {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 0,
+            "n": 64,
+            "by_level": {
+              "easy": 0,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 14,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 8,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 28.63,
         "t": "2026-10-27T18:41:23-07:00",
         "run_id": "hub hard-weighted all4",
         "decision": "FOLDED",
@@ -1091,6 +1263,59 @@
         "time_approx": true
       },
       {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 3,
+            "n": 64,
+            "by_level": {
+              "easy": 2,
+              "medium": 1,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 14,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 8,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 29.57,
         "t": "2026-10-27T20:38:10-07:00",
         "run_id": "hub at AWS-F3 launch",
         "decision": "FOLDED",
@@ -1107,6 +1332,59 @@
         "time_approx": true
       },
       {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 0,
+            "n": 64,
+            "by_level": {
+              "easy": 0,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 10,
+            "n": 49,
+            "by_level": {
+              "easy": 5,
+              "medium": 5,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 27.0,
         "t": "2026-10-28T03:14:21-07:00",
         "run_id": "hub post E+F",
         "decision": "FOLDED",
@@ -1123,6 +1401,59 @@
         "time_approx": true
       },
       {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 0,
+            "n": 64,
+            "by_level": {
+              "easy": 0,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 11,
+            "n": 49,
+            "by_level": {
+              "easy": 5,
+              "medium": 6,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 27.41,
         "t": "2026-10-28T08:37:02-07:00",
         "run_id": "hub at AWS-I6 launch",
         "decision": "FOLDED",
@@ -1554,6 +1885,73 @@
         },
         "fa": 0,
         "hub_sha": "b311663a690b"
+      },
+      {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 0,
+            "n": 64,
+            "by_level": {
+              "easy": 0,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 14,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 8,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 28.63,
+        "t": "2026-10-29T04:07:02.569679-07:00",
+        "run_id": "e2b-lineage-t98u-g20",
+        "decision": "FOLDED",
+        "composite": 86.73,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 54
+        },
+        "fa": 0,
+        "hub_sha": "985a4067b74b"
       }
     ]
   }
