@@ -125,6 +125,11 @@
       </section>
     </div>
 
+    <section class="card" style="margin-top:1rem" id="card-tiered">
+      <h2>Tiered eval (EXPERIMENTAL / not FNR-000)</h2>
+      <div id="tiered_meta"></div>
+      <table id="tiered_tbl" style="width:100%;font-size:.9em"></table>
+    </section>
     <section class="card" style="margin-top:1rem">
       <h2>AWS letter history (completed — not current)</h2>
       <div style="overflow-x:auto">
@@ -179,6 +184,17 @@
       return parts.join(" ");
     }
     function render(d) {
+      try {
+        const te = d.tiered_eval || {}; const tn = te.tiers || {};
+        document.getElementById("tiered_meta").textContent = (te.label||"") + " · suite " + (te.suite_sha256_12||"—") +
+          " · composite = 100×(0.1·T1+0.2·T2+0.3·T3+0.4·T4) · T4 tight budget";
+        let rows = "<tr><th>when</th><th>hub</th><th>event</th><th>T1</th><th>T2</th><th>T3</th><th>T4</th><th>FA</th><th>composite</th></tr>";
+        for (const r of (te.trend||[]).slice().reverse()) {
+          const t = r.tiers||{}; const f = k => `${t[k]??"—"}/${(tn[k]||{}).n??"?"}`;
+          rows += `<tr><td>${(r.t||"").slice(0,16)}</td><td>${r.hub_sha||""}</td><td>${r.run_id||""}</td><td>${f("T1")}</td><td>${f("T2")}</td><td>${f("T3")}</td><td>${f("T4")}</td><td>${r.fa??"—"}</td><td><b>${r.composite??"—"}</b></td></tr>`;
+        }
+        document.getElementById("tiered_tbl").innerHTML = rows;
+      } catch (e) {}
       document.getElementById("last_updated").textContent = d.last_updated_pt || "unknown";
       document.getElementById("disclaimer").textContent = d.disclaimer || "";
       document.getElementById("source_repo").textContent = d.source_repo || "";

@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-10-29 02:06:37 PDT (America/Los_Angeles)",
+  "last_updated_pt": "2026-10-29 02:22:31 PDT (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -27,12 +27,12 @@
     "recommended_sha256": "15d42b2740b88faf1e914c49ab34fab01ca0dd427af2e9c6cffd76104082accb",
     "recommended_sha256_short": "15d42b2740b8\u2026",
     "last_publish_run_id": "e2b-lineage-t98u-g8",
-    "last_publish_pt": "2026-10-29 02:06:32 PDT",
+    "last_publish_pt": "2026-10-29 02:21:52 PDT",
     "w_old": 0.65,
     "w_new": 0.35,
-    "observed_at_pt": "2026-10-29 02:06:32 PDT",
-    "observation_age_seconds": 4,
-    "observation_age_human": "4s",
+    "observed_at_pt": "2026-10-29 02:21:52 PDT",
+    "observation_age_seconds": 39,
+    "observation_age_human": "39s",
     "label": "EXPERIMENTAL / not FNR-000"
   },
   "latest_letter_metrics": {
@@ -50,8 +50,8 @@
     "label": "EXPERIMENTAL / not FNR-000",
     "producer_reported": true,
     "observed_at_pt": "2026-10-28 21:25:49 PDT",
-    "observation_age_seconds": 16848,
-    "observation_age_human": "4h 40m",
+    "observation_age_seconds": 17802,
+    "observation_age_human": "4h 56m",
     "artifact_dir": "v15_lineage_warm_x22"
   },
   "validation_accuracy": {
@@ -60,7 +60,7 @@
     "val_acc_pct": "64.31%",
     "producer_reported": true,
     "observed_at_pt": "2026-10-28 21:25:49 PDT",
-    "observation_age_human": "4h 40m",
+    "observation_age_human": "4h 56m",
     "note": "From train_metrics final_val_acc on published letter artifacts"
   },
   "recent_letters": [
@@ -79,8 +79,8 @@
       "label": "EXPERIMENTAL / not FNR-000",
       "producer_reported": true,
       "observed_at_pt": "2026-10-28 21:25:49 PDT",
-      "observation_age_seconds": 16848,
-      "observation_age_human": "4h 40m",
+      "observation_age_seconds": 17802,
+      "observation_age_human": "4h 56m",
       "artifact_dir": "v15_lineage_warm_x22"
     }
   ],
@@ -102,8 +102,8 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 21997,
-      "observation_age_human": "6h 6m",
+      "observation_age_seconds": 22951,
+      "observation_age_human": "6h 22m",
       "label": "EXPERIMENTAL / not FNR-000"
     },
     "history": [
@@ -172,8 +172,8 @@
       "instance_id": "i-0746255c3049ddc86",
       "label": "EXPERIMENTAL-not-FNR-000",
       "observed_at_pt": "2026-10-28 21:25:51 PDT",
-      "observation_age_seconds": 16846,
-      "observation_age_human": "4h 40m",
+      "observation_age_seconds": 17800,
+      "observation_age_human": "4h 56m",
       "note": "Completed fold receipt \u2014 not the live AWS letter unless current.state says running"
     },
     "stale_probe_suppressed": "Ignored stale probe letter X16 (probe @ 2026-10-28 16:25 PDT); current letter is X21",
@@ -192,32 +192,32 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 21997,
-    "observation_age_human": "6h 6m"
+    "observation_age_seconds": 22951,
+    "observation_age_human": "6h 22m"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-10-29 02:06:37 PDT (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-10-29 02:22:31 PDT (America/Los_Angeles)",
     "hub_publish": {
-      "observed_at_pt": "2026-10-29 02:06:32 PDT",
-      "age_human": "4s",
-      "age_seconds": 4
+      "observed_at_pt": "2026-10-29 02:21:52 PDT",
+      "age_human": "39s",
+      "age_seconds": 39
     },
     "latest_letter_metrics": {
       "letter": "X22",
       "observed_at_pt": "2026-10-28 21:25:49 PDT",
-      "age_human": "4h 40m",
-      "age_seconds": 16848
+      "age_human": "4h 56m",
+      "age_seconds": 17802
     },
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "6h 6m",
-      "age_seconds": 21997
+      "age_human": "6h 22m",
+      "age_seconds": 22951
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "6h 6m",
-      "age_seconds": 21997
+      "age_human": "6h 22m",
+      "age_seconds": 22951
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -306,5 +306,234 @@
     ],
     "registry_bytes": 96057,
     "registry_sha256_12": "60d556647c88\u2026"
+  },
+  "tiered_eval": {
+    "label": "EXPERIMENTAL / not FNR-000 \u2014 tiered eval (checker-verified, frozen)",
+    "suite_sha256_12": "fd005cb2de0a\u2026",
+    "tiers": {
+      "T1": {
+        "n": 60,
+        "avg_steps": 3.95
+      },
+      "T2": {
+        "n": 60,
+        "avg_steps": 5.98
+      },
+      "T3": {
+        "n": 110,
+        "avg_steps": 0.0
+      },
+      "T4": {
+        "n": 80,
+        "avg_steps": 10.85
+      }
+    },
+    "weights": {
+      "T1": 0.1,
+      "T2": 0.2,
+      "T3": 0.3,
+      "T4": 0.4
+    },
+    "trend": [
+      {
+        "t": "baseline-t102u",
+        "run_id": "after X21 (reconstructed)",
+        "hub_tag": "31d9171b",
+        "hub_sha": "b83d5288df7e\u2026",
+        "composite": 85.23,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 51
+        },
+        "tier_n": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 80
+        },
+        "fa": 0,
+        "adv_n": 2474,
+        "adv_by_type": {
+          "wrong_premise": 0,
+          "wrong_conclusion": 0,
+          "swap_neg": 0,
+          "capture_all_e": 0,
+          "bad_induction": 0,
+          "bad_list": 0,
+          "truncate": 0,
+          "bad_hyp_idx": 0
+        }
+      },
+      {
+        "t": "baseline-t102u",
+        "run_id": "after E2B g6 (reconstructed)",
+        "hub_tag": "e836823e",
+        "hub_sha": "3cf44ddd1550\u2026",
+        "composite": 84.77,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 100,
+          "T4": 55
+        },
+        "tier_n": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 80
+        },
+        "fa": 0,
+        "adv_n": 2474,
+        "adv_by_type": {
+          "wrong_premise": 0,
+          "wrong_conclusion": 0,
+          "swap_neg": 0,
+          "capture_all_e": 0,
+          "bad_induction": 0,
+          "bad_list": 0,
+          "truncate": 0,
+          "bad_hyp_idx": 0
+        }
+      },
+      {
+        "t": "baseline-t102u",
+        "run_id": "after E2B t101u-test1 (reconstructed)",
+        "hub_tag": "015be68d",
+        "hub_sha": "df2233fa6a16\u2026",
+        "composite": 84.73,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 50
+        },
+        "tier_n": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 80
+        },
+        "fa": 0,
+        "adv_n": 2474,
+        "adv_by_type": {
+          "wrong_premise": 0,
+          "wrong_conclusion": 0,
+          "swap_neg": 0,
+          "capture_all_e": 0,
+          "bad_induction": 0,
+          "bad_list": 0,
+          "truncate": 0,
+          "bad_hyp_idx": 0
+        }
+      },
+      {
+        "t": "baseline-t102u",
+        "run_id": "after Daytona test1 (reconstructed)",
+        "hub_tag": "969963c0",
+        "hub_sha": "d32458460300\u2026",
+        "composite": 87.0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 54
+        },
+        "tier_n": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 80
+        },
+        "fa": 0,
+        "adv_n": 2474,
+        "adv_by_type": {
+          "wrong_premise": 0,
+          "wrong_conclusion": 0,
+          "swap_neg": 0,
+          "capture_all_e": 0,
+          "bad_induction": 0,
+          "bad_list": 0,
+          "truncate": 0,
+          "bad_hyp_idx": 0
+        }
+      },
+      {
+        "t": "baseline-t102u",
+        "run_id": "after AWS X22 (git 0fd9bff)",
+        "hub_tag": "cda8a1a9",
+        "hub_sha": "cda8a1a968e1\u2026",
+        "composite": 87.5,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 55
+        },
+        "tier_n": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 80
+        },
+        "fa": 0,
+        "adv_n": 2474,
+        "adv_by_type": {
+          "wrong_premise": 0,
+          "wrong_conclusion": 0,
+          "swap_neg": 0,
+          "capture_all_e": 0,
+          "bad_induction": 0,
+          "bad_list": 0,
+          "truncate": 0,
+          "bad_hyp_idx": 0
+        }
+      },
+      {
+        "t": "baseline-t102u",
+        "run_id": "after E2B g5 (current)",
+        "hub_tag": "f42395ce",
+        "hub_sha": "f42395ce535f\u2026",
+        "composite": 87.23,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        },
+        "tier_n": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 80
+        },
+        "fa": 0,
+        "adv_n": 2474,
+        "adv_by_type": {
+          "wrong_premise": 0,
+          "wrong_conclusion": 0,
+          "swap_neg": 0,
+          "capture_all_e": 0,
+          "bad_induction": 0,
+          "bad_list": 0,
+          "truncate": 0,
+          "bad_hyp_idx": 0
+        }
+      },
+      {
+        "t": "2026-10-29T02:22:31.837748",
+        "run_id": "e2b-lineage-t98u-g8",
+        "hub_sha": "15d42b2740b8\u2026",
+        "composite": 85.0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 50
+        },
+        "fa": 0
+      }
+    ]
   }
 }
