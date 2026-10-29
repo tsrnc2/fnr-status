@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-10-29 03:12:56 PDT (America/Los_Angeles)",
+  "last_updated_pt": "2026-10-29 03:25:15 PDT (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -24,66 +24,28 @@
     "runtime_flag": "lanes/lineage-hub/ONE_LANE_POLICY.json"
   },
   "hub": {
-    "recommended_sha256": "6d8d0749a4205b5e785d723f0f3ce3f390ca1fd6abce0c48b2c689fe223ef187",
-    "recommended_sha256_short": "6d8d0749a420\u2026",
-    "last_publish_run_id": "e2b-lineage-t98u-g12",
-    "last_publish_pt": "2026-10-29 03:12:15 PDT",
+    "recommended_sha256": "8a81b9b125997e9d98e2ef2dc54ca4879fedbe4f2676eb13138903b89c9c7ecb",
+    "recommended_sha256_short": "8a81b9b12599\u2026",
+    "last_publish_run_id": "e2b-lineage-t98u-g15",
+    "last_publish_pt": "2026-10-29 03:24:34 PDT",
     "w_old": 0.65,
     "w_new": 0.35,
-    "observed_at_pt": "2026-10-29 03:12:15 PDT",
+    "observed_at_pt": "2026-10-29 03:24:34 PDT",
     "observation_age_seconds": 41,
     "observation_age_human": "41s",
     "label": "EXPERIMENTAL / not FNR-000"
   },
-  "latest_letter_metrics": {
-    "letter": "X22",
-    "hard_neural": "92/110",
-    "hard_solve_rate": 0.8363636363636363,
-    "avg_nodes": 34.32727272727273,
-    "false_accept": "0/613",
-    "false_accept_rate": 0.0,
-    "val_acc": 0.6430722891566265,
-    "val_acc_pct": "64.31%",
-    "train_acc": 0.7602776294714362,
-    "train_acc_pct": "76.03%",
-    "fnr_000_admission": false,
-    "label": "EXPERIMENTAL / not FNR-000",
-    "producer_reported": true,
-    "observed_at_pt": "2026-10-28 21:25:49 PDT",
-    "observation_age_seconds": 20827,
-    "observation_age_human": "5h 47m",
-    "artifact_dir": "v15_lineage_warm_x22"
-  },
+  "latest_letter_metrics": null,
   "validation_accuracy": {
-    "letter": "X22",
-    "val_acc": 0.6430722891566265,
-    "val_acc_pct": "64.31%",
+    "letter": null,
+    "val_acc": null,
+    "val_acc_pct": null,
     "producer_reported": true,
-    "observed_at_pt": "2026-10-28 21:25:49 PDT",
-    "observation_age_human": "5h 47m",
+    "observed_at_pt": null,
+    "observation_age_human": null,
     "note": "From train_metrics final_val_acc on published letter artifacts"
   },
-  "recent_letters": [
-    {
-      "letter": "X22",
-      "hard_neural": "92/110",
-      "hard_solve_rate": 0.8363636363636363,
-      "avg_nodes": 34.32727272727273,
-      "false_accept": "0/613",
-      "false_accept_rate": 0.0,
-      "val_acc": 0.6430722891566265,
-      "val_acc_pct": "64.31%",
-      "train_acc": 0.7602776294714362,
-      "train_acc_pct": "76.03%",
-      "fnr_000_admission": false,
-      "label": "EXPERIMENTAL / not FNR-000",
-      "producer_reported": true,
-      "observed_at_pt": "2026-10-28 21:25:49 PDT",
-      "observation_age_seconds": 20827,
-      "observation_age_human": "5h 47m",
-      "artifact_dir": "v15_lineage_warm_x22"
-    }
-  ],
+  "recent_letters": [],
   "aws_burst": {
     "role": "optional_continue_only_burst_leq_1_ec2",
     "soft_cap": "\u22641 EC2",
@@ -102,8 +64,8 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 25976,
-      "observation_age_human": "7h 12m",
+      "observation_age_seconds": 26715,
+      "observation_age_human": "7h 25m",
       "label": "EXPERIMENTAL / not FNR-000"
     },
     "history": [
@@ -151,34 +113,12 @@
         "monitor": "done",
         "source": "t90u_continue_until_credits",
         "observed_at_pt": "2026-10-28 20:00 PDT"
-      },
-      {
-        "letter": "X22",
-        "instance_id": "i-0746255c3049ddc86",
-        "run_id": "v15-lineage-warm-20261027-x22",
-        "state": "done_receipt",
-        "hard_neural": "92/110",
-        "val_acc_pct": "64.31%",
-        "false_accept": "0/613",
-        "source": "DONE.json",
-        "observed_at_pt": "2026-10-28 21:25:51 PDT"
       }
     ],
-    "latest_DONE": {
-      "lane": "AWS-X",
-      "run": "v15-lineage-warm-20261027-x22",
-      "letter": "X22",
-      "finished_utc": "2026-10-29T04:25:50Z",
-      "instance_id": "i-0746255c3049ddc86",
-      "label": "EXPERIMENTAL-not-FNR-000",
-      "observed_at_pt": "2026-10-28 21:25:51 PDT",
-      "observation_age_seconds": 20825,
-      "observation_age_human": "5h 47m",
-      "note": "Completed fold receipt \u2014 not the live AWS letter unless current.state says running"
-    },
+    "latest_DONE": null,
     "stale_probe_suppressed": "Ignored stale probe letter X16 (probe @ 2026-10-28 16:25 PDT); current letter is X21",
-    "instance_id_file": "i-0746255c3049ddc86",
-    "instance_id_file_observed_at_pt": "2026-10-28 20:39:41 PDT",
+    "instance_id_file": "i-02b0b9389e422227c",
+    "instance_id_file_observed_at_pt": "2026-10-29 03:24:46 PDT",
     "registry_burn_updated_pt": "2026-10-28 20:00 PDT",
     "data_note": "aws_burst.current is the only live letter claim in this snapshot. history / latest_DONE are completed letters and must not be read as current AWS status. Snapshot \u2260 live EC2 DescribeInstances.",
     "label": "EXPERIMENTAL / not FNR-000"
@@ -192,32 +132,32 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 25976,
-    "observation_age_human": "7h 12m"
+    "observation_age_seconds": 26715,
+    "observation_age_human": "7h 25m"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-10-29 03:12:56 PDT (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-10-29 03:25:15 PDT (America/Los_Angeles)",
     "hub_publish": {
-      "observed_at_pt": "2026-10-29 03:12:15 PDT",
+      "observed_at_pt": "2026-10-29 03:24:34 PDT",
       "age_human": "41s",
       "age_seconds": 41
     },
     "latest_letter_metrics": {
-      "letter": "X22",
-      "observed_at_pt": "2026-10-28 21:25:49 PDT",
-      "age_human": "5h 47m",
-      "age_seconds": 20827
+      "letter": null,
+      "observed_at_pt": null,
+      "age_human": null,
+      "age_seconds": null
     },
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "7h 12m",
-      "age_seconds": 25976
+      "age_human": "7h 25m",
+      "age_seconds": 26715
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "7h 12m",
-      "age_seconds": 25976
+      "age_human": "7h 25m",
+      "age_seconds": 26715
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -709,6 +649,404 @@
           "T4": 52
         },
         "fa": 0
+      }
+    ]
+  },
+  "eval_history": {
+    "label": "EXPERIMENTAL / not FNR-000",
+    "tier_n": {
+      "T1": 60,
+      "T2": 60,
+      "T3": 110,
+      "T4": 80
+    },
+    "points": [
+      {
+        "t": "2026-10-27T18:40:49-07:00",
+        "run_id": "seed AWS-A v12",
+        "decision": "SEED",
+        "composite": 84.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 49
+        },
+        "fa": 0,
+        "hub_sha": "ee42751f00ef",
+        "reconstructed": true,
+        "time_approx": true
+      },
+      {
+        "t": "2026-10-27T18:40:49-07:00",
+        "run_id": "seed AWS-B v13",
+        "decision": "SEED",
+        "composite": 85.86,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "8c625e2eea79",
+        "reconstructed": true,
+        "time_approx": true
+      },
+      {
+        "t": "2026-10-27T18:40:49-07:00",
+        "run_id": "seed Linode v13",
+        "decision": "SEED",
+        "composite": 81.77,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 100,
+          "T4": 49
+        },
+        "fa": 0,
+        "hub_sha": "6a7347ca97b0",
+        "reconstructed": true,
+        "time_approx": true
+      },
+      {
+        "t": "2026-10-27T18:40:49-07:00",
+        "run_id": "seed AWS-C v14",
+        "decision": "SEED",
+        "composite": 85.91,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 54
+        },
+        "fa": 0,
+        "hub_sha": "bbe8cc4b6913",
+        "reconstructed": true,
+        "time_approx": true
+      },
+      {
+        "t": "2026-10-27T18:41:23-07:00",
+        "run_id": "hub equal A+B+C",
+        "decision": "FOLDED",
+        "composite": 74.41,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 62,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "98fd7040c66c",
+        "reconstructed": true,
+        "time_approx": true
+      },
+      {
+        "t": "2026-10-27T18:41:23-07:00",
+        "run_id": "hub hard-weighted A+C",
+        "decision": "FOLDED",
+        "composite": 72.18,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 52,
+          "T4": 56
+        },
+        "fa": 0,
+        "hub_sha": "34e73be55324",
+        "reconstructed": true,
+        "time_approx": true
+      },
+      {
+        "t": "2026-10-27T18:41:23-07:00",
+        "run_id": "hub hard-weighted all4",
+        "decision": "FOLDED",
+        "composite": 79.59,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 81,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "8163ee05f4ec",
+        "reconstructed": true,
+        "time_approx": true
+      },
+      {
+        "t": "2026-10-27T20:38:10-07:00",
+        "run_id": "hub at AWS-F3 launch",
+        "decision": "FOLDED",
+        "composite": 87.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "d4fc0392bbbb",
+        "reconstructed": true,
+        "time_approx": true
+      },
+      {
+        "t": "2026-10-28T03:14:21-07:00",
+        "run_id": "hub post E+F",
+        "decision": "FOLDED",
+        "composite": 86.45,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 108,
+          "T4": 54
+        },
+        "fa": 0,
+        "hub_sha": "992858cfa9aa",
+        "reconstructed": true,
+        "time_approx": true
+      },
+      {
+        "t": "2026-10-28T08:37:02-07:00",
+        "run_id": "hub at AWS-I6 launch",
+        "decision": "FOLDED",
+        "composite": 87.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "41251e71a27d",
+        "reconstructed": true,
+        "time_approx": true
+      },
+      {
+        "t": "2026-10-28T09:10:02-07:00",
+        "run_id": "hub post H+I",
+        "decision": "FOLDED",
+        "composite": 87.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "39a03049a362",
+        "reconstructed": true,
+        "time_approx": true
+      },
+      {
+        "t": "2026-10-28T09:53:46-07:00",
+        "run_id": "hub post J+E2B t76u",
+        "decision": "FOLDED",
+        "composite": 87.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "ac65a124793b",
+        "reconstructed": true,
+        "time_approx": true
+      },
+      {
+        "t": "2026-10-28T14:58:59-07:00",
+        "run_id": "hub at X15 launch",
+        "decision": "FOLDED",
+        "composite": 87.23,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "e708238503b3",
+        "reconstructed": true,
+        "time_approx": true
+      },
+      {
+        "t": "2026-10-28T15:01:19-07:00",
+        "run_id": "hub X14 double-fold",
+        "decision": "FOLDED",
+        "composite": 87.23,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "850e43b27976",
+        "reconstructed": true,
+        "time_approx": true
+      },
+      {
+        "t": "2026-10-28T20:39:37-07:00",
+        "run_id": "hub at X22 launch",
+        "decision": "FOLDED",
+        "composite": 86.73,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 54
+        },
+        "fa": 0,
+        "hub_sha": "31d9171b4c2e",
+        "reconstructed": true,
+        "time_approx": true
+      },
+      {
+        "t": "2026-10-28T20:39:41-07:00",
+        "run_id": "after AWS X21 (reconstructed)",
+        "decision": "FOLDED",
+        "composite": 85.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        },
+        "fa": 0,
+        "hub_sha": "b83d5288df7e",
+        "backfill": true
+      },
+      {
+        "t": "2026-10-28T20:56:21-07:00",
+        "run_id": "after E2B g6 (reconstructed)",
+        "decision": "FOLDED",
+        "composite": 85.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        },
+        "fa": 0,
+        "hub_sha": "3cf44ddd1550",
+        "backfill": true
+      },
+      {
+        "t": "2026-10-29T01:55:03-07:00",
+        "run_id": "after E2B t101u-test1 (reconstructed)",
+        "decision": "FOLDED",
+        "composite": 85.0,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 50
+        },
+        "fa": 0,
+        "hub_sha": "df2233fa6a16",
+        "backfill": true
+      },
+      {
+        "t": "2026-10-29T01:56:01-07:00",
+        "run_id": "after Daytona t101u-test1 (reconstructed)",
+        "decision": "FOLDED",
+        "composite": 85.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        },
+        "fa": 0,
+        "hub_sha": "d32458460300",
+        "backfill": true
+      },
+      {
+        "t": "2026-10-29T01:57:00-07:00",
+        "run_id": "after AWS X22 (git 0fd9bff)",
+        "decision": "FOLDED",
+        "composite": 85.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        },
+        "fa": 0,
+        "hub_sha": "cda8a1a968e1",
+        "backfill": true
+      },
+      {
+        "t": "2026-10-29T02:03:18-07:00",
+        "run_id": "after E2B g5",
+        "decision": "FOLDED",
+        "composite": 85.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        },
+        "fa": 0,
+        "hub_sha": "f42395ce535f",
+        "backfill": true
+      },
+      {
+        "t": "2026-10-29T02:22:33-07:00",
+        "run_id": "after E2B g8 (current)",
+        "decision": "FOLDED",
+        "composite": 85.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        },
+        "fa": 0,
+        "hub_sha": "15d42b2740b8",
+        "backfill": true
+      },
+      {
+        "t": "2026-10-29T02:34:10-07:00",
+        "run_id": "e2b-lineage-t98u-g10",
+        "decision": "FOLDED",
+        "composite": 85.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        },
+        "fa": 0,
+        "hub_sha": "688e8aabd4b9"
+      },
+      {
+        "t": "2026-10-29T02:36:04-07:00",
+        "run_id": "e2b-lineage-t98u-g11",
+        "decision": "FOLDED",
+        "composite": 85.0,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 50
+        },
+        "fa": 0,
+        "hub_sha": "f618dbbb3236"
+      },
+      {
+        "t": "2026-10-29T03:12:14-07:00",
+        "run_id": "e2b-lineage-t98u-g12",
+        "decision": "FOLDED",
+        "composite": 86.0,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 52
+        },
+        "fa": 0,
+        "hub_sha": "f618dbbb3236"
       }
     ]
   }

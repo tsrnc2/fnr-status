@@ -125,6 +125,14 @@
       </section>
     </div>
 
+    <section class="card" style="margin-top:1rem" id="card-gen">
+      <h2>Generational improvement — problems solved per hub generation <span style="font-size:.7em;color:var(--warn)">EXPERIMENTAL / not FNR-000</span></h2>
+      <div style="font-size:.85em;color:var(--muted)">x = lineage generation (ordered hub folds). y = % solved on frozen tiered suite (T1 60 · T2 60 · T3 110 · T4 80) + weighted composite; dashed = best composite so far. Hollow points = reconstructed / approximate time; red ✕ = scored but REJECTED by fold gate (not adopted). Hover for hub hash + source run.</div>
+      <div id="gen_chart" style="overflow-x:auto"></div>
+      <div id="gen_legend" style="font-size:.85em;margin:.3rem 0"></div>
+      <h3 style="font-size:1rem">Per-generation change vs previous</h3>
+      <div style="max-height:320px;overflow-y:auto"><table id="gen_delta" style="width:100%;font-size:.85em"></table></div>
+    </section>
     <section class="card" style="margin-top:1rem" id="card-tiered">
       <h2>Tiered eval (EXPERIMENTAL / not FNR-000)</h2>
       <div id="tiered_meta"></div>
@@ -185,6 +193,7 @@
     }
     function render(d) {
       try {
+        try{renderGen(d.eval_history||{});}catch(e){console.error(e)}
         const te = d.tiered_eval || {}; const tn = te.tiers || {};
         document.getElementById("tiered_meta").textContent = (te.label||"") + " · suite " + (te.suite_sha256_12||"—") +
           " · composite = 100×(0.1·T1+0.2·T2+0.3·T3+0.4·T4) · T4 tight budget";
@@ -359,6 +368,33 @@
     }, 1000);
     refresh();
     setInterval(refresh, POLL_MS);
-  </script>
+  
+function genLabel(r){r=r||"";let m;
+  if(m=r.match(/x(\d+)/i)) return "X"+m[1];
+  if(m=r.match(/^e2b-lineage-.*?g(\d+)/)) return "E2B g"+m[1];
+  if(m=r.match(/^daytona-lineage-.*?g(\d+)/)) return "Daytona g"+m[1];
+  return r.replace(/^after /,"").replace(/ \(.*\)$/,"");}
+function renderGen(eh){
+  const N=eh.tier_n||{T1:60,T2:60,T3:110,T4:80}; const pts=(eh.points||[]).slice().sort((a,b)=>a.t.slice(0,19)<b.t.slice(0,19)?-1:1);
+  const gens=[], rej=[]; pts.forEach(p=>{ if(p.decision==="REJECTED") rej.push({p,g:gens.length}); else gens.push(p); });
+  const W=Math.max(900,gens.length*44+80),H=320,L=46,R=16,T=12,B=70,x=i=>L+(gens.length<2?0:i*(W-L-R)/(gens.length-1));
+  const lo=40, y=v=>T+(100-v)*(H-T-B)/(100-lo); const col={T1:"#7dd3fc",T2:"#3ddc97",T3:"#f0c14b",T4:"#ff9f6b",composite:"#e8eefc"};
+  const val=(p,k)=>k==="composite"?p.composite:100*(p.solved||{})[k]/N[k]; let svg=`<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg" style="background:#0e1626;border-radius:8px">`;
+  for(let v=lo;v<=100;v+=10) svg+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="#243047"/><text x="${L-6}" y="${y(v)+4}" fill="#9bb0d0" font-size="10" text-anchor="end">${v}%</text>`;
+  gens.forEach((p,i)=>svg+=`<text transform="translate(${x(i)},${H-B+12}) rotate(55)" fill="#9bb0d0" font-size="9">${i}:${genLabel(p.run_id)}</text>`);
+  let best=-1,bp=[]; gens.forEach((p,i)=>{best=Math.max(best,p.composite);bp.push(`${x(i)},${y(best)}`)});
+  svg+=`<polyline points="${bp.join(" ")}" fill="none" stroke="#e8eefc" stroke-dasharray="5,4" opacity=".55"/>`;
+  for(const k of ["T1","T2","T3","T4","composite"]){
+    svg+=`<polyline points="${gens.map((p,i)=>x(i)+","+y(val(p,k))).join(" ")}" fill="none" stroke="${col[k]}" stroke-width="${k==="composite"?2.5:1.6}"/>`;
+    gens.forEach((p,i)=>{const tip=`Gen ${i} ${genLabel(p.run_id)} — ${k} ${val(p,k).toFixed(1)}%\nhub ${p.hub_sha||"—"} · ${p.run_id} · ${p.decision}${p.reconstructed?" (reconstructed)":""}\nT1 ${p.solved.T1}/${N.T1} T2 ${p.solved.T2}/${N.T2} T3 ${p.solved.T3}/${N.T3} T4 ${p.solved.T4}/${N.T4} · composite ${p.composite} · FA ${p.fa}\n${p.t}`;
+      svg+=`<circle cx="${x(i)}" cy="${y(val(p,k))}" r="3.5" fill="${p.reconstructed?"#0e1626":col[k]}" stroke="${col[k]}"><title>${tip}</title></circle>`;});}
+  rej.forEach(({p,g})=>{const xx=x(Math.max(0,g-0.5)),yy=y(p.composite);svg+=`<text x="${xx}" y="${yy+4}" fill="#ff6b6b" font-size="13" text-anchor="middle">✕<title>REJECTED ${p.run_id} — preview composite ${p.composite} (hub ${p.hub_sha}) ${p.t}</title></text>`;});
+  svg+="</svg>"; document.getElementById("gen_chart").innerHTML=svg;
+  document.getElementById("gen_legend").innerHTML=Object.entries(col).map(([k,c])=>`<span style="color:${c}">━ ${k}</span>`).join(" &nbsp; ")+` &nbsp; <span style="opacity:.6">┅ best composite so far</span> &nbsp; <span style="color:#ff6b6b">✕ rejected</span> · ${gens.length} generations, ${rej.length} rejected`;
+  const d=(a,b,s="")=>{const v=+(a-b).toFixed(1);return `<td style="color:${v>0?"#3ddc97":v<0?"#ff6b6b":"#9bb0d0"}">${v>0?"+":""}${v}${s}</td>`};
+  let rows="<tr><th>Gen</th><th>Source</th><th>Hub</th><th>T4 solved</th><th>ΔT4</th><th>Composite</th><th>ΔComposite</th><th>Best so far</th></tr>"; best=-1;
+  gens.forEach((p,i)=>{best=Math.max(best,p.composite);const q=gens[i-1];rows+=`<tr><td>${i}</td><td>${genLabel(p.run_id)}${p.reconstructed?" <i>(recon)</i>":""}</td><td><code>${p.hub_sha||"—"}</code></td><td>${p.solved.T4}/${N.T4}</td>${q?d(p.solved.T4,q.solved.T4):"<td>—</td>"}<td>${p.composite}</td>${q?d(p.composite,q.composite):"<td>—</td>"}<td>${best}</td></tr>`;});
+  document.getElementById("gen_delta").innerHTML=rows;}
+</script>
 </body>
 </html>
