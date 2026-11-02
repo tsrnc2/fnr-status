@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-11-01 20:44:48 PST (America/Los_Angeles)",
+  "last_updated_pt": "2026-11-01 21:03:52 PST (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -24,14 +24,14 @@
     "runtime_flag": "lanes/lineage-hub/ONE_LANE_POLICY.json"
   },
   "hub": {
-    "recommended_sha256": "ca14b6daad0743404af9e4eb2711c7f9881ad7446365d7da58d2ca7708bf3e20",
-    "recommended_sha256_short": "ca14b6daad07\u2026",
-    "last_publish_run_id": "e2b-lineage-t98u-g23",
-    "last_publish_pt": "2026-11-01 20:37:43 PST",
+    "recommended_sha256": "821eb787dc510aca55abbd9afc8c23b14557ed97915c528810b867d29705f417",
+    "recommended_sha256_short": "821eb787dc51\u2026",
+    "last_publish_run_id": "e2b-lineage-t98u-g26",
+    "last_publish_pt": "2026-11-01 20:56:40 PST",
     "w_old": 0.65,
     "w_new": 0.35,
-    "observed_at_pt": "2026-11-01 20:37:43 PST",
-    "observation_age_seconds": 424,
+    "observed_at_pt": "2026-11-01 20:56:40 PST",
+    "observation_age_seconds": 432,
     "observation_age_human": "7m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
@@ -64,8 +64,8 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 348288,
-      "observation_age_human": "4d",
+      "observation_age_seconds": 349432,
+      "observation_age_human": "4d 1h",
       "label": "EXPERIMENTAL / not FNR-000"
     },
     "history": [
@@ -118,7 +118,7 @@
     "latest_DONE": null,
     "stale_probe_suppressed": "Ignored stale probe letter X16 (probe @ 2026-10-28 16:25 PDT); current letter is X21",
     "instance_id_file": "i-01a8ff57018bf7951",
-    "instance_id_file_observed_at_pt": "2026-11-01 20:33:25 PST",
+    "instance_id_file_observed_at_pt": "2026-11-01 20:49:18 PST",
     "registry_burn_updated_pt": "2026-10-28 20:00 PDT",
     "data_note": "aws_burst.current is the only live letter claim in this snapshot. history / latest_DONE are completed letters and must not be read as current AWS status. Snapshot \u2260 live EC2 DescribeInstances.",
     "label": "EXPERIMENTAL / not FNR-000"
@@ -132,15 +132,15 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 348288,
-    "observation_age_human": "4d"
+    "observation_age_seconds": 349432,
+    "observation_age_human": "4d 1h"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-11-01 20:44:48 PST (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-11-01 21:03:52 PST (America/Los_Angeles)",
     "hub_publish": {
-      "observed_at_pt": "2026-11-01 20:37:43 PST",
+      "observed_at_pt": "2026-11-01 20:56:40 PST",
       "age_human": "7m",
-      "age_seconds": 424
+      "age_seconds": 432
     },
     "latest_letter_metrics": {
       "letter": null,
@@ -151,13 +151,13 @@
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "4d",
-      "age_seconds": 348288
+      "age_human": "4d 1h",
+      "age_seconds": 349432
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "4d",
-      "age_seconds": 348288
+      "age_human": "4d 1h",
+      "age_seconds": 349432
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -711,6 +711,19 @@
           "T1": 60,
           "T2": 60,
           "T3": 109,
+          "T4": 55
+        },
+        "fa": 0
+      },
+      {
+        "t": "2026-11-01T21:01:48.118447",
+        "run_id": "e2b-lineage-t98u-g26",
+        "hub_sha": "821eb787dc51\u2026",
+        "composite": 87.5,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
           "T4": 55
         },
         "fa": 0
@@ -2193,6 +2206,101 @@
         },
         "fa": 0,
         "hub_sha": "ca14b6daad07"
+      },
+      {
+        "t": "2026-11-01T20:46:05.240147-08:00",
+        "run_id": "e2b-lineage-t98u-g24",
+        "decision": "REJECTED",
+        "composite": 85.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        },
+        "fa": 0,
+        "hub_sha": "ca14b6daad07"
+      },
+      {
+        "t": "2026-11-01T20:54:22.804905-08:00",
+        "run_id": "e2b-lineage-t98u-g25",
+        "decision": "REJECTED",
+        "composite": 84.23,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 49
+        },
+        "fa": 0,
+        "hub_sha": "ca14b6daad07"
+      },
+      {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 0,
+            "n": 64,
+            "by_level": {
+              "easy": 0,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 14,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 8,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 28.63,
+        "t": "2026-11-01T20:56:39.169536-08:00",
+        "run_id": "e2b-lineage-t98u-g26",
+        "decision": "FOLDED",
+        "composite": 87.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "821eb787dc51"
       }
     ]
   }
