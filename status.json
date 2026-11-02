@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-11-01 21:47:55 PST (America/Los_Angeles)",
+  "last_updated_pt": "2026-11-01 22:07:14 PST (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -31,59 +31,21 @@
     "w_old": 0.65,
     "w_new": 0.35,
     "observed_at_pt": "2026-11-01 21:30:14 PST",
-    "observation_age_seconds": 29,
-    "observation_age_human": "29s",
+    "observation_age_seconds": 1188,
+    "observation_age_human": "19m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
-  "latest_letter_metrics": {
-    "letter": "X26",
-    "hard_neural": "98/110",
-    "hard_solve_rate": 0.8909090909090909,
-    "avg_nodes": 30.736363636363638,
-    "false_accept": "0/613",
-    "false_accept_rate": 0.0,
-    "val_acc": 0.6204819277108434,
-    "val_acc_pct": "62.05%",
-    "train_acc": 0.6357720163745145,
-    "train_acc_pct": "63.58%",
-    "fnr_000_admission": false,
-    "label": "EXPERIMENTAL / not FNR-000",
-    "producer_reported": true,
-    "observed_at_pt": "2026-11-01 21:42:26 PST",
-    "observation_age_seconds": 329,
-    "observation_age_human": "5m",
-    "artifact_dir": "v15_lineage_warm_x26"
-  },
+  "latest_letter_metrics": null,
   "validation_accuracy": {
-    "letter": "X26",
-    "val_acc": 0.6204819277108434,
-    "val_acc_pct": "62.05%",
+    "letter": null,
+    "val_acc": null,
+    "val_acc_pct": null,
     "producer_reported": true,
-    "observed_at_pt": "2026-11-01 21:42:26 PST",
-    "observation_age_human": "5m",
+    "observed_at_pt": null,
+    "observation_age_human": null,
     "note": "From train_metrics final_val_acc on published letter artifacts"
   },
-  "recent_letters": [
-    {
-      "letter": "X26",
-      "hard_neural": "98/110",
-      "hard_solve_rate": 0.8909090909090909,
-      "avg_nodes": 30.736363636363638,
-      "false_accept": "0/613",
-      "false_accept_rate": 0.0,
-      "val_acc": 0.6204819277108434,
-      "val_acc_pct": "62.05%",
-      "train_acc": 0.6357720163745145,
-      "train_acc_pct": "63.58%",
-      "fnr_000_admission": false,
-      "label": "EXPERIMENTAL / not FNR-000",
-      "producer_reported": true,
-      "observed_at_pt": "2026-11-01 21:42:26 PST",
-      "observation_age_seconds": 329,
-      "observation_age_human": "5m",
-      "artifact_dir": "v15_lineage_warm_x26"
-    }
-  ],
+  "recent_letters": [],
   "aws_burst": {
     "role": "optional_continue_only_burst_leq_1_ec2",
     "soft_cap": "\u22641 EC2",
@@ -102,8 +64,8 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 352075,
-      "observation_age_human": "4d 1h",
+      "observation_age_seconds": 353234,
+      "observation_age_human": "4d 2h",
       "label": "EXPERIMENTAL / not FNR-000"
     },
     "history": [
@@ -151,34 +113,12 @@
         "monitor": "done",
         "source": "t90u_continue_until_credits",
         "observed_at_pt": "2026-10-28 20:00 PDT"
-      },
-      {
-        "letter": "X26",
-        "instance_id": "i-0430d6bba694ffad8",
-        "run_id": "v15-lineage-warm-20261027-x26",
-        "state": "done_receipt",
-        "hard_neural": "98/110",
-        "val_acc_pct": "62.05%",
-        "false_accept": "0/613",
-        "source": "DONE.json",
-        "observed_at_pt": "2026-11-01 21:42:28 PST"
       }
     ],
-    "latest_DONE": {
-      "lane": "AWS-X",
-      "run": "v15-lineage-warm-20261027-x26",
-      "letter": "X26",
-      "finished_utc": "2026-11-02T05:42:27Z",
-      "instance_id": "i-0430d6bba694ffad8",
-      "label": "EXPERIMENTAL-not-FNR-000",
-      "observed_at_pt": "2026-11-01 21:42:28 PST",
-      "observation_age_seconds": 327,
-      "observation_age_human": "5m",
-      "note": "Completed fold receipt \u2014 not the live AWS letter unless current.state says running"
-    },
+    "latest_DONE": null,
     "stale_probe_suppressed": "Ignored stale probe letter X16 (probe @ 2026-10-28 16:25 PDT); current letter is X21",
-    "instance_id_file": "i-0430d6bba694ffad8",
-    "instance_id_file_observed_at_pt": "2026-11-01 21:47:25 PST",
+    "instance_id_file": "i-0ce2f8c4316fce889",
+    "instance_id_file_observed_at_pt": "2026-11-01 21:49:09 PST",
     "registry_burn_updated_pt": "2026-10-28 20:00 PDT",
     "data_note": "aws_burst.current is the only live letter claim in this snapshot. history / latest_DONE are completed letters and must not be read as current AWS status. Snapshot \u2260 live EC2 DescribeInstances.",
     "label": "EXPERIMENTAL / not FNR-000"
@@ -192,32 +132,32 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 352075,
-    "observation_age_human": "4d 1h"
+    "observation_age_seconds": 353234,
+    "observation_age_human": "4d 2h"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-11-01 21:47:55 PST (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-11-01 22:07:14 PST (America/Los_Angeles)",
     "hub_publish": {
       "observed_at_pt": "2026-11-01 21:30:14 PST",
-      "age_human": "29s",
-      "age_seconds": 29
+      "age_human": "19m",
+      "age_seconds": 1188
     },
     "latest_letter_metrics": {
-      "letter": "X26",
-      "observed_at_pt": "2026-11-01 21:42:26 PST",
-      "age_human": "5m",
-      "age_seconds": 329
+      "letter": null,
+      "observed_at_pt": null,
+      "age_human": null,
+      "age_seconds": null
     },
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "4d 1h",
-      "age_seconds": 352075
+      "age_human": "4d 2h",
+      "age_seconds": 353234
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "4d 1h",
-      "age_seconds": 352075
+      "age_human": "4d 2h",
+      "age_seconds": 353234
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -2497,6 +2437,48 @@
         },
         "fa": 0,
         "hub_sha": "e7b36e0a3e2f"
+      },
+      {
+        "t": "2026-11-01T21:49:02.263800-08:00",
+        "run_id": "aws-next-1793598439",
+        "decision": "REJECTED",
+        "composite": 84.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 99,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "e7b36e0a3e2f"
+      },
+      {
+        "t": "2026-11-01T21:51:32.228825-08:00",
+        "run_id": "e2b-lineage-t98u-g31",
+        "decision": "REJECTED",
+        "composite": 85.86,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "e7b36e0a3e2f"
+      },
+      {
+        "t": "2026-11-01T21:52:53.060435-08:00",
+        "run_id": "e2b-lineage-t98u-g32",
+        "decision": "REJECTED",
+        "composite": 86.41,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "e7b36e0a3e2f"
       }
     ]
   },
@@ -2504,7 +2486,7 @@
     "label": "EXPERIMENTAL / not FNR-000 \u2014 budget & burn plan (t115u)",
     "aws": {
       "credit_remaining_usd": 195.33,
-      "credit_checked": null,
+      "credit_checked": "2026-11-01T21:49:03.850745-08:00",
       "instance_type": "m7i-flex.large",
       "cost_per_hr_usd": 0.0958,
       "burn_per_day_usd_1ec2": 2.3,
@@ -2570,5 +2552,12 @@
         "exec_timeout_s": 7200
       }
     }
+  },
+  "hub_github": {
+    "label": "EXPERIMENTAL / not FNR-000 \u2014 source of truth (t116u)",
+    "tag": "hub-e7b36e0a",
+    "sha256": "e7b36e0a3e2f9c1cb40e79f5e81a536454d811728e310fc2d2e1a015073407b9",
+    "release_url": "https://github.com/tsrnc2/multi-cloud-train/releases/tag/hub-e7b36e0a",
+    "repo_private": true
   }
 }

@@ -442,5 +442,11 @@ function renderDomains(eh, ds){
     pts.map((p,i)=>`<circle cx="${x(i)}" cy="${y(p.domain_mean)}" r="3.5" fill="${p.reconstructed?"#0e1626":"#6ea8fe"}" stroke="#6ea8fe"><title>${genLabel(p.run_id)} hub ${p.hub_sha} — domain mean ${p.domain_mean}%</title></circle>`).join("")+
     [0,25,50,75,100].map(v=>`<text x="4" y="${y(v)+4}" fill="#9bb0d0" font-size="9">${v}%</text>`).join("")+"</svg>";}
 </script>
+
+<script>/* t116u hub source-of-truth card */
+fetch('status.json',{cache:'no-store'}).then(r=>r.json()).then(s=>{const g=s.hub_github;if(!g||!g.release_url)return;
+const d=document.createElement('section');d.id='hub-github';d.style.cssText='margin:1em 0;padding:.8em;border:1px solid #888;border-radius:8px';
+d.innerHTML='<h3>Lineage hub — GitHub source of truth</h3><p>'+g.label+'</p><p>Current hub <code>'+g.tag+'</code>: <a href="'+g.release_url+'">'+g.release_url+'</a> (private repo; access required)</p><p>sha256 <code>'+g.sha256+'</code></p>';
+(document.querySelector('main')||document.body).prepend(d);}).catch(()=>{});</script>
 </body>
 </html>
