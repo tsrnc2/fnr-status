@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-11-02 00:07:59 PST (America/Los_Angeles)",
+  "last_updated_pt": "2026-11-02 00:24:19 PST (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -24,28 +24,66 @@
     "runtime_flag": "lanes/lineage-hub/ONE_LANE_POLICY.json"
   },
   "hub": {
-    "recommended_sha256": "6f4a17fdfccf24b0947967fa978481a01c1a9aea0ec82334044ef7032be93219",
-    "recommended_sha256_short": "6f4a17fdfccf\u2026",
-    "last_publish_run_id": "e2b-lineage-t98u-g36",
-    "last_publish_pt": "2026-11-02 00:04:35 PST",
+    "recommended_sha256": "f6dd634ac3f0e127cd152f97dc9f4b02e9030929aac8fef431ce2642e67501f9",
+    "recommended_sha256_short": "f6dd634ac3f0\u2026",
+    "last_publish_run_id": "v14_full_lrp_skills_roles_cont_20261102-073436",
+    "last_publish_pt": "2026-11-02 00:20:46 PST",
     "w_old": 0.65,
     "w_new": 0.35,
-    "observed_at_pt": "2026-11-02 00:04:35 PST",
-    "observation_age_seconds": 203,
+    "observed_at_pt": "2026-11-02 00:20:46 PST",
+    "observation_age_seconds": 213,
     "observation_age_human": "3m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
-  "latest_letter_metrics": null,
-  "validation_accuracy": {
-    "letter": null,
-    "val_acc": null,
-    "val_acc_pct": null,
+  "latest_letter_metrics": {
+    "letter": "X27",
+    "hard_neural": "70/110",
+    "hard_solve_rate": 0.6363636363636364,
+    "avg_nodes": 34.763636363636365,
+    "false_accept": "0/613",
+    "false_accept_rate": 0.0,
+    "val_acc": 0.5903614457831325,
+    "val_acc_pct": "59.04%",
+    "train_acc": 0.7226315789473684,
+    "train_acc_pct": "72.26%",
+    "fnr_000_admission": false,
+    "label": "EXPERIMENTAL / not FNR-000",
     "producer_reported": true,
-    "observed_at_pt": null,
-    "observation_age_human": null,
+    "observed_at_pt": "2026-11-02 00:16:39 PST",
+    "observation_age_seconds": 460,
+    "observation_age_human": "7m",
+    "artifact_dir": "v15_lineage_warm_x27"
+  },
+  "validation_accuracy": {
+    "letter": "X27",
+    "val_acc": 0.5903614457831325,
+    "val_acc_pct": "59.04%",
+    "producer_reported": true,
+    "observed_at_pt": "2026-11-02 00:16:39 PST",
+    "observation_age_human": "7m",
     "note": "From train_metrics final_val_acc on published letter artifacts"
   },
-  "recent_letters": [],
+  "recent_letters": [
+    {
+      "letter": "X27",
+      "hard_neural": "70/110",
+      "hard_solve_rate": 0.6363636363636364,
+      "avg_nodes": 34.763636363636365,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "val_acc": 0.5903614457831325,
+      "val_acc_pct": "59.04%",
+      "train_acc": 0.7226315789473684,
+      "train_acc_pct": "72.26%",
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "producer_reported": true,
+      "observed_at_pt": "2026-11-02 00:16:39 PST",
+      "observation_age_seconds": 460,
+      "observation_age_human": "7m",
+      "artifact_dir": "v15_lineage_warm_x27"
+    }
+  ],
   "aws_burst": {
     "role": "optional_continue_only_burst_leq_1_ec2",
     "soft_cap": "\u22641 EC2",
@@ -64,7 +102,7 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 360479,
+      "observation_age_seconds": 361459,
       "observation_age_human": "4d 4h",
       "label": "EXPERIMENTAL / not FNR-000"
     },
@@ -113,9 +151,31 @@
         "monitor": "done",
         "source": "t90u_continue_until_credits",
         "observed_at_pt": "2026-10-28 20:00 PDT"
+      },
+      {
+        "letter": "X27",
+        "instance_id": "i-0ce2f8c4316fce889",
+        "run_id": "v15-lineage-warm-20261027-x27",
+        "state": "done_receipt",
+        "hard_neural": "70/110",
+        "val_acc_pct": "59.04%",
+        "false_accept": "0/613",
+        "source": "DONE.json",
+        "observed_at_pt": "2026-11-02 00:16:41 PST"
       }
     ],
-    "latest_DONE": null,
+    "latest_DONE": {
+      "lane": "AWS-X",
+      "run": "v15-lineage-warm-20261027-x27",
+      "letter": "X27",
+      "finished_utc": "2026-11-02T08:16:39Z",
+      "instance_id": "i-0ce2f8c4316fce889",
+      "label": "EXPERIMENTAL-not-FNR-000",
+      "observed_at_pt": "2026-11-02 00:16:41 PST",
+      "observation_age_seconds": 458,
+      "observation_age_human": "7m",
+      "note": "Completed fold receipt \u2014 not the live AWS letter unless current.state says running"
+    },
     "stale_probe_suppressed": "Ignored stale probe letter X16 (probe @ 2026-10-28 16:25 PDT); current letter is X21",
     "instance_id_file": "i-0ce2f8c4316fce889",
     "instance_id_file_observed_at_pt": "2026-11-01 21:49:09 PST",
@@ -132,32 +192,32 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 360479,
+    "observation_age_seconds": 361459,
     "observation_age_human": "4d 4h"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-11-02 00:07:59 PST (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-11-02 00:24:19 PST (America/Los_Angeles)",
     "hub_publish": {
-      "observed_at_pt": "2026-11-02 00:04:35 PST",
+      "observed_at_pt": "2026-11-02 00:20:46 PST",
       "age_human": "3m",
-      "age_seconds": 203
+      "age_seconds": 213
     },
     "latest_letter_metrics": {
-      "letter": null,
-      "observed_at_pt": null,
-      "age_human": null,
-      "age_seconds": null
+      "letter": "X27",
+      "observed_at_pt": "2026-11-02 00:16:39 PST",
+      "age_human": "7m",
+      "age_seconds": 460
     },
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
       "age_human": "4d 4h",
-      "age_seconds": 360479
+      "age_seconds": 361459
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
       "age_human": "4d 4h",
-      "age_seconds": 360479
+      "age_seconds": 361459
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -768,6 +828,20 @@
           "T2": 60,
           "T3": 107,
           "T4": 113,
+          "T5": 49
+        },
+        "fa": 0
+      },
+      {
+        "t": "2026-11-02T00:22:07.672413",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-073436",
+        "hub_sha": "f6dd634ac3f0\u2026",
+        "composite": 69.86,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 111,
           "T5": 49
         },
         "fa": 0
@@ -2719,6 +2793,74 @@
         },
         "fa": 0,
         "hub_sha": "6f4a17fdfccf"
+      },
+      {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 0,
+            "n": 64,
+            "by_level": {
+              "easy": 0,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 17,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 11,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 3,
+            "n": 64,
+            "by_level": {
+              "easy": 3,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 29.54,
+        "t": "2026-11-02T00:20:44.119179-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-073436",
+        "decision": "FOLDED",
+        "composite": 69.86,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 111,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "f6dd634ac3f0"
       }
     ]
   },
@@ -2739,25 +2881,31 @@
     "e2b": {
       "cap": 2,
       "profile": {
-        "epochs": 40,
-        "lr": 0.001,
+        "epochs": 30,
+        "lr": 0.0003,
         "lr_schedule": "cosine",
-        "warmup_frac": 0.05,
+        "warmup_frac": 0.1,
         "min_lr_frac": 0.05,
-        "train_time_budget_s": 2400
+        "train_time_budget_s": 2400,
+        "select_best": true,
+        "early_stop_patience": 5,
+        "early_stop_min_delta": 0.005
       },
       "credit_remaining": "not visible via API"
     },
     "daytona": {
       "cap": 2,
       "profile": {
-        "epochs": 60,
-        "lr": 0.001,
+        "epochs": 40,
+        "lr": 0.0003,
         "lr_schedule": "cosine",
-        "warmup_frac": 0.05,
+        "warmup_frac": 0.1,
         "min_lr_frac": 0.05,
         "train_time_budget_s": 6000,
-        "exec_timeout_s": 7200
+        "exec_timeout_s": 7200,
+        "select_best": true,
+        "early_stop_patience": 5,
+        "early_stop_min_delta": 0.005
       },
       "credit_remaining": "not visible via API"
     },
@@ -2765,31 +2913,40 @@
       "aws": {
         "instance_type": "m7i-flex.large",
         "cost_per_hr_usd": 0.0958,
-        "epochs": 120,
+        "epochs": 40,
         "batch_size": 48,
         "grad_accum": 2,
-        "lr": 0.001,
+        "lr": 0.0003,
         "lr_schedule": "cosine",
-        "warmup_frac": 0.05,
+        "warmup_frac": 0.1,
         "min_lr_frac": 0.05,
-        "train_time_budget_s": 19800
+        "train_time_budget_s": 5400,
+        "select_best": true,
+        "early_stop_patience": 5,
+        "early_stop_min_delta": 0.005
       },
       "e2b": {
-        "epochs": 40,
-        "lr": 0.001,
+        "epochs": 30,
+        "lr": 0.0003,
         "lr_schedule": "cosine",
-        "warmup_frac": 0.05,
+        "warmup_frac": 0.1,
         "min_lr_frac": 0.05,
-        "train_time_budget_s": 2400
+        "train_time_budget_s": 2400,
+        "select_best": true,
+        "early_stop_patience": 5,
+        "early_stop_min_delta": 0.005
       },
       "daytona": {
-        "epochs": 60,
-        "lr": 0.001,
+        "epochs": 40,
+        "lr": 0.0003,
         "lr_schedule": "cosine",
-        "warmup_frac": 0.05,
+        "warmup_frac": 0.1,
         "min_lr_frac": 0.05,
         "train_time_budget_s": 6000,
-        "exec_timeout_s": 7200
+        "exec_timeout_s": 7200,
+        "select_best": true,
+        "early_stop_patience": 5,
+        "early_stop_min_delta": 0.005
       }
     }
   },
@@ -2815,7 +2972,8 @@
           "T2": 60,
           "T3": 110,
           "T4": 55
-        }
+        },
+        "useful_pct": 100.0
       },
       {
         "provider": "e2b",
@@ -2836,7 +2994,8 @@
           "T2": 60,
           "T3": 110,
           "T4": 51
-        }
+        },
+        "useful_pct": 100.0
       },
       {
         "provider": "e2b",
@@ -2857,7 +3016,8 @@
           "T2": 60,
           "T3": 110,
           "T4": 50
-        }
+        },
+        "useful_pct": 100.0
       },
       {
         "provider": "e2b",
@@ -2878,7 +3038,8 @@
           "T2": 60,
           "T3": 110,
           "T4": 52
-        }
+        },
+        "useful_pct": 100.0
       },
       {
         "provider": "e2b",
@@ -2899,7 +3060,8 @@
           "T2": 60,
           "T3": 110,
           "T4": 50
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "e2b",
@@ -2920,7 +3082,8 @@
           "T2": 60,
           "T3": 110,
           "T4": 53
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "e2b",
@@ -2941,7 +3104,8 @@
           "T2": 60,
           "T3": 106,
           "T4": 55
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "e2b",
@@ -2962,7 +3126,8 @@
           "T2": 60,
           "T3": 109,
           "T4": 54
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "e2b",
@@ -2983,7 +3148,8 @@
           "T2": 60,
           "T3": 109,
           "T4": 54
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "e2b",
@@ -3004,7 +3170,8 @@
           "T2": 60,
           "T3": 109,
           "T4": 55
-        }
+        },
+        "useful_pct": 100.0
       },
       {
         "provider": "e2b",
@@ -3025,7 +3192,8 @@
           "T2": 60,
           "T3": 109,
           "T4": 54
-        }
+        },
+        "useful_pct": 100.0
       },
       {
         "provider": "e2b",
@@ -3046,7 +3214,8 @@
           "T2": 60,
           "T3": 109,
           "T4": 54
-        }
+        },
+        "useful_pct": 100.0
       },
       {
         "provider": "e2b",
@@ -3067,15 +3236,16 @@
           "T2": 60,
           "T3": 109,
           "T4": 55
-        }
+        },
+        "useful_pct": 100.0
       },
       {
         "provider": "aws",
         "run_id": "aws-next-1793593612",
         "t": "2026-11-01T20:28:12.565390-08:00",
         "suite": "fd005cb2",
-        "hours_est": 5.5,
-        "usd_est": 0.53,
+        "hours_est": 0.85,
+        "usd_est": 0.08,
         "candidate": 83.41,
         "preview": 85.59,
         "hub": 87.23,
@@ -3088,15 +3258,16 @@
           "T2": 60,
           "T3": 103,
           "T4": 55
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "aws",
         "run_id": "aws-next-1793593700",
         "t": "2026-11-01T20:30:35.928680-08:00",
         "suite": "fd005cb2",
-        "hours_est": 5.5,
-        "usd_est": 0.53,
+        "hours_est": 0.85,
+        "usd_est": 0.08,
         "candidate": 85.36,
         "preview": 85.86,
         "hub": 87.23,
@@ -3109,7 +3280,8 @@
           "T2": 60,
           "T3": 104,
           "T4": 55
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "e2b",
@@ -3130,7 +3302,8 @@
           "T2": 60,
           "T3": 109,
           "T4": 55
-        }
+        },
+        "useful_pct": 100.0
       },
       {
         "provider": "e2b",
@@ -3151,7 +3324,8 @@
           "T2": 60,
           "T3": 110,
           "T4": 51
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "e2b",
@@ -3172,7 +3346,8 @@
           "T2": 60,
           "T3": 109,
           "T4": 49
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "e2b",
@@ -3193,7 +3368,8 @@
           "T2": 60,
           "T3": 110,
           "T4": 55
-        }
+        },
+        "useful_pct": 100.0
       },
       {
         "provider": "e2b",
@@ -3214,15 +3390,16 @@
           "T2": 60,
           "T3": 108,
           "T4": 55
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "aws",
         "run_id": "aws-next-1793595918",
         "t": "2026-11-01T21:06:53.121714-08:00",
         "suite": "fd005cb2",
-        "hours_est": 5.5,
-        "usd_est": 0.53,
+        "hours_est": 0.85,
+        "usd_est": 0.08,
         "candidate": 81.64,
         "preview": 82.59,
         "hub": 87.5,
@@ -3235,15 +3412,16 @@
           "T2": 60,
           "T3": 92,
           "T4": 55
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "aws",
         "run_id": "aws-next-1793596118",
         "t": "2026-11-01T21:09:02.118842-08:00",
         "suite": "fd005cb2",
-        "hours_est": 5.5,
-        "usd_est": 0.53,
+        "hours_est": 0.85,
+        "usd_est": 0.08,
         "candidate": 81.64,
         "preview": 82.59,
         "hub": 87.5,
@@ -3256,7 +3434,8 @@
           "T2": 60,
           "T3": 92,
           "T4": 55
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "e2b",
@@ -3277,7 +3456,8 @@
           "T2": 60,
           "T3": 108,
           "T4": 55
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "e2b",
@@ -3298,15 +3478,16 @@
           "T2": 60,
           "T3": 109,
           "T4": 55
-        }
+        },
+        "useful_pct": 100.0
       },
       {
         "provider": "aws",
         "run_id": "aws-next-1793598439",
         "t": "2026-11-01T21:49:02.263800-08:00",
         "suite": "fd005cb2",
-        "hours_est": 5.5,
-        "usd_est": 0.53,
+        "hours_est": 0.85,
+        "usd_est": 0.08,
         "candidate": 84.23,
         "preview": 84.5,
         "hub": 87.23,
@@ -3319,7 +3500,8 @@
           "T2": 60,
           "T3": 99,
           "T4": 55
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "e2b",
@@ -3340,7 +3522,8 @@
           "T2": 60,
           "T3": 104,
           "T4": 55
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "e2b",
@@ -3361,7 +3544,8 @@
           "T2": 60,
           "T3": 106,
           "T4": 55
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "waypoint",
@@ -3382,7 +3566,8 @@
           "T2": 60,
           "T3": 110,
           "T4": 49
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "waypoint",
@@ -3403,7 +3588,8 @@
           "T2": 60,
           "T3": 110,
           "T4": 54
-        }
+        },
+        "useful_pct": 100.0
       },
       {
         "provider": "e2b",
@@ -3425,7 +3611,8 @@
           "T3": 108,
           "T4": 108,
           "T5": 49
-        }
+        },
+        "useful_pct": 0.0
       },
       {
         "provider": "e2b",
@@ -3447,7 +3634,31 @@
           "T3": 107,
           "T4": 113,
           "T5": 49
-        }
+        },
+        "useful_pct": 100.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-073436",
+        "t": "2026-11-02T00:20:44.119179-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 69.36,
+        "preview": 69.86,
+        "hub": 69.64,
+        "delta_vs_hub": 0.22,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 111,
+          "T5": 49
+        },
+        "useful_pct": 100.0
       }
     ],
     "hub_progress": [
@@ -4083,22 +4294,42 @@
         "n_T4": 188,
         "delta_first": 0.28,
         "best_so_far": 70.02
+      },
+      {
+        "t": "2026-11-02T00:20:44.119179-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-073436",
+        "hub_sha": "f6dd634ac3f0",
+        "suite": "12c4c4f0",
+        "composite": 69.86,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 111,
+          "T5": 49
+        },
+        "kind": "FOLDED",
+        "n_T4": 188,
+        "delta_first": 0.5,
+        "best_so_far": 70.02
       }
     ],
     "waste": {
       "overall": {
-        "runs": 31,
+        "useful_compute_pct": 39.5,
+        "runs": 32,
         "wasted_runs": 18,
-        "pct_runs": 58.1,
-        "hours": 43.5,
-        "wasted_hours": 35.5,
-        "pct_hours": 81.6,
-        "usd": 2.65,
-        "wasted_usd": 2.65,
+        "pct_runs": 56.2,
+        "hours": 20.25,
+        "wasted_hours": 12.25,
+        "pct_hours": 60.5,
+        "usd": 0.4,
+        "wasted_usd": 0.4,
         "pct_usd": 100.0
       },
       "by_provider": {
         "e2b": {
+          "useful_compute_pct": 50.0,
           "runs": 24,
           "wasted_runs": 12,
           "pct_runs": 50.0,
@@ -4110,20 +4341,22 @@
           "pct_usd": null
         },
         "aws": {
+          "useful_compute_pct": 0.0,
           "runs": 5,
           "wasted_runs": 5,
           "pct_runs": 100.0,
-          "hours": 27.5,
-          "wasted_hours": 27.5,
+          "hours": 4.25,
+          "wasted_hours": 4.25,
           "pct_hours": 100.0,
-          "usd": 2.65,
-          "wasted_usd": 2.65,
+          "usd": 0.4,
+          "wasted_usd": 0.4,
           "pct_usd": 100.0
         },
         "waypoint": {
-          "runs": 2,
+          "useful_compute_pct": 66.7,
+          "runs": 3,
           "wasted_runs": 1,
-          "pct_runs": 50.0,
+          "pct_runs": 33.3,
           "hours": 0,
           "wasted_hours": 0,
           "pct_hours": null,
@@ -4137,191 +4370,229 @@
           "t": "2026-10-29T02:21:51.419247",
           "run_id": "e2b-lineage-t98u-g8",
           "pct_runs_rolling10": 0.0,
-          "pct_runs_cum": 0.0
+          "pct_runs_cum": 0.0,
+          "useful_compute_pct_rolling10": 100.0
         },
         {
           "t": "2026-10-29T02:34:10.191871",
           "run_id": "e2b-lineage-t98u-g10",
           "pct_runs_rolling10": 0.0,
-          "pct_runs_cum": 0.0
+          "pct_runs_cum": 0.0,
+          "useful_compute_pct_rolling10": 100.0
         },
         {
           "t": "2026-10-29T02:36:04.951818",
           "run_id": "e2b-lineage-t98u-g11",
           "pct_runs_rolling10": 0.0,
-          "pct_runs_cum": 0.0
+          "pct_runs_cum": 0.0,
+          "useful_compute_pct_rolling10": 100.0
         },
         {
           "t": "2026-10-29T03:12:14.918796",
           "run_id": "e2b-lineage-t98u-g12",
           "pct_runs_rolling10": 0.0,
-          "pct_runs_cum": 0.0
+          "pct_runs_cum": 0.0,
+          "useful_compute_pct_rolling10": 100.0
         },
         {
           "t": "2026-10-29T03:14:15.970427",
           "run_id": "e2b-lineage-t98u-g13",
           "pct_runs_rolling10": 20.0,
-          "pct_runs_cum": 20.0
+          "pct_runs_cum": 20.0,
+          "useful_compute_pct_rolling10": 80.0
         },
         {
           "t": "2026-10-29T03:26:51.537217-07:00",
           "run_id": "e2b-lineage-t98u-g14",
           "pct_runs_rolling10": 33.3,
-          "pct_runs_cum": 33.3
+          "pct_runs_cum": 33.3,
+          "useful_compute_pct_rolling10": 66.7
         },
         {
           "t": "2026-10-29T03:27:30.424129-07:00",
           "run_id": "e2b-lineage-t98u-g15",
           "pct_runs_rolling10": 42.9,
-          "pct_runs_cum": 42.9
+          "pct_runs_cum": 42.9,
+          "useful_compute_pct_rolling10": 57.1
         },
         {
           "t": "2026-10-29T03:36:44.921321-07:00",
           "run_id": "e2b-lineage-t98u-g16",
           "pct_runs_rolling10": 50.0,
-          "pct_runs_cum": 50.0
+          "pct_runs_cum": 50.0,
+          "useful_compute_pct_rolling10": 50.0
         },
         {
           "t": "2026-10-29T03:39:58.342285-07:00",
           "run_id": "e2b-lineage-t98u-g17",
           "pct_runs_rolling10": 55.6,
-          "pct_runs_cum": 55.6
+          "pct_runs_cum": 55.6,
+          "useful_compute_pct_rolling10": 44.4
         },
         {
           "t": "2026-10-29T03:52:23.616917-07:00",
           "run_id": "e2b-lineage-t98u-g18",
           "pct_runs_rolling10": 50.0,
-          "pct_runs_cum": 50.0
+          "pct_runs_cum": 50.0,
+          "useful_compute_pct_rolling10": 50.0
         },
         {
           "t": "2026-10-29T03:56:12.369040-07:00",
           "run_id": "e2b-lineage-t98u-g19",
           "pct_runs_rolling10": 50.0,
-          "pct_runs_cum": 45.5
+          "pct_runs_cum": 45.5,
+          "useful_compute_pct_rolling10": 50.0
         },
         {
           "t": "2026-10-29T04:07:02.569679-07:00",
           "run_id": "e2b-lineage-t98u-g20",
           "pct_runs_rolling10": 50.0,
-          "pct_runs_cum": 41.7
+          "pct_runs_cum": 41.7,
+          "useful_compute_pct_rolling10": 50.0
         },
         {
           "t": "2026-10-29T04:10:56.774277-07:00",
           "run_id": "e2b-lineage-t98u-g21",
           "pct_runs_rolling10": 50.0,
-          "pct_runs_cum": 38.5
+          "pct_runs_cum": 38.5,
+          "useful_compute_pct_rolling10": 50.0
         },
         {
           "t": "2026-11-01T20:28:12.565390-08:00",
           "run_id": "aws-next-1793593612",
           "pct_runs_rolling10": 60.0,
-          "pct_runs_cum": 42.9
+          "pct_runs_cum": 42.9,
+          "useful_compute_pct_rolling10": 38.9
         },
         {
           "t": "2026-11-01T20:30:35.928680-08:00",
           "run_id": "aws-next-1793593700",
           "pct_runs_rolling10": 60.0,
-          "pct_runs_cum": 46.7
+          "pct_runs_cum": 46.7,
+          "useful_compute_pct_rolling10": 37.9
         },
         {
           "t": "2026-11-01T20:37:42.803824-08:00",
           "run_id": "e2b-lineage-t98u-g23",
           "pct_runs_rolling10": 50.0,
-          "pct_runs_cum": 43.8
+          "pct_runs_cum": 43.8,
+          "useful_compute_pct_rolling10": 47.4
         },
         {
           "t": "2026-11-01T20:46:05.240147-08:00",
           "run_id": "e2b-lineage-t98u-g24",
           "pct_runs_rolling10": 50.0,
-          "pct_runs_cum": 47.1
+          "pct_runs_cum": 47.1,
+          "useful_compute_pct_rolling10": 47.4
         },
         {
           "t": "2026-11-01T20:54:22.804905-08:00",
           "run_id": "e2b-lineage-t98u-g25",
           "pct_runs_rolling10": 50.0,
-          "pct_runs_cum": 50.0
+          "pct_runs_cum": 50.0,
+          "useful_compute_pct_rolling10": 47.4
         },
         {
           "t": "2026-11-01T20:56:39.169536-08:00",
           "run_id": "e2b-lineage-t98u-g26",
           "pct_runs_rolling10": 40.0,
-          "pct_runs_cum": 47.4
+          "pct_runs_cum": 47.4,
+          "useful_compute_pct_rolling10": 56.9
         },
         {
           "t": "2026-11-01T21:05:14.627322-08:00",
           "run_id": "e2b-lineage-t98u-g27",
           "pct_runs_rolling10": 50.0,
-          "pct_runs_cum": 50.0
+          "pct_runs_cum": 50.0,
+          "useful_compute_pct_rolling10": 47.4
         },
         {
           "t": "2026-11-01T21:06:53.121714-08:00",
           "run_id": "aws-next-1793595918",
           "pct_runs_rolling10": 60.0,
-          "pct_runs_cum": 52.4
+          "pct_runs_cum": 52.4,
+          "useful_compute_pct_rolling10": 37.0
         },
         {
           "t": "2026-11-01T21:09:02.118842-08:00",
           "run_id": "aws-next-1793596118",
           "pct_runs_rolling10": 70.0,
-          "pct_runs_cum": 54.5
+          "pct_runs_cum": 54.5,
+          "useful_compute_pct_rolling10": 27.0
         },
         {
           "t": "2026-11-01T21:14:23.388566-08:00",
           "run_id": "e2b-lineage-t98u-g28",
           "pct_runs_rolling10": 80.0,
-          "pct_runs_cum": 56.5
+          "pct_runs_cum": 56.5,
+          "useful_compute_pct_rolling10": 18.0
         },
         {
           "t": "2026-11-01T21:30:13.338478-08:00",
           "run_id": "e2b-lineage-t98u-g29",
           "pct_runs_rolling10": 70.0,
-          "pct_runs_cum": 54.2
+          "pct_runs_cum": 54.2,
+          "useful_compute_pct_rolling10": 27.7
         },
         {
           "t": "2026-11-01T21:49:02.263800-08:00",
           "run_id": "aws-next-1793598439",
           "pct_runs_rolling10": 70.0,
-          "pct_runs_cum": 56.0
+          "pct_runs_cum": 56.0,
+          "useful_compute_pct_rolling10": 27.7
         },
         {
           "t": "2026-11-01T21:51:32.228825-08:00",
           "run_id": "e2b-lineage-t98u-g31",
           "pct_runs_rolling10": 80.0,
-          "pct_runs_cum": 57.7
+          "pct_runs_cum": 57.7,
+          "useful_compute_pct_rolling10": 18.5
         },
         {
           "t": "2026-11-01T21:52:53.060435-08:00",
           "run_id": "e2b-lineage-t98u-g32",
           "pct_runs_rolling10": 80.0,
-          "pct_runs_cum": 59.3
+          "pct_runs_cum": 59.3,
+          "useful_compute_pct_rolling10": 18.5
         },
         {
           "t": "2026-11-01T23:12:58.977229-08:00",
           "run_id": "waypoint-hub-c5bd4065",
           "pct_runs_rolling10": 80.0,
-          "pct_runs_cum": 60.7
+          "pct_runs_cum": 60.7,
+          "useful_compute_pct_rolling10": 20.4
         },
         {
           "t": "2026-11-01T23:39:28.810391-08:00",
           "run_id": "v14_full_lrp_skills_roles_cont_20261102-064828",
           "pct_runs_rolling10": 80.0,
-          "pct_runs_cum": 58.6
+          "pct_runs_cum": 58.6,
+          "useful_compute_pct_rolling10": 11.3
         },
         {
           "t": "2026-11-02T00:01:27.357209-08:00",
           "run_id": "e2b-lineage-t98u-g35",
           "pct_runs_rolling10": 80.0,
-          "pct_runs_cum": 60.0
+          "pct_runs_cum": 60.0,
+          "useful_compute_pct_rolling10": 11.3
         },
         {
           "t": "2026-11-02T00:04:34.282628-08:00",
           "run_id": "e2b-lineage-t98u-g36",
           "pct_runs_rolling10": 70.0,
-          "pct_runs_cum": 58.1
+          "pct_runs_cum": 58.1,
+          "useful_compute_pct_rolling10": 23.4
+        },
+        {
+          "t": "2026-11-02T00:20:44.119179-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-073436",
+          "pct_runs_rolling10": 60.0,
+          "pct_runs_cum": 56.2,
+          "useful_compute_pct_rolling10": 27.5
         }
       ]
     },
-    "notes": "hours/$ are per-run profile estimates (E2B 40 min, Daytona 100 min, AWS 5.5 h @ $0.0958/h; waypoint unknown). Suite changes are marked; scores from different suites are never compared."
+    "notes": "hours/$ are per-run profile estimates (E2B 40 min, Daytona 100 min, AWS 0.85 h measured @ $0.0958/h; waypoint unknown). useful_compute_pct = folded share of compute (t124u). Suite changes are marked; scores from different suites are never compared."
   },
   "suite_t120u": {
     "suite_sha256": "12c4c4f0a89c33cb93212ba793d03b1ed3d1ea7f3c240097485ca41e936f99cf",
@@ -4696,9 +4967,9 @@
   },
   "hub_github": {
     "label": "EXPERIMENTAL / not FNR-000 \u2014 source of truth (t116u)",
-    "tag": "hub-6f4a17fd",
-    "sha256": "6f4a17fdfccf24b0947967fa978481a01c1a9aea0ec82334044ef7032be93219",
-    "release_url": "https://github.com/tsrnc2/multi-cloud-train/releases/tag/hub-6f4a17fd",
+    "tag": "hub-f6dd634a",
+    "sha256": "f6dd634ac3f0e127cd152f97dc9f4b02e9030929aac8fef431ce2642e67501f9",
+    "release_url": "https://github.com/tsrnc2/multi-cloud-train/releases/tag/hub-f6dd634a",
     "repo_private": true
   }
 }
