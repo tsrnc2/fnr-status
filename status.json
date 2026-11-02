@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-11-01 23:42:18 PST (America/Los_Angeles)",
+  "last_updated_pt": "2026-11-02 00:00:13 PST (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -31,8 +31,8 @@
     "w_old": 0.65,
     "w_new": 0.35,
     "observed_at_pt": "2026-11-01 23:39:30 PST",
-    "observation_age_seconds": 167,
-    "observation_age_human": "2m",
+    "observation_age_seconds": 1243,
+    "observation_age_human": "20m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
   "latest_letter_metrics": null,
@@ -64,8 +64,8 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 358938,
-      "observation_age_human": "4d 3h",
+      "observation_age_seconds": 360013,
+      "observation_age_human": "4d 4h",
       "label": "EXPERIMENTAL / not FNR-000"
     },
     "history": [
@@ -132,15 +132,15 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 358938,
-    "observation_age_human": "4d 3h"
+    "observation_age_seconds": 360013,
+    "observation_age_human": "4d 4h"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-11-01 23:42:18 PST (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-11-02 00:00:13 PST (America/Los_Angeles)",
     "hub_publish": {
       "observed_at_pt": "2026-11-01 23:39:30 PST",
-      "age_human": "2m",
-      "age_seconds": 167
+      "age_human": "20m",
+      "age_seconds": 1243
     },
     "latest_letter_metrics": {
       "letter": null,
@@ -151,13 +151,13 @@
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "4d 3h",
-      "age_seconds": 358938
+      "age_human": "4d 4h",
+      "age_seconds": 360013
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "4d 3h",
-      "age_seconds": 358938
+      "age_human": "4d 4h",
+      "age_seconds": 360013
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -249,7 +249,7 @@
   },
   "tiered_eval": {
     "label": "EXPERIMENTAL / not FNR-000 \u2014 tiered eval (checker-verified, frozen)",
-    "suite_sha256_12": "fd005cb2de0a\u2026",
+    "suite_sha256_12": "12c4c4f0a89c\u2026",
     "tiers": {
       "T1": {
         "n": 60,
@@ -264,8 +264,12 @@
         "avg_steps": 0.0
       },
       "T4": {
-        "n": 80,
-        "avg_steps": 10.85
+        "n": 188,
+        "avg_steps": 12.64
+      },
+      "T5": {
+        "n": 100,
+        "avg_steps": 18.79
       }
     },
     "weights": {
@@ -2573,6 +2577,51 @@
         },
         "fa": 0,
         "hub_sha": "e6eb1eeed8dc"
+      },
+      {
+        "t": "2026-11-01T23:55:00-08:00",
+        "run_id": "REBASELINE hub 31d9171b (t120u suite)",
+        "decision": "REBASELINE",
+        "composite": 69.36,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 109,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "31d9171b"
+      },
+      {
+        "t": "2026-11-01T23:55:01-08:00",
+        "run_id": "REBASELINE hub e7b36e0a (t120u suite)",
+        "decision": "REBASELINE",
+        "composite": 70.0,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 113,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "e7b36e0a"
+      },
+      {
+        "t": "2026-11-01T23:55:02-08:00",
+        "run_id": "REBASELINE hub e6eb1eee (t120u suite)",
+        "decision": "REBASELINE",
+        "composite": 70.02,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 112,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "e6eb1eee"
       }
     ]
   },
@@ -3239,7 +3288,7 @@
         }
       },
       {
-        "provider": "other",
+        "provider": "waypoint",
         "run_id": "v14_full_lrp_skills_roles_cont_20261102-064828",
         "t": "2026-11-01T23:39:28.810391-08:00",
         "suite": "fd005cb2",
@@ -3821,6 +3870,60 @@
         "n_T4": 80,
         "delta_first": 2.5,
         "best_so_far": 87.5
+      },
+      {
+        "t": "2026-11-01T23:55:00-08:00",
+        "run_id": "REBASELINE hub 31d9171b (t120u suite)",
+        "hub_sha": "31d9171b",
+        "suite": "12c4c4f0",
+        "composite": 69.36,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 109,
+          "T5": 49
+        },
+        "kind": "REBASELINE",
+        "n_T4": 188,
+        "delta_first": 0.0,
+        "best_so_far": 69.36
+      },
+      {
+        "t": "2026-11-01T23:55:01-08:00",
+        "run_id": "REBASELINE hub e7b36e0a (t120u suite)",
+        "hub_sha": "e7b36e0a",
+        "suite": "12c4c4f0",
+        "composite": 70.0,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 113,
+          "T5": 49
+        },
+        "kind": "REBASELINE",
+        "n_T4": 188,
+        "delta_first": 0.64,
+        "best_so_far": 70.0
+      },
+      {
+        "t": "2026-11-01T23:55:02-08:00",
+        "run_id": "REBASELINE hub e6eb1eee (t120u suite)",
+        "hub_sha": "e6eb1eee",
+        "suite": "12c4c4f0",
+        "composite": 70.02,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 112,
+          "T5": 49
+        },
+        "kind": "REBASELINE",
+        "n_T4": 188,
+        "delta_first": 0.66,
+        "best_so_far": 70.02
       }
     ],
     "waste": {
@@ -3859,20 +3962,9 @@
           "pct_usd": 100.0
         },
         "waypoint": {
-          "runs": 1,
+          "runs": 2,
           "wasted_runs": 1,
-          "pct_runs": 100.0,
-          "hours": 0,
-          "wasted_hours": 0,
-          "pct_hours": null,
-          "usd": 0,
-          "wasted_usd": 0,
-          "pct_usd": null
-        },
-        "other": {
-          "runs": 1,
-          "wasted_runs": 0,
-          "pct_runs": 0.0,
+          "pct_runs": 50.0,
           "hours": 0,
           "wasted_hours": 0,
           "pct_hours": null,
@@ -4059,6 +4151,377 @@
       ]
     },
     "notes": "hours/$ are per-run profile estimates (E2B 40 min, Daytona 100 min, AWS 5.5 h @ $0.0958/h; waypoint unknown). Suite changes are marked; scores from different suites are never compared."
+  },
+  "suite_t120u": {
+    "suite_sha256": "12c4c4f0a89c33cb93212ba793d03b1ed3d1ea7f3c240097485ca41e936f99cf",
+    "tier_n": {
+      "T1": 60,
+      "T2": 60,
+      "T3": 110,
+      "T4": 188,
+      "T5": 100
+    },
+    "weights": {
+      "T1": 0.05,
+      "T2": 0.1,
+      "T3": 0.2,
+      "T4": 0.3,
+      "T5": 0.35
+    },
+    "new_t4_categories": [
+      "contra_efq_long",
+      "dne_multi",
+      "three_chain_and",
+      "eq_trans_long",
+      "succ_cong_deep",
+      "forall_inst_chain",
+      "ind_inst_deep",
+      "exists_intro_chain",
+      "theory_discrim"
+    ],
+    "old_suite": "fd005cb2",
+    "rebaseline": {
+      "31d9171b": {
+        "composite": 69.36,
+        "fa": 0,
+        "tiers": {
+          "T1": {
+            "solved": 60,
+            "n": 60,
+            "by_family": {}
+          },
+          "T2": {
+            "solved": 60,
+            "n": 60,
+            "by_family": {}
+          },
+          "T3": {
+            "solved": 109,
+            "n": 110,
+            "by_family": {}
+          },
+          "T4": {
+            "solved": 109,
+            "n": 188,
+            "by_family": {
+              "T4_and_elim_long": {
+                "solved": 15,
+                "n": 15
+              },
+              "T4_contra_efq_long": {
+                "solved": 12,
+                "n": 12
+              },
+              "T4_dne_mid_long": {
+                "solved": 11,
+                "n": 11
+              },
+              "T4_dne_multi": {
+                "solved": 12,
+                "n": 12
+              },
+              "T4_efq_detour": {
+                "solved": 5,
+                "n": 19
+              },
+              "T4_eq_trans_long": {
+                "solved": 0,
+                "n": 12
+              },
+              "T4_exists_intro_chain": {
+                "solved": 12,
+                "n": 12
+              },
+              "T4_forall_inst_chain": {
+                "solved": 0,
+                "n": 12
+              },
+              "T4_ind_inst_deep": {
+                "solved": 0,
+                "n": 12
+              },
+              "T4_long_distract": {
+                "solved": 8,
+                "n": 20
+              },
+              "T4_succ_cong_deep": {
+                "solved": 7,
+                "n": 12
+              },
+              "T4_theory_discrim": {
+                "solved": 12,
+                "n": 12
+              },
+              "T4_three_chain_and": {
+                "solved": 0,
+                "n": 12
+              },
+              "T4_two_chain_and": {
+                "solved": 15,
+                "n": 15
+              }
+            }
+          },
+          "T5": {
+            "solved": 49,
+            "n": 100,
+            "by_family": {
+              "T5_deep_distract": {
+                "solved": 16,
+                "n": 17
+              },
+              "T5_dne_efq_deep": {
+                "solved": 17,
+                "n": 17
+              },
+              "T5_eq_trans_deep": {
+                "solved": 0,
+                "n": 17
+              },
+              "T5_ind_then_chain": {
+                "solved": 0,
+                "n": 17
+              },
+              "T5_lemma_join_chain": {
+                "solved": 16,
+                "n": 16
+              },
+              "T5_three_lemma_mixed": {
+                "solved": 0,
+                "n": 16
+              }
+            }
+          }
+        }
+      },
+      "e7b36e0a": {
+        "composite": 70.0,
+        "fa": 0,
+        "tiers": {
+          "T1": {
+            "solved": 60,
+            "n": 60,
+            "by_family": {}
+          },
+          "T2": {
+            "solved": 60,
+            "n": 60,
+            "by_family": {}
+          },
+          "T3": {
+            "solved": 109,
+            "n": 110,
+            "by_family": {}
+          },
+          "T4": {
+            "solved": 113,
+            "n": 188,
+            "by_family": {
+              "T4_and_elim_long": {
+                "solved": 15,
+                "n": 15
+              },
+              "T4_contra_efq_long": {
+                "solved": 12,
+                "n": 12
+              },
+              "T4_dne_mid_long": {
+                "solved": 11,
+                "n": 11
+              },
+              "T4_dne_multi": {
+                "solved": 12,
+                "n": 12
+              },
+              "T4_efq_detour": {
+                "solved": 5,
+                "n": 19
+              },
+              "T4_eq_trans_long": {
+                "solved": 0,
+                "n": 12
+              },
+              "T4_exists_intro_chain": {
+                "solved": 12,
+                "n": 12
+              },
+              "T4_forall_inst_chain": {
+                "solved": 0,
+                "n": 12
+              },
+              "T4_ind_inst_deep": {
+                "solved": 0,
+                "n": 12
+              },
+              "T4_long_distract": {
+                "solved": 9,
+                "n": 20
+              },
+              "T4_succ_cong_deep": {
+                "solved": 10,
+                "n": 12
+              },
+              "T4_theory_discrim": {
+                "solved": 12,
+                "n": 12
+              },
+              "T4_three_chain_and": {
+                "solved": 0,
+                "n": 12
+              },
+              "T4_two_chain_and": {
+                "solved": 15,
+                "n": 15
+              }
+            }
+          },
+          "T5": {
+            "solved": 49,
+            "n": 100,
+            "by_family": {
+              "T5_deep_distract": {
+                "solved": 16,
+                "n": 17
+              },
+              "T5_dne_efq_deep": {
+                "solved": 17,
+                "n": 17
+              },
+              "T5_eq_trans_deep": {
+                "solved": 0,
+                "n": 17
+              },
+              "T5_ind_then_chain": {
+                "solved": 0,
+                "n": 17
+              },
+              "T5_lemma_join_chain": {
+                "solved": 16,
+                "n": 16
+              },
+              "T5_three_lemma_mixed": {
+                "solved": 0,
+                "n": 16
+              }
+            }
+          }
+        }
+      },
+      "e6eb1eee": {
+        "composite": 70.02,
+        "fa": 0,
+        "tiers": {
+          "T1": {
+            "solved": 60,
+            "n": 60,
+            "by_family": {}
+          },
+          "T2": {
+            "solved": 60,
+            "n": 60,
+            "by_family": {}
+          },
+          "T3": {
+            "solved": 110,
+            "n": 110,
+            "by_family": {}
+          },
+          "T4": {
+            "solved": 112,
+            "n": 188,
+            "by_family": {
+              "T4_and_elim_long": {
+                "solved": 15,
+                "n": 15
+              },
+              "T4_contra_efq_long": {
+                "solved": 12,
+                "n": 12
+              },
+              "T4_dne_mid_long": {
+                "solved": 11,
+                "n": 11
+              },
+              "T4_dne_multi": {
+                "solved": 12,
+                "n": 12
+              },
+              "T4_efq_detour": {
+                "solved": 4,
+                "n": 19
+              },
+              "T4_eq_trans_long": {
+                "solved": 0,
+                "n": 12
+              },
+              "T4_exists_intro_chain": {
+                "solved": 12,
+                "n": 12
+              },
+              "T4_forall_inst_chain": {
+                "solved": 0,
+                "n": 12
+              },
+              "T4_ind_inst_deep": {
+                "solved": 0,
+                "n": 12
+              },
+              "T4_long_distract": {
+                "solved": 9,
+                "n": 20
+              },
+              "T4_succ_cong_deep": {
+                "solved": 10,
+                "n": 12
+              },
+              "T4_theory_discrim": {
+                "solved": 12,
+                "n": 12
+              },
+              "T4_three_chain_and": {
+                "solved": 0,
+                "n": 12
+              },
+              "T4_two_chain_and": {
+                "solved": 15,
+                "n": 15
+              }
+            }
+          },
+          "T5": {
+            "solved": 49,
+            "n": 100,
+            "by_family": {
+              "T5_deep_distract": {
+                "solved": 16,
+                "n": 17
+              },
+              "T5_dne_efq_deep": {
+                "solved": 17,
+                "n": 17
+              },
+              "T5_eq_trans_deep": {
+                "solved": 0,
+                "n": 17
+              },
+              "T5_ind_then_chain": {
+                "solved": 0,
+                "n": 17
+              },
+              "T5_lemma_join_chain": {
+                "solved": 16,
+                "n": 16
+              },
+              "T5_three_lemma_mixed": {
+                "solved": 0,
+                "n": 16
+              }
+            }
+          }
+        }
+      }
+    },
+    "label": "EXPERIMENTAL / not FNR-000"
   },
   "hub_github": {
     "label": "EXPERIMENTAL / not FNR-000 \u2014 source of truth (t116u)",
