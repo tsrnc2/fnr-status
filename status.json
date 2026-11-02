@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-10-29 04:13:45 PDT (America/Los_Angeles)",
+  "last_updated_pt": "2026-11-01 20:44:48 PST (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -24,15 +24,15 @@
     "runtime_flag": "lanes/lineage-hub/ONE_LANE_POLICY.json"
   },
   "hub": {
-    "recommended_sha256": "3e1eceef31a9182b478e829a265f553b9c514aba72f2ac759b999f4a70ec31df",
-    "recommended_sha256_short": "3e1eceef31a9\u2026",
-    "last_publish_run_id": "e2b-lineage-t98u-g21",
-    "last_publish_pt": "2026-10-29 04:10:57 PDT",
+    "recommended_sha256": "ca14b6daad0743404af9e4eb2711c7f9881ad7446365d7da58d2ca7708bf3e20",
+    "recommended_sha256_short": "ca14b6daad07\u2026",
+    "last_publish_run_id": "e2b-lineage-t98u-g23",
+    "last_publish_pt": "2026-11-01 20:37:43 PST",
     "w_old": 0.65,
     "w_new": 0.35,
-    "observed_at_pt": "2026-10-29 04:10:57 PDT",
-    "observation_age_seconds": 168,
-    "observation_age_human": "2m",
+    "observed_at_pt": "2026-11-01 20:37:43 PST",
+    "observation_age_seconds": 424,
+    "observation_age_human": "7m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
   "latest_letter_metrics": null,
@@ -64,8 +64,8 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 29625,
-      "observation_age_human": "8h 13m",
+      "observation_age_seconds": 348288,
+      "observation_age_human": "4d",
       "label": "EXPERIMENTAL / not FNR-000"
     },
     "history": [
@@ -117,8 +117,8 @@
     ],
     "latest_DONE": null,
     "stale_probe_suppressed": "Ignored stale probe letter X16 (probe @ 2026-10-28 16:25 PDT); current letter is X21",
-    "instance_id_file": "i-02b0b9389e422227c",
-    "instance_id_file_observed_at_pt": "2026-10-29 03:24:46 PDT",
+    "instance_id_file": "i-01a8ff57018bf7951",
+    "instance_id_file_observed_at_pt": "2026-11-01 20:33:25 PST",
     "registry_burn_updated_pt": "2026-10-28 20:00 PDT",
     "data_note": "aws_burst.current is the only live letter claim in this snapshot. history / latest_DONE are completed letters and must not be read as current AWS status. Snapshot \u2260 live EC2 DescribeInstances.",
     "label": "EXPERIMENTAL / not FNR-000"
@@ -132,15 +132,15 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 29625,
-    "observation_age_human": "8h 13m"
+    "observation_age_seconds": 348288,
+    "observation_age_human": "4d"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-10-29 04:13:45 PDT (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-11-01 20:44:48 PST (America/Los_Angeles)",
     "hub_publish": {
-      "observed_at_pt": "2026-10-29 04:10:57 PDT",
-      "age_human": "2m",
-      "age_seconds": 168
+      "observed_at_pt": "2026-11-01 20:37:43 PST",
+      "age_human": "7m",
+      "age_seconds": 424
     },
     "latest_letter_metrics": {
       "letter": null,
@@ -151,13 +151,13 @@
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "8h 13m",
-      "age_seconds": 29625
+      "age_human": "4d",
+      "age_seconds": 348288
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "8h 13m",
-      "age_seconds": 29625
+      "age_human": "4d",
+      "age_seconds": 348288
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -693,6 +693,19 @@
         "t": "2026-10-29T04:11:40.295349",
         "run_id": "e2b-lineage-t98u-g21",
         "hub_sha": "3e1eceef31a9\u2026",
+        "composite": 87.23,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        },
+        "fa": 0
+      },
+      {
+        "t": "2026-11-01T20:42:50.965377",
+        "run_id": "e2b-lineage-t98u-g23",
+        "hub_sha": "ca14b6daad07\u2026",
         "composite": 87.23,
         "tiers": {
           "T1": 60,
@@ -2073,6 +2086,48 @@
         "hub_sha": "985a4067b74b"
       },
       {
+        "t": "2026-11-01T20:40:00-08:00",
+        "run_id": "t113u checker-v2 rebaseline",
+        "decision": "REBASELINE",
+        "composite": 87.23,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "3e1eceef31a9"
+      },
+      {
+        "t": "2026-11-01T20:28:12.565390-08:00",
+        "run_id": "aws-next-1793593612",
+        "decision": "REJECTED",
+        "composite": 85.59,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 103,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "3e1eceef31a9"
+      },
+      {
+        "t": "2026-11-01T20:30:35.928680-08:00",
+        "run_id": "aws-next-1793593700",
+        "decision": "REJECTED",
+        "composite": 85.86,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "3e1eceef31a9"
+      },
+      {
         "domains": {
           "logic.propositional": {
             "solved": 64,
@@ -2126,8 +2181,8 @@
           }
         },
         "domain_mean": 28.63,
-        "t": "2026-10-29T04:10:56.774277-07:00",
-        "run_id": "e2b-lineage-t98u-g21",
+        "t": "2026-11-01T20:37:42.803824-08:00",
+        "run_id": "e2b-lineage-t98u-g23",
         "decision": "FOLDED",
         "composite": 87.23,
         "solved": {
@@ -2137,7 +2192,7 @@
           "T4": 55
         },
         "fa": 0,
-        "hub_sha": "3e1eceef31a9"
+        "hub_sha": "ca14b6daad07"
       }
     ]
   }
