@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-11-01 21:03:52 PST (America/Los_Angeles)",
+  "last_updated_pt": "2026-11-01 21:37:42 PST (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -24,28 +24,66 @@
     "runtime_flag": "lanes/lineage-hub/ONE_LANE_POLICY.json"
   },
   "hub": {
-    "recommended_sha256": "821eb787dc510aca55abbd9afc8c23b14557ed97915c528810b867d29705f417",
-    "recommended_sha256_short": "821eb787dc51\u2026",
-    "last_publish_run_id": "e2b-lineage-t98u-g26",
-    "last_publish_pt": "2026-11-01 20:56:40 PST",
+    "recommended_sha256": "e7b36e0a3e2f9c1cb40e79f5e81a536454d811728e310fc2d2e1a015073407b9",
+    "recommended_sha256_short": "e7b36e0a3e2f\u2026",
+    "last_publish_run_id": "e2b-lineage-t98u-g29",
+    "last_publish_pt": "2026-11-01 21:30:14 PST",
     "w_old": 0.65,
     "w_new": 0.35,
-    "observed_at_pt": "2026-11-01 20:56:40 PST",
-    "observation_age_seconds": 432,
+    "observed_at_pt": "2026-11-01 21:30:14 PST",
+    "observation_age_seconds": 447,
     "observation_age_human": "7m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
-  "latest_letter_metrics": null,
-  "validation_accuracy": {
-    "letter": null,
-    "val_acc": null,
-    "val_acc_pct": null,
+  "latest_letter_metrics": {
+    "letter": "X25",
+    "hard_neural": "80/110",
+    "hard_solve_rate": 0.7272727272727273,
+    "avg_nodes": 33.24545454545454,
+    "false_accept": "0/613",
+    "false_accept_rate": 0.0,
+    "val_acc": 0.5993975903614458,
+    "val_acc_pct": "59.94%",
+    "train_acc": 0.6204471502046814,
+    "train_acc_pct": "62.04%",
+    "fnr_000_admission": false,
+    "label": "EXPERIMENTAL / not FNR-000",
     "producer_reported": true,
-    "observed_at_pt": null,
-    "observation_age_human": null,
+    "observed_at_pt": "2026-11-01 21:04:43 PST",
+    "observation_age_seconds": 1979,
+    "observation_age_human": "32m",
+    "artifact_dir": "v15_lineage_warm_x25"
+  },
+  "validation_accuracy": {
+    "letter": "X25",
+    "val_acc": 0.5993975903614458,
+    "val_acc_pct": "59.94%",
+    "producer_reported": true,
+    "observed_at_pt": "2026-11-01 21:04:43 PST",
+    "observation_age_human": "32m",
     "note": "From train_metrics final_val_acc on published letter artifacts"
   },
-  "recent_letters": [],
+  "recent_letters": [
+    {
+      "letter": "X25",
+      "hard_neural": "80/110",
+      "hard_solve_rate": 0.7272727272727273,
+      "avg_nodes": 33.24545454545454,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "val_acc": 0.5993975903614458,
+      "val_acc_pct": "59.94%",
+      "train_acc": 0.6204471502046814,
+      "train_acc_pct": "62.04%",
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "producer_reported": true,
+      "observed_at_pt": "2026-11-01 21:04:43 PST",
+      "observation_age_seconds": 1979,
+      "observation_age_human": "32m",
+      "artifact_dir": "v15_lineage_warm_x25"
+    }
+  ],
   "aws_burst": {
     "role": "optional_continue_only_burst_leq_1_ec2",
     "soft_cap": "\u22641 EC2",
@@ -64,7 +102,7 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 349432,
+      "observation_age_seconds": 351462,
       "observation_age_human": "4d 1h",
       "label": "EXPERIMENTAL / not FNR-000"
     },
@@ -113,12 +151,34 @@
         "monitor": "done",
         "source": "t90u_continue_until_credits",
         "observed_at_pt": "2026-10-28 20:00 PDT"
+      },
+      {
+        "letter": "X25",
+        "instance_id": "i-01a8ff57018bf7951",
+        "run_id": "v15-lineage-warm-20261027-x25",
+        "state": "done_receipt",
+        "hard_neural": "80/110",
+        "val_acc_pct": "59.94%",
+        "false_accept": "0/613",
+        "source": "DONE.json",
+        "observed_at_pt": "2026-11-01 21:04:45 PST"
       }
     ],
-    "latest_DONE": null,
+    "latest_DONE": {
+      "lane": "AWS-X",
+      "run": "v15-lineage-warm-20261027-x25",
+      "letter": "X25",
+      "finished_utc": "2026-11-02T05:04:43Z",
+      "instance_id": "i-01a8ff57018bf7951",
+      "label": "EXPERIMENTAL-not-FNR-000",
+      "observed_at_pt": "2026-11-01 21:04:45 PST",
+      "observation_age_seconds": 1977,
+      "observation_age_human": "32m",
+      "note": "Completed fold receipt \u2014 not the live AWS letter unless current.state says running"
+    },
     "stale_probe_suppressed": "Ignored stale probe letter X16 (probe @ 2026-10-28 16:25 PDT); current letter is X21",
-    "instance_id_file": "i-01a8ff57018bf7951",
-    "instance_id_file_observed_at_pt": "2026-11-01 20:49:18 PST",
+    "instance_id_file": "i-0430d6bba694ffad8",
+    "instance_id_file_observed_at_pt": "2026-11-01 21:06:59 PST",
     "registry_burn_updated_pt": "2026-10-28 20:00 PDT",
     "data_note": "aws_burst.current is the only live letter claim in this snapshot. history / latest_DONE are completed letters and must not be read as current AWS status. Snapshot \u2260 live EC2 DescribeInstances.",
     "label": "EXPERIMENTAL / not FNR-000"
@@ -132,32 +192,32 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 349432,
+    "observation_age_seconds": 351462,
     "observation_age_human": "4d 1h"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-11-01 21:03:52 PST (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-11-01 21:37:42 PST (America/Los_Angeles)",
     "hub_publish": {
-      "observed_at_pt": "2026-11-01 20:56:40 PST",
+      "observed_at_pt": "2026-11-01 21:30:14 PST",
       "age_human": "7m",
-      "age_seconds": 432
+      "age_seconds": 447
     },
     "latest_letter_metrics": {
-      "letter": null,
-      "observed_at_pt": null,
-      "age_human": null,
-      "age_seconds": null
+      "letter": "X25",
+      "observed_at_pt": "2026-11-01 21:04:43 PST",
+      "age_human": "32m",
+      "age_seconds": 1979
     },
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
       "age_human": "4d 1h",
-      "age_seconds": 349432
+      "age_seconds": 351462
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
       "age_human": "4d 1h",
-      "age_seconds": 349432
+      "age_seconds": 351462
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -724,6 +784,19 @@
           "T1": 60,
           "T2": 60,
           "T3": 110,
+          "T4": 55
+        },
+        "fa": 0
+      },
+      {
+        "t": "2026-11-01T21:35:29.483301",
+        "run_id": "e2b-lineage-t98u-g29",
+        "hub_sha": "e7b36e0a3e2f\u2026",
+        "composite": 87.23,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
           "T4": 55
         },
         "fa": 0
@@ -2301,7 +2374,201 @@
         },
         "fa": 0,
         "hub_sha": "821eb787dc51"
+      },
+      {
+        "t": "2026-11-01T21:05:14.627322-08:00",
+        "run_id": "e2b-lineage-t98u-g27",
+        "decision": "REJECTED",
+        "composite": 86.95,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 108,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "821eb787dc51"
+      },
+      {
+        "t": "2026-11-01T21:06:53.121714-08:00",
+        "run_id": "aws-next-1793595918",
+        "decision": "REJECTED",
+        "composite": 82.59,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 92,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "821eb787dc51"
+      },
+      {
+        "t": "2026-11-01T21:09:02.118842-08:00",
+        "run_id": "aws-next-1793596118",
+        "decision": "REJECTED",
+        "composite": 82.59,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 92,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "821eb787dc51"
+      },
+      {
+        "t": "2026-11-01T21:14:23.388566-08:00",
+        "run_id": "e2b-lineage-t98u-g28",
+        "decision": "REJECTED",
+        "composite": 86.95,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 108,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "821eb787dc51"
+      },
+      {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 0,
+            "n": 64,
+            "by_level": {
+              "easy": 0,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 14,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 8,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 28.63,
+        "t": "2026-11-01T21:30:13.338478-08:00",
+        "run_id": "e2b-lineage-t98u-g29",
+        "decision": "FOLDED",
+        "composite": 87.23,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        },
+        "fa": 0,
+        "hub_sha": "e7b36e0a3e2f"
       }
     ]
+  },
+  "budget": {
+    "label": "EXPERIMENTAL / not FNR-000 \u2014 budget & burn plan (t115u)",
+    "aws": {
+      "credit_remaining_usd": 195.33,
+      "credit_checked": null,
+      "instance_type": "m7i-flex.large",
+      "cost_per_hr_usd": 0.0958,
+      "burn_per_day_usd_1ec2": 2.3,
+      "reserve_usd": 10,
+      "run_cost_usd": 0.67,
+      "runway_days_at_1ec2": 80.6,
+      "parked": false,
+      "cap_ec2": 1
+    },
+    "e2b": {
+      "cap": 2,
+      "profile": {
+        "epochs": 40,
+        "lr": 0.001,
+        "lr_schedule": "cosine",
+        "warmup_frac": 0.05,
+        "min_lr_frac": 0.05,
+        "train_time_budget_s": 2400
+      },
+      "credit_remaining": "not visible via API"
+    },
+    "daytona": {
+      "cap": 2,
+      "profile": {
+        "epochs": 60,
+        "lr": 0.001,
+        "lr_schedule": "cosine",
+        "warmup_frac": 0.05,
+        "min_lr_frac": 0.05,
+        "train_time_budget_s": 6000,
+        "exec_timeout_s": 7200
+      },
+      "credit_remaining": "not visible via API"
+    },
+    "profiles": {
+      "aws": {
+        "instance_type": "m7i-flex.large",
+        "cost_per_hr_usd": 0.0958,
+        "epochs": 120,
+        "batch_size": 48,
+        "grad_accum": 2,
+        "lr": 0.001,
+        "lr_schedule": "cosine",
+        "warmup_frac": 0.05,
+        "min_lr_frac": 0.05,
+        "train_time_budget_s": 19800
+      },
+      "e2b": {
+        "epochs": 40,
+        "lr": 0.001,
+        "lr_schedule": "cosine",
+        "warmup_frac": 0.05,
+        "min_lr_frac": 0.05,
+        "train_time_budget_s": 2400
+      },
+      "daytona": {
+        "epochs": 60,
+        "lr": 0.001,
+        "lr_schedule": "cosine",
+        "warmup_frac": 0.05,
+        "min_lr_frac": 0.05,
+        "train_time_budget_s": 6000,
+        "exec_timeout_s": 7200
+      }
+    }
   }
 }

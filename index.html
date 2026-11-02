@@ -133,6 +133,11 @@
       <h3 style="font-size:1rem">Per-generation change vs previous</h3>
       <div style="max-height:320px;overflow-y:auto"><table id="gen_delta" style="width:100%;font-size:.85em"></table></div>
     </section>
+    <section class="card" style="margin-top:1rem" id="card-budget">
+      <h2>Budget &amp; burn plan <span style="font-size:.7em;color:var(--warn)">EXPERIMENTAL / not FNR-000</span></h2>
+      <table id="bud_tbl" style="width:100%;font-size:.85em"></table>
+      <div id="bud_note" style="font-size:.8em;color:var(--muted);margin-top:.4rem"></div>
+    </section>
     <section class="card" style="margin-top:1rem" id="card-domain">
       <h2>Areas of expertise — per-domain solve rate <span style="font-size:.7em;color:var(--warn)">EXPERIMENTAL / not FNR-000</span></h2>
       <div id="dom_meta" style="font-size:.85em;color:var(--muted)"></div>
@@ -202,6 +207,7 @@
       try {
         try{renderGen(d.eval_history||{});}catch(e){console.error(e)}
         try{renderDomains(d.eval_history||{}, d.domain_suite);}catch(e){console.error(e)}
+        try{renderBudget(d.budget||{});}catch(e){console.error(e)}
         const te = d.tiered_eval || {}; const tn = te.tiers || {};
         document.getElementById("tiered_meta").textContent = (te.label||"") + " · suite " + (te.suite_sha256_12||"—") +
           " · composite = 100×(0.1·T1+0.2·T2+0.3·T3+0.4·T4) · T4 tight budget";
@@ -404,6 +410,16 @@ function renderGen(eh){
   gens.forEach((p,i)=>{best=Math.max(best,p.composite);const q=gens[i-1];rows+=`<tr><td>${i}</td><td>${genLabel(p.run_id)}${p.reconstructed?" <i>(recon)</i>":""}</td><td><code>${p.hub_sha||"—"}</code></td><td>${p.solved.T4}/${N.T4}</td>${q?d(p.solved.T4,q.solved.T4):"<td>—</td>"}<td>${p.composite}</td>${q?d(p.composite,q.composite):"<td>—</td>"}<td>${best}</td></tr>`;});
   document.getElementById("gen_delta").innerHTML=rows;}
 
+function renderBudget(b){
+  const a=b.aws||{}, e=b.e2b||{}, y=b.daytona||{}, pr=x=>x?`${x.epochs} ep · ${x.lr_schedule||"const"} lr ${x.lr} · accum ${x.grad_accum||1} · budget ${Math.round((x.train_time_budget_s||0)/60)} min`:"—";
+  const rows=[["Provider","Cap","Run profile","Cost","Credit / runway"],
+    ["AWS ("+(a.instance_type||"?")+")",a.cap_ec2+" EC2",pr((b.profiles||{}).aws),`$${a.cost_per_hr_usd}/hr · ~$${a.run_cost_usd}/run · $${a.burn_per_day_usd_1ec2}/day`,
+     `$${a.credit_remaining} left (reserve $${a.reserve_usd}) · ~${a.runway_days_at_1ec2} days`+(a.parked?" · PARKED (budget guard)":"")],
+    ["E2B",e.cap+" sandboxes",pr(e.profile),"free tier (1 h cap)",e.credit_remaining],
+    ["Daytona",y.cap+" sandboxes",pr(y.profile),"free credits",y.credit_remaining]];
+  document.getElementById("bud_tbl").innerHTML=rows.map((r,i)=>"<tr>"+r.map(c=>i?`<td>${c}</td>`:`<th style="text-align:left">${c}</th>`).join("")+"</tr>").join("");
+  document.getElementById("bud_note").textContent="Guard: AWS launches only when remaining free-plan credit − reserve ≥ one run's projected cost (checked "+(a.credit_checked||"at next launch")+"). Free plan allows only free-tier-eligible instance types.";
+}
 function renderDomains(eh, ds){
   ds=ds||{}; const pts=(eh.points||[]).filter(p=>p.domains&&p.decision!=="REJECTED").sort((a,b)=>a.t.slice(0,19)<b.t.slice(0,19)?-1:1);
   document.getElementById("dom_meta").textContent=`Frozen, seeded, checker-verified domain suites (suite ${ds.suite_sha256_12||"—"}), easy→very_hard, never in training. ${pts.length} hub generations scored.`;
