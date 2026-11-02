@@ -148,6 +148,11 @@
       <h3 style="font-size:1rem">Per-generation change vs previous</h3>
       <div style="max-height:320px;overflow-y:auto"><table id="gen_delta" style="width:100%;font-size:.85em"></table></div>
     </section>
+    <section class="card" style="margin-top:1rem" id="card-checker">
+      <h2>Checker health <span style="font-size:.7em;color:var(--warn)">EXPERIMENTAL / not FNR-000</span></h2>
+      <table id="chk_tbl" style="width:100%;font-size:.85em"></table>
+      <div id="chk_note" style="font-size:.8em;color:var(--muted);margin-top:.4rem"></div>
+    </section>
     <section class="card" style="margin-top:1rem" id="card-budget">
       <h2>Budget &amp; burn plan <span style="font-size:.7em;color:var(--warn)">EXPERIMENTAL / not FNR-000</span></h2>
       <table id="bud_tbl" style="width:100%;font-size:.85em"></table>
@@ -230,6 +235,7 @@
         try{renderT5(d.suite_t120u||{});}catch(e){console.error(e)}
         try{renderDomains(d.eval_history||{}, d.domain_suite);}catch(e){console.error(e)}
         try{renderBudget(d.budget||{});}catch(e){console.error(e)}
+        try{renderChecker(d.checker_health||{});}catch(e){console.error(e)}
         const te = d.tiered_eval || {}; const tn = te.tiers || {};
         document.getElementById("tiered_meta").textContent = (te.label||"") + " · suite " + (te.suite_sha256_12||"—") +
           " · composite = 100×(0.1·T1+0.2·T2+0.3·T3+0.4·T4) · T4 tight budget";
@@ -433,6 +439,23 @@ function renderGen(eh){
   gens.forEach((p,i)=>{best=Math.max(best,p.composite);const q=gens[i-1];rows+=`<tr><td>${i}</td><td>${genLabel(p.run_id)}${p.reconstructed?" <i>(recon)</i>":""}</td><td><code>${p.hub_sha||"—"}</code></td><td>${p.solved.T4}/${N.T4}</td>${q?d(p.solved.T4,q.solved.T4):"<td>—</td>"}<td>${p.composite}</td>${q?d(p.composite,q.composite):"<td>—</td>"}<td>${best}</td></tr>`;});
   document.getElementById("gen_delta").innerHTML=rows;}
 
+function renderChecker(c){
+  const esc=x=>String(x==null?"—":x).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+  const f=c.findings||{}, la=c.last_alert;
+  const rows=[["Tests passed",esc(c.tests_passed)+(c.tests_failed?` (<b style="color:var(--bad,#c33)">${esc(c.tests_failed)} failed</b>)`:"")],
+    ["Fuzz hours",esc(c.fuzz_hours)],["Cases run",c.cases_run!=null?Number(c.cases_run).toLocaleString():"—"],
+    ["Kernel accepts re-checked (ref checker + model oracle)",c.kernel_accepts_checked!=null?Number(c.kernel_accepts_checked).toLocaleString():"—"],
+    ["Bugs found / fixed",esc(c.bugs_found)+" / "+esc(c.bugs_fixed)],
+    ["Open soundness findings",c.soundness_findings_open?`<b style="color:#c33">${esc(c.soundness_findings_open)}</b>`:"0"],
+    ["Folding",c.fold_paused?'<b style="color:#c33">PAUSED (checker alert)</b>':"normal"],
+    ["Last alert",la?esc(la.t+" · "+la.kind+(la.soundness?" (soundness)":"")):"none"],
+    ["Training/eval re-verification",esc(c.reverify)],
+    ["Data no-shortcut scan (consistent premises, no EFQ, no distractor shortcut)",c.data_no_shortcut?(c.data_no_shortcut.failing?`<b style="color:#c33">${esc(c.data_no_shortcut.failing)} failing</b> / ${esc(c.data_no_shortcut.rows)}`:`0 failing / ${esc(c.data_no_shortcut.rows)} rows`):"—"],
+    ["Other findings",esc(Object.entries(f).map(([k,v])=>k+" "+v).join(", ")||"none")],
+    ["Heartbeat",esc(c.heartbeat)]];
+  document.getElementById("chk_tbl").innerHTML=rows.map(r=>`<tr><th style="text-align:left;width:45%">${r[0]}</th><td>${r[1]}</td></tr>`).join("");
+  document.getElementById("chk_note").textContent="Kernel v2.1 vs an independent reference checker and a finite-model soundness oracle, on random valid proofs, near-miss mutants, red-team climbs and hostile inputs. A new soundness finding pauses folding until fixed.";
+}
 function renderBudget(b){
   const a=b.aws||{}, e=b.e2b||{}, y=b.daytona||{}, pr=x=>x?`${x.epochs} ep · ${x.lr_schedule||"const"} lr ${x.lr} · accum ${x.grad_accum||1} · budget ${Math.round((x.train_time_budget_s||0)/60)} min`:"—";
   const rows=[["Provider","Cap","Run profile","Cost","Credit / runway"],

@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-11-02 02:18:36 PST (America/Los_Angeles)",
+  "last_updated_pt": "2026-11-02 07:02:40 PST (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -24,28 +24,66 @@
     "runtime_flag": "lanes/lineage-hub/ONE_LANE_POLICY.json"
   },
   "hub": {
-    "recommended_sha256": "1da47c64fbcedfb4660ddbdb7e565e127c69bed3fbb9817b6a23c0c31cd543f3",
-    "recommended_sha256_short": "1da47c64fbce\u2026",
-    "last_publish_run_id": "e2b-lineage-t98u-g41",
-    "last_publish_pt": "2026-11-02 02:12:21 PST",
+    "recommended_sha256": "4f9db917ec4e2acaac8b8d942fc5d4d5e7378603e04ae348369adfbe77aafd62",
+    "recommended_sha256_short": "4f9db917ec4e\u2026",
+    "last_publish_run_id": "e2b-lineage-t98u-g51",
+    "last_publish_pt": "2026-11-02 06:58:16 PST",
     "w_old": 0.65,
     "w_new": 0.35,
-    "observed_at_pt": "2026-11-02 02:12:21 PST",
-    "observation_age_seconds": 374,
-    "observation_age_human": "6m",
+    "observed_at_pt": "2026-11-02 06:58:16 PST",
+    "observation_age_seconds": 263,
+    "observation_age_human": "4m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
-  "latest_letter_metrics": null,
-  "validation_accuracy": {
-    "letter": null,
-    "val_acc": null,
-    "val_acc_pct": null,
+  "latest_letter_metrics": {
+    "letter": "X37",
+    "hard_neural": "91/110",
+    "hard_solve_rate": 0.8272727272727273,
+    "avg_nodes": 30.945454545454545,
+    "false_accept": "0/613",
+    "false_accept_rate": 0.0,
+    "val_acc": 0.5963855421686747,
+    "val_acc_pct": "59.64%",
+    "train_acc": 0.6172199702396224,
+    "train_acc_pct": "61.72%",
+    "fnr_000_admission": false,
+    "label": "EXPERIMENTAL / not FNR-000",
     "producer_reported": true,
-    "observed_at_pt": null,
-    "observation_age_human": null,
+    "observed_at_pt": "2026-11-02 06:59:01 PST",
+    "observation_age_seconds": 219,
+    "observation_age_human": "3m",
+    "artifact_dir": "v15_lineage_warm_x37"
+  },
+  "validation_accuracy": {
+    "letter": "X37",
+    "val_acc": 0.5963855421686747,
+    "val_acc_pct": "59.64%",
+    "producer_reported": true,
+    "observed_at_pt": "2026-11-02 06:59:01 PST",
+    "observation_age_human": "3m",
     "note": "From train_metrics final_val_acc on published letter artifacts"
   },
-  "recent_letters": [],
+  "recent_letters": [
+    {
+      "letter": "X37",
+      "hard_neural": "91/110",
+      "hard_solve_rate": 0.8272727272727273,
+      "avg_nodes": 30.945454545454545,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "val_acc": 0.5963855421686747,
+      "val_acc_pct": "59.64%",
+      "train_acc": 0.6172199702396224,
+      "train_acc_pct": "61.72%",
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "producer_reported": true,
+      "observed_at_pt": "2026-11-02 06:59:01 PST",
+      "observation_age_seconds": 219,
+      "observation_age_human": "3m",
+      "artifact_dir": "v15_lineage_warm_x37"
+    }
+  ],
   "aws_burst": {
     "role": "optional_continue_only_burst_leq_1_ec2",
     "soft_cap": "\u22641 EC2",
@@ -64,8 +102,8 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 368316,
-      "observation_age_human": "4d 6h",
+      "observation_age_seconds": 385360,
+      "observation_age_human": "4d 11h",
       "label": "EXPERIMENTAL / not FNR-000"
     },
     "history": [
@@ -113,12 +151,34 @@
         "monitor": "done",
         "source": "t90u_continue_until_credits",
         "observed_at_pt": "2026-10-28 20:00 PDT"
+      },
+      {
+        "letter": "X37",
+        "instance_id": "i-00a2a4fee455f6260",
+        "run_id": "v15-lineage-warm-20261027-x37",
+        "state": "done_receipt",
+        "hard_neural": "91/110",
+        "val_acc_pct": "59.64%",
+        "false_accept": "0/613",
+        "source": "DONE.json",
+        "observed_at_pt": "2026-11-02 06:59:04 PST"
       }
     ],
-    "latest_DONE": null,
+    "latest_DONE": {
+      "lane": "AWS-X",
+      "run": "v15-lineage-warm-20261027-x37",
+      "letter": "X37",
+      "finished_utc": "2026-11-02T14:59:02Z",
+      "instance_id": "i-00a2a4fee455f6260",
+      "label": "EXPERIMENTAL-not-FNR-000",
+      "observed_at_pt": "2026-11-02 06:59:04 PST",
+      "observation_age_seconds": 216,
+      "observation_age_human": "3m",
+      "note": "Completed fold receipt \u2014 not the live AWS letter unless current.state says running"
+    },
     "stale_probe_suppressed": "Ignored stale probe letter X16 (probe @ 2026-10-28 16:25 PDT); current letter is X21",
-    "instance_id_file": "i-0c60422a6612461ea",
-    "instance_id_file_observed_at_pt": "2026-11-02 01:55:35 PST",
+    "instance_id_file": "i-00a2a4fee455f6260",
+    "instance_id_file_observed_at_pt": "2026-11-02 06:36:24 PST",
     "registry_burn_updated_pt": "2026-10-28 20:00 PDT",
     "data_note": "aws_burst.current is the only live letter claim in this snapshot. history / latest_DONE are completed letters and must not be read as current AWS status. Snapshot \u2260 live EC2 DescribeInstances.",
     "label": "EXPERIMENTAL / not FNR-000"
@@ -132,32 +192,32 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 368316,
-    "observation_age_human": "4d 6h"
+    "observation_age_seconds": 385360,
+    "observation_age_human": "4d 11h"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-11-02 02:18:36 PST (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-11-02 07:02:40 PST (America/Los_Angeles)",
     "hub_publish": {
-      "observed_at_pt": "2026-11-02 02:12:21 PST",
-      "age_human": "6m",
-      "age_seconds": 374
+      "observed_at_pt": "2026-11-02 06:58:16 PST",
+      "age_human": "4m",
+      "age_seconds": 263
     },
     "latest_letter_metrics": {
-      "letter": null,
-      "observed_at_pt": null,
-      "age_human": null,
-      "age_seconds": null
+      "letter": "X37",
+      "observed_at_pt": "2026-11-02 06:59:01 PST",
+      "age_human": "3m",
+      "age_seconds": 219
     },
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "4d 6h",
-      "age_seconds": 368316
+      "age_human": "4d 11h",
+      "age_seconds": 385360
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "4d 6h",
-      "age_seconds": 368316
+      "age_human": "4d 11h",
+      "age_seconds": 385360
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -895,6 +955,20 @@
           "T3": 107,
           "T4": 119,
           "T5": 51
+        },
+        "fa": 0
+      },
+      {
+        "t": "2026-11-02T06:59:36.498074",
+        "run_id": "e2b-lineage-t98u-g51",
+        "hub_sha": "4f9db917ec4e\u2026",
+        "composite": 70.03,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 121,
+          "T5": 47
         },
         "fa": 0
       }
@@ -3487,6 +3561,374 @@
         },
         "fa": 0,
         "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T02:21:55.189459-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-093200",
+        "decision": "REJECTED",
+        "composite": 69.03,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 107,
+          "T4": 107,
+          "T5": 50
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T02:25:25.707323-08:00",
+        "run_id": "aws-next-1793614859",
+        "decision": "REJECTED",
+        "composite": 69.06,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 115,
+          "T5": 48
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T02:36:45.155946-08:00",
+        "run_id": "e2b-lineage-t98u-g42",
+        "decision": "REJECTED",
+        "composite": 69.93,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 116,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T02:46:43.039321-08:00",
+        "run_id": "e2b-lineage-t98u-g43",
+        "decision": "REJECTED",
+        "composite": 69.74,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 103,
+          "T4": 116,
+          "T5": 50
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T05:27:50.146489-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-100838",
+        "decision": "REJECTED",
+        "composite": 66.69,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 95,
+          "T4": 106,
+          "T5": 50
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T05:30:33.010072-08:00",
+        "run_id": "aws-next-1793626085",
+        "decision": "REJECTED",
+        "composite": 70.28,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 116,
+          "T5": 50
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T05:34:25.116108-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-104515",
+        "decision": "REJECTED",
+        "composite": 67.7,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 102,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T05:36:33.346040-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-112223",
+        "decision": "REJECTED",
+        "composite": 67.8,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 102,
+          "T4": 105,
+          "T5": 50
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T05:38:47.473655-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-120031",
+        "decision": "REJECTED",
+        "composite": 68.02,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 104,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T05:42:18.081929-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-123808",
+        "decision": "REJECTED",
+        "composite": 68.21,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 103,
+          "T5": 50
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T05:45:52.447661-08:00",
+        "run_id": "aws-next-1793626331",
+        "decision": "REJECTED",
+        "composite": 70.28,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 116,
+          "T5": 50
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T06:01:12.324129-08:00",
+        "run_id": "e2b-lineage-t98u-g46",
+        "decision": "REJECTED",
+        "composite": 69.91,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 105,
+          "T4": 117,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T06:04:37.065565-08:00",
+        "run_id": "aws-next-1793628061",
+        "decision": "REJECTED",
+        "composite": 69.56,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 102,
+          "T4": 116,
+          "T5": 50
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T06:09:04.356008-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-132547",
+        "decision": "REJECTED",
+        "composite": 68.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 107,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T06:12:19.145430-08:00",
+        "run_id": "e2b-lineage-t98u-g47",
+        "decision": "REJECTED",
+        "composite": 69.92,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 116,
+          "T5": 50
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T06:17:50.219621-08:00",
+        "run_id": "e2b-lineage-t98u-g48",
+        "decision": "REJECTED",
+        "composite": 69.96,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 107,
+          "T4": 115,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T06:32:28.117358-08:00",
+        "run_id": "aws-next-1793629808",
+        "decision": "REJECTED",
+        "composite": 69.62,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 105,
+          "T4": 113,
+          "T5": 50
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T06:36:10.774661-08:00",
+        "run_id": "e2b-lineage-t98u-g49",
+        "decision": "REJECTED",
+        "composite": 69.42,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 103,
+          "T4": 114,
+          "T5": 50
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T06:39:43.134053-08:00",
+        "run_id": "e2b-lineage-t98u-g50",
+        "decision": "REJECTED",
+        "composite": 69.27,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 105,
+          "T4": 113,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "t": "2026-11-02T06:55:02.747410-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-140255",
+        "decision": "REJECTED",
+        "composite": 68.02,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 104,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "1da47c64fbce"
+      },
+      {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 30,
+            "n": 64,
+            "by_level": {
+              "easy": 15,
+              "medium": 15,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 18,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 11,
+              "hard": 1,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 39.64,
+        "t": "2026-11-02T06:58:15.010803-08:00",
+        "run_id": "e2b-lineage-t98u-g51",
+        "decision": "FOLDED",
+        "composite": 70.03,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 121,
+          "T5": 47
+        },
+        "fa": 0,
+        "hub_sha": "4f9db917ec4e"
       }
     ]
   },
@@ -3494,7 +3936,7 @@
     "label": "EXPERIMENTAL / not FNR-000 \u2014 budget & burn plan (t115u)",
     "aws": {
       "credit_remaining_usd": 195.33,
-      "credit_checked": "2026-11-02T01:55:24.667368-08:00",
+      "credit_checked": "2026-11-02T06:36:15.586449-08:00",
       "instance_type": "m7i-flex.large",
       "cost_per_hr_usd": 0.0958,
       "burn_per_day_usd_1ec2": 2.3,
@@ -3575,6 +4017,33 @@
         "early_stop_min_delta": 0.005
       }
     }
+  },
+  "checker_health": {
+    "label": "EXPERIMENTAL / not FNR-000 \u2014 checker v2.1 continuous testing (t132u)",
+    "tests_passed": 106,
+    "tests_failed": 0,
+    "reverify": "{\"rows\": 7371, \"new_accept\": 7371, \"old_accept\": 7371} changed: 0 crashes: 0",
+    "fuzz_hours": 1.287,
+    "cases_run": 4861807,
+    "kernel_accepts_checked": 1607660,
+    "findings": {
+      "SLOW": 2,
+      "KERNEL_REJECT_REF_ACCEPT": 135
+    },
+    "soundness_findings_open": 0,
+    "fold_paused": false,
+    "alert_open": false,
+    "last_alert": {
+      "t": "2026-11-02T05:46:46-08:00",
+      "kind": "SLOW",
+      "sig": "3642c8c76e93d58f",
+      "source": "hostile",
+      "soundness": false
+    },
+    "bugs_found": 3,
+    "bugs_fixed": 2,
+    "heartbeat": "2026-11-02T06:48:43-08:00",
+    "updated": "2026-11-02T07:02:14-08:00"
   },
   "training_quality": {
     "label": "EXPERIMENTAL / not FNR-000 \u2014 training quality (t122u)",
@@ -4515,6 +4984,489 @@
           "T5": 51
         },
         "useful_pct": 100.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-093200",
+        "t": "2026-11-02T02:21:55.189459-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 68.59,
+        "preview": 69.03,
+        "hub": 71.29,
+        "delta_vs_hub": -2.26,
+        "folded": false,
+        "why": "preview composite 69.03 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 107,
+          "T4": 107,
+          "T5": 50
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "aws",
+        "run_id": "aws-next-1793614859",
+        "t": "2026-11-02T02:25:25.707323-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": 0.85,
+        "usd_est": 0.08,
+        "candidate": 67.8,
+        "preview": 69.06,
+        "hub": 71.29,
+        "delta_vs_hub": -2.23,
+        "folded": false,
+        "why": "preview composite 69.06 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 115,
+          "T5": 48
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g42",
+        "t": "2026-11-02T02:36:45.155946-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 68.26,
+        "preview": 69.93,
+        "hub": 71.29,
+        "delta_vs_hub": -1.36,
+        "folded": false,
+        "why": "preview composite 69.93 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 116,
+          "T5": 49
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g43",
+        "t": "2026-11-02T02:46:43.039321-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 67.85,
+        "preview": 69.74,
+        "hub": 71.29,
+        "delta_vs_hub": -1.55,
+        "folded": false,
+        "why": "preview composite 69.74 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 103,
+          "T4": 116,
+          "T5": 50
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-100838",
+        "t": "2026-11-02T05:27:50.146489-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 66.34,
+        "preview": 66.69,
+        "hub": 71.29,
+        "delta_vs_hub": -4.6,
+        "folded": false,
+        "why": "preview T3 95 < floor 100",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 95,
+          "T4": 106,
+          "T5": 50
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "aws",
+        "run_id": "aws-next-1793626085",
+        "t": "2026-11-02T05:30:33.010072-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": 0.85,
+        "usd_est": 0.08,
+        "candidate": 67.78,
+        "preview": 70.28,
+        "hub": 71.29,
+        "delta_vs_hub": -1.01,
+        "folded": false,
+        "why": "preview composite 70.28 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 116,
+          "T5": 50
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-104515",
+        "t": "2026-11-02T05:34:25.116108-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 67.47,
+        "preview": 67.7,
+        "hub": 71.29,
+        "delta_vs_hub": -3.59,
+        "folded": false,
+        "why": "preview composite 67.7 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 102,
+          "T5": 49
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-112223",
+        "t": "2026-11-02T05:36:33.346040-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 68.27,
+        "preview": 67.8,
+        "hub": 71.29,
+        "delta_vs_hub": -3.49,
+        "folded": false,
+        "why": "preview composite 67.8 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 102,
+          "T4": 105,
+          "T5": 50
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-120031",
+        "t": "2026-11-02T05:38:47.473655-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 69.68,
+        "preview": 68.02,
+        "hub": 71.29,
+        "delta_vs_hub": -3.27,
+        "folded": false,
+        "why": "preview composite 68.02 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 104,
+          "T5": 49
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-123808",
+        "t": "2026-11-02T05:42:18.081929-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 68.27,
+        "preview": 68.21,
+        "hub": 71.29,
+        "delta_vs_hub": -3.08,
+        "folded": false,
+        "why": "preview composite 68.21 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 103,
+          "T5": 50
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "aws",
+        "run_id": "aws-next-1793626331",
+        "t": "2026-11-02T05:45:52.447661-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": 0.85,
+        "usd_est": 0.08,
+        "candidate": 67.78,
+        "preview": 70.28,
+        "hub": 71.29,
+        "delta_vs_hub": -1.01,
+        "folded": false,
+        "why": "preview composite 70.28 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 116,
+          "T5": 50
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g46",
+        "t": "2026-11-02T06:01:12.324129-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 67.97,
+        "preview": 69.91,
+        "hub": 71.29,
+        "delta_vs_hub": -1.38,
+        "folded": false,
+        "why": "preview composite 69.91 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 105,
+          "T4": 117,
+          "T5": 49
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "aws",
+        "run_id": "aws-next-1793628061",
+        "t": "2026-11-02T06:04:37.065565-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": 0.85,
+        "usd_est": 0.08,
+        "candidate": 67.94,
+        "preview": 69.56,
+        "hub": 71.29,
+        "delta_vs_hub": -1.73,
+        "folded": false,
+        "why": "preview composite 69.56 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 102,
+          "T4": 116,
+          "T5": 50
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-132547",
+        "t": "2026-11-02T06:09:04.356008-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 69.22,
+        "preview": 68.5,
+        "hub": 71.29,
+        "delta_vs_hub": -2.79,
+        "folded": false,
+        "why": "preview composite 68.5 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 107,
+          "T5": 49
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g47",
+        "t": "2026-11-02T06:12:19.145430-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 67.66,
+        "preview": 69.92,
+        "hub": 71.29,
+        "delta_vs_hub": -1.37,
+        "folded": false,
+        "why": "preview composite 69.92 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 116,
+          "T5": 50
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g48",
+        "t": "2026-11-02T06:17:50.219621-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 67.96,
+        "preview": 69.96,
+        "hub": 71.29,
+        "delta_vs_hub": -1.33,
+        "folded": false,
+        "why": "preview composite 69.96 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 107,
+          "T4": 115,
+          "T5": 49
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "aws",
+        "run_id": "aws-next-1793629808",
+        "t": "2026-11-02T06:32:28.117358-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": 0.85,
+        "usd_est": 0.08,
+        "candidate": 67.65,
+        "preview": 69.62,
+        "hub": 71.29,
+        "delta_vs_hub": -1.67,
+        "folded": false,
+        "why": "preview composite 69.62 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 105,
+          "T4": 113,
+          "T5": 50
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g49",
+        "t": "2026-11-02T06:36:10.774661-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 66.51,
+        "preview": 69.42,
+        "hub": 71.29,
+        "delta_vs_hub": -1.87,
+        "folded": false,
+        "why": "preview composite 69.42 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 103,
+          "T4": 114,
+          "T5": 50
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g50",
+        "t": "2026-11-02T06:39:43.134053-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 67.61,
+        "preview": 69.27,
+        "hub": 71.29,
+        "delta_vs_hub": -2.02,
+        "folded": false,
+        "why": "preview composite 69.27 < hub 71.29 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 105,
+          "T4": 113,
+          "T5": 49
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-140255",
+        "t": "2026-11-02T06:55:02.747410-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 69.0,
+        "preview": 68.02,
+        "hub": 70.4,
+        "delta_vs_hub": -2.38,
+        "folded": false,
+        "why": "preview composite 68.02 < hub 70.4 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 104,
+          "T5": 49
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g51",
+        "t": "2026-11-02T06:58:15.010803-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 68.89,
+        "preview": 70.03,
+        "hub": 70.4,
+        "delta_vs_hub": -0.37,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 121,
+          "T5": 47
+        },
+        "useful_pct": 37.5
       }
     ],
     "hub_progress": [
@@ -5312,51 +6264,69 @@
         "n_T4": 188,
         "delta_first": 1.93,
         "best_so_far": 71.29
+      },
+      {
+        "t": "2026-11-02T06:58:15.010803-08:00",
+        "run_id": "e2b-lineage-t98u-g51",
+        "hub_sha": "4f9db917ec4e",
+        "suite": "12c4c4f0",
+        "composite": 70.03,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 121,
+          "T5": 47
+        },
+        "kind": "FOLDED",
+        "n_T4": 188,
+        "delta_first": 0.67,
+        "best_so_far": 71.29
       }
     ],
     "waste": {
       "overall": {
-        "useful_compute_pct": 50.6,
-        "runs": 42,
-        "wasted_runs": 20,
-        "pct_runs": 47.6,
-        "hours": 26.13,
-        "wasted_hours": 12.92,
-        "pct_hours": 49.4,
-        "usd": 0.64,
-        "wasted_usd": 0.4,
-        "pct_usd": 62.5
+        "useful_compute_pct": 37.7,
+        "runs": 63,
+        "wasted_runs": 40,
+        "pct_runs": 63.5,
+        "hours": 35.72,
+        "wasted_hours": 21.83,
+        "pct_hours": 61.1,
+        "usd": 1.04,
+        "wasted_usd": 0.8,
+        "pct_usd": 76.9
       },
       "by_provider": {
         "e2b": {
-          "useful_compute_pct": 55.2,
-          "runs": 29,
-          "wasted_runs": 13,
-          "pct_runs": 44.8,
-          "hours": 19.33,
-          "wasted_hours": 8.67,
-          "pct_hours": 44.8,
+          "useful_compute_pct": 44.3,
+          "runs": 37,
+          "wasted_runs": 20,
+          "pct_runs": 54.1,
+          "hours": 24.67,
+          "wasted_hours": 13.33,
+          "pct_hours": 54.1,
           "usd": 0,
           "wasted_usd": 0,
           "pct_usd": null
         },
         "aws": {
-          "useful_compute_pct": 37.5,
-          "runs": 8,
-          "wasted_runs": 5,
-          "pct_runs": 62.5,
-          "hours": 6.8,
-          "wasted_hours": 4.25,
-          "pct_hours": 62.5,
-          "usd": 0.64,
-          "wasted_usd": 0.4,
-          "pct_usd": 62.5
+          "useful_compute_pct": 23.1,
+          "runs": 13,
+          "wasted_runs": 10,
+          "pct_runs": 76.9,
+          "hours": 11.05,
+          "wasted_hours": 8.5,
+          "pct_hours": 76.9,
+          "usd": 1.04,
+          "wasted_usd": 0.8,
+          "pct_usd": 76.9
         },
         "waypoint": {
-          "useful_compute_pct": 60.0,
-          "runs": 5,
-          "wasted_runs": 2,
-          "pct_runs": 40.0,
+          "useful_compute_pct": 23.1,
+          "runs": 13,
+          "wasted_runs": 10,
+          "pct_runs": 76.9,
           "hours": 0,
           "wasted_hours": 0,
           "pct_hours": null,
@@ -5659,6 +6629,153 @@
           "pct_runs_rolling10": 20.0,
           "pct_runs_cum": 47.6,
           "useful_compute_pct_rolling10": 88.7
+        },
+        {
+          "t": "2026-11-02T02:21:55.189459-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-093200",
+          "pct_runs_rolling10": 30.0,
+          "pct_runs_cum": 48.8,
+          "useful_compute_pct_rolling10": 86.8
+        },
+        {
+          "t": "2026-11-02T02:25:25.707323-08:00",
+          "run_id": "aws-next-1793614859",
+          "pct_runs_rolling10": 40.0,
+          "pct_runs_cum": 50.0,
+          "useful_compute_pct_rolling10": 70.9
+        },
+        {
+          "t": "2026-11-02T02:36:45.155946-08:00",
+          "run_id": "e2b-lineage-t98u-g42",
+          "pct_runs_rolling10": 50.0,
+          "pct_runs_cum": 51.1,
+          "useful_compute_pct_rolling10": 58.1
+        },
+        {
+          "t": "2026-11-02T02:46:43.039321-08:00",
+          "run_id": "e2b-lineage-t98u-g43",
+          "pct_runs_rolling10": 50.0,
+          "pct_runs_cum": 52.2,
+          "useful_compute_pct_rolling10": 51.6
+        },
+        {
+          "t": "2026-11-02T05:27:50.146489-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-100838",
+          "pct_runs_rolling10": 60.0,
+          "pct_runs_cum": 53.2,
+          "useful_compute_pct_rolling10": 43.4
+        },
+        {
+          "t": "2026-11-02T05:30:33.010072-08:00",
+          "run_id": "aws-next-1793626085",
+          "pct_runs_rolling10": 60.0,
+          "pct_runs_cum": 54.2,
+          "useful_compute_pct_rolling10": 41.9
+        },
+        {
+          "t": "2026-11-02T05:34:25.116108-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-104515",
+          "pct_runs_rolling10": 70.0,
+          "pct_runs_cum": 55.1,
+          "useful_compute_pct_rolling10": 41.9
+        },
+        {
+          "t": "2026-11-02T05:36:33.346040-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-112223",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 56.0,
+          "useful_compute_pct_rolling10": 30.5
+        },
+        {
+          "t": "2026-11-02T05:38:47.473655-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-120031",
+          "pct_runs_rolling10": 90.0,
+          "pct_runs_cum": 56.9,
+          "useful_compute_pct_rolling10": 18.0
+        },
+        {
+          "t": "2026-11-02T05:42:18.081929-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-123808",
+          "pct_runs_rolling10": 100.0,
+          "pct_runs_cum": 57.7,
+          "useful_compute_pct_rolling10": 0.0
+        },
+        {
+          "t": "2026-11-02T05:45:52.447661-08:00",
+          "run_id": "aws-next-1793626331",
+          "pct_runs_rolling10": 100.0,
+          "pct_runs_cum": 58.5,
+          "useful_compute_pct_rolling10": 0.0
+        },
+        {
+          "t": "2026-11-02T06:01:12.324129-08:00",
+          "run_id": "e2b-lineage-t98u-g46",
+          "pct_runs_rolling10": 100.0,
+          "pct_runs_cum": 59.3,
+          "useful_compute_pct_rolling10": 0.0
+        },
+        {
+          "t": "2026-11-02T06:04:37.065565-08:00",
+          "run_id": "aws-next-1793628061",
+          "pct_runs_rolling10": 100.0,
+          "pct_runs_cum": 60.0,
+          "useful_compute_pct_rolling10": 0.0
+        },
+        {
+          "t": "2026-11-02T06:09:04.356008-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-132547",
+          "pct_runs_rolling10": 100.0,
+          "pct_runs_cum": 60.7,
+          "useful_compute_pct_rolling10": 0.0
+        },
+        {
+          "t": "2026-11-02T06:12:19.145430-08:00",
+          "run_id": "e2b-lineage-t98u-g47",
+          "pct_runs_rolling10": 100.0,
+          "pct_runs_cum": 61.4,
+          "useful_compute_pct_rolling10": 0.0
+        },
+        {
+          "t": "2026-11-02T06:17:50.219621-08:00",
+          "run_id": "e2b-lineage-t98u-g48",
+          "pct_runs_rolling10": 100.0,
+          "pct_runs_cum": 62.1,
+          "useful_compute_pct_rolling10": 0.0
+        },
+        {
+          "t": "2026-11-02T06:32:28.117358-08:00",
+          "run_id": "aws-next-1793629808",
+          "pct_runs_rolling10": 100.0,
+          "pct_runs_cum": 62.7,
+          "useful_compute_pct_rolling10": 0.0
+        },
+        {
+          "t": "2026-11-02T06:36:10.774661-08:00",
+          "run_id": "e2b-lineage-t98u-g49",
+          "pct_runs_rolling10": 100.0,
+          "pct_runs_cum": 63.3,
+          "useful_compute_pct_rolling10": 0.0
+        },
+        {
+          "t": "2026-11-02T06:39:43.134053-08:00",
+          "run_id": "e2b-lineage-t98u-g50",
+          "pct_runs_rolling10": 100.0,
+          "pct_runs_cum": 63.9,
+          "useful_compute_pct_rolling10": 0.0
+        },
+        {
+          "t": "2026-11-02T06:55:02.747410-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-140255",
+          "pct_runs_rolling10": 100.0,
+          "pct_runs_cum": 64.5,
+          "useful_compute_pct_rolling10": 0.0
+        },
+        {
+          "t": "2026-11-02T06:58:15.010803-08:00",
+          "run_id": "e2b-lineage-t98u-g51",
+          "pct_runs_rolling10": 90.0,
+          "pct_runs_cum": 63.5,
+          "useful_compute_pct_rolling10": 4.4
         }
       ]
     },
@@ -6037,9 +7154,9 @@
   },
   "hub_github": {
     "label": "EXPERIMENTAL / not FNR-000 \u2014 source of truth (t116u)",
-    "tag": "hub-1da47c64",
-    "sha256": "1da47c64fbcedfb4660ddbdb7e565e127c69bed3fbb9817b6a23c0c31cd543f3",
-    "release_url": "https://github.com/tsrnc2/multi-cloud-train/releases/tag/hub-1da47c64",
+    "tag": "hub-4f9db917",
+    "sha256": "4f9db917ec4e2acaac8b8d942fc5d4d5e7378603e04ae348369adfbe77aafd62",
+    "release_url": "https://github.com/tsrnc2/multi-cloud-train/releases/tag/hub-4f9db917",
     "repo_private": true
   }
 }
