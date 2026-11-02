@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-11-02 01:03:57 PST (America/Los_Angeles)",
+  "last_updated_pt": "2026-11-02 01:13:34 PST (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -24,15 +24,15 @@
     "runtime_flag": "lanes/lineage-hub/ONE_LANE_POLICY.json"
   },
   "hub": {
-    "recommended_sha256": "b8c355060f2e43c28daa255dd78b9f5319dd84d787b388a348c54f2c462a1dea",
-    "recommended_sha256_short": "b8c355060f2e\u2026",
-    "last_publish_run_id": "e2b-lineage-t98u-g38",
-    "last_publish_pt": "2026-11-02 00:54:05 PST",
+    "recommended_sha256": "3da8c66d0e43b316f54df4f02712bc83b40b464a681d4e6ce9e83cb63b13d876",
+    "recommended_sha256_short": "3da8c66d0e43\u2026",
+    "last_publish_run_id": "aws-next-1793610103",
+    "last_publish_pt": "2026-11-02 01:06:30 PST",
     "w_old": 0.65,
     "w_new": 0.35,
-    "observed_at_pt": "2026-11-02 00:54:05 PST",
-    "observation_age_seconds": 591,
-    "observation_age_human": "9m",
+    "observed_at_pt": "2026-11-02 01:06:30 PST",
+    "observation_age_seconds": 422,
+    "observation_age_human": "7m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
   "latest_letter_metrics": {
@@ -50,8 +50,8 @@
     "label": "EXPERIMENTAL / not FNR-000",
     "producer_reported": true,
     "observed_at_pt": "2026-11-02 00:59:23 PST",
-    "observation_age_seconds": 274,
-    "observation_age_human": "4m",
+    "observation_age_seconds": 851,
+    "observation_age_human": "14m",
     "artifact_dir": "v15_lineage_warm_x29"
   },
   "validation_accuracy": {
@@ -60,7 +60,7 @@
     "val_acc_pct": "61.60%",
     "producer_reported": true,
     "observed_at_pt": "2026-11-02 00:59:23 PST",
-    "observation_age_human": "4m",
+    "observation_age_human": "14m",
     "note": "From train_metrics final_val_acc on published letter artifacts"
   },
   "recent_letters": [
@@ -79,8 +79,8 @@
       "label": "EXPERIMENTAL / not FNR-000",
       "producer_reported": true,
       "observed_at_pt": "2026-11-02 00:59:23 PST",
-      "observation_age_seconds": 274,
-      "observation_age_human": "4m",
+      "observation_age_seconds": 851,
+      "observation_age_human": "14m",
       "artifact_dir": "v15_lineage_warm_x29"
     }
   ],
@@ -102,7 +102,7 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 363837,
+      "observation_age_seconds": 364414,
       "observation_age_human": "4d 5h",
       "label": "EXPERIMENTAL / not FNR-000"
     },
@@ -172,8 +172,8 @@
       "instance_id": "i-098ba40a7a4b419a9",
       "label": "EXPERIMENTAL-not-FNR-000",
       "observed_at_pt": "2026-11-02 00:59:25 PST",
-      "observation_age_seconds": 272,
-      "observation_age_human": "4m",
+      "observation_age_seconds": 849,
+      "observation_age_human": "14m",
       "note": "Completed fold receipt \u2014 not the live AWS letter unless current.state says running"
     },
     "stale_probe_suppressed": "Ignored stale probe letter X16 (probe @ 2026-10-28 16:25 PDT); current letter is X21",
@@ -192,32 +192,32 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 363837,
+    "observation_age_seconds": 364414,
     "observation_age_human": "4d 5h"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-11-02 01:03:57 PST (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-11-02 01:13:34 PST (America/Los_Angeles)",
     "hub_publish": {
-      "observed_at_pt": "2026-11-02 00:54:05 PST",
-      "age_human": "9m",
-      "age_seconds": 591
+      "observed_at_pt": "2026-11-02 01:06:30 PST",
+      "age_human": "7m",
+      "age_seconds": 422
     },
     "latest_letter_metrics": {
       "letter": "X29",
       "observed_at_pt": "2026-11-02 00:59:23 PST",
-      "age_human": "4m",
-      "age_seconds": 274
+      "age_human": "14m",
+      "age_seconds": 851
     },
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
       "age_human": "4d 5h",
-      "age_seconds": 363837
+      "age_seconds": 364414
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
       "age_human": "4d 5h",
-      "age_seconds": 363837
+      "age_seconds": 364414
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -884,6 +884,20 @@
           "T2": 60,
           "T3": 101,
           "T4": 127,
+          "T5": 49
+        },
+        "fa": 0
+      },
+      {
+        "t": "2026-11-02T01:08:30.794782",
+        "run_id": "aws-next-1793610103",
+        "hub_sha": "3da8c66d0e43\u2026",
+        "composite": 70.53,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 122,
           "T5": 49
         },
         "fa": 0
@@ -3122,6 +3136,74 @@
         },
         "fa": 0,
         "hub_sha": "b8c355060f2e"
+      },
+      {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 21,
+            "n": 64,
+            "by_level": {
+              "easy": 12,
+              "medium": 9,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 18,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 11,
+              "hard": 1,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 36.82,
+        "t": "2026-11-02T01:06:27.654312-08:00",
+        "run_id": "aws-next-1793610103",
+        "decision": "FOLDED",
+        "composite": 70.53,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 122,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "3da8c66d0e43"
       }
     ]
   },
@@ -4012,6 +4094,29 @@
           "T5": 49
         },
         "useful_pct": 0.0
+      },
+      {
+        "provider": "aws",
+        "run_id": "aws-next-1793610103",
+        "t": "2026-11-02T01:06:27.654312-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": 0.85,
+        "usd_est": 0.08,
+        "candidate": 69.4,
+        "preview": 70.53,
+        "hub": 70.78,
+        "delta_vs_hub": -0.25,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 122,
+          "T5": 49
+        },
+        "useful_pct": 100.0
       }
     ],
     "hub_progress": [
@@ -4719,20 +4824,38 @@
         "n_T4": 188,
         "delta_first": 1.42,
         "best_so_far": 70.78
+      },
+      {
+        "t": "2026-11-02T01:06:27.654312-08:00",
+        "run_id": "aws-next-1793610103",
+        "hub_sha": "3da8c66d0e43",
+        "suite": "12c4c4f0",
+        "composite": 70.53,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 122,
+          "T5": 49
+        },
+        "kind": "FOLDED",
+        "n_T4": 188,
+        "delta_first": 1.17,
+        "best_so_far": 70.78
       }
     ],
     "waste": {
       "overall": {
-        "useful_compute_pct": 45.4,
-        "runs": 36,
+        "useful_compute_pct": 47.4,
+        "runs": 37,
         "wasted_runs": 19,
-        "pct_runs": 52.8,
-        "hours": 22.43,
+        "pct_runs": 51.4,
+        "hours": 23.28,
         "wasted_hours": 12.25,
-        "pct_hours": 54.6,
-        "usd": 0.48,
+        "pct_hours": 52.6,
+        "usd": 0.56,
         "wasted_usd": 0.4,
-        "pct_usd": 83.3
+        "pct_usd": 71.4
       },
       "by_provider": {
         "e2b": {
@@ -4748,16 +4871,16 @@
           "pct_usd": null
         },
         "aws": {
-          "useful_compute_pct": 16.7,
-          "runs": 6,
+          "useful_compute_pct": 28.6,
+          "runs": 7,
           "wasted_runs": 5,
-          "pct_runs": 83.3,
-          "hours": 5.1,
+          "pct_runs": 71.4,
+          "hours": 5.95,
           "wasted_hours": 4.25,
-          "pct_hours": 83.3,
-          "usd": 0.48,
+          "pct_hours": 71.4,
+          "usd": 0.56,
           "wasted_usd": 0.4,
-          "pct_usd": 83.3
+          "pct_usd": 71.4
         },
         "waypoint": {
           "useful_compute_pct": 50.0,
@@ -5024,6 +5147,13 @@
           "pct_runs_rolling10": 40.0,
           "pct_runs_cum": 52.8,
           "useful_compute_pct_rolling10": 68.1
+        },
+        {
+          "t": "2026-11-02T01:06:27.654312-08:00",
+          "run_id": "aws-next-1793610103",
+          "pct_runs_rolling10": 30.0,
+          "pct_runs_cum": 51.4,
+          "useful_compute_pct_rolling10": 84.7
         }
       ]
     },
@@ -5402,9 +5532,9 @@
   },
   "hub_github": {
     "label": "EXPERIMENTAL / not FNR-000 \u2014 source of truth (t116u)",
-    "tag": "hub-b8c35506",
-    "sha256": "b8c355060f2e43c28daa255dd78b9f5319dd84d787b388a348c54f2c462a1dea",
-    "release_url": "https://github.com/tsrnc2/multi-cloud-train/releases/tag/hub-b8c35506",
+    "tag": "hub-3da8c66d",
+    "sha256": "3da8c66d0e43b316f54df4f02712bc83b40b464a681d4e6ce9e83cb63b13d876",
+    "release_url": "https://github.com/tsrnc2/multi-cloud-train/releases/tag/hub-3da8c66d",
     "repo_private": true
   }
 }
