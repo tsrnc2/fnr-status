@@ -450,6 +450,7 @@ function renderChecker(c){
     ["Folding",c.fold_paused?'<b style="color:#c33">PAUSED (checker alert)</b>':"normal"],
     ["Last alert",la?esc(la.t+" · "+la.kind+(la.soundness?" (soundness)":"")):"none"],
     ["Training/eval re-verification",esc(c.reverify)],
+    ["Lean 4 kernel (required for folds and training data)",c.lean?((c.lean.fold_paused||c.lean.alert_open||c.lean.reverify_lean_reject_kernel_accept)?`<b style="color:#c33">disagreement — folding paused</b>`:`agrees with v2.1 on ${esc(c.lean.reverify_rows??"—")} data rows`+(c.lean.fuzz?`, ${esc(c.lean.fuzz.agree)}/${esc(c.lean.fuzz.checked)} fuzz cases`:"")+` · ${esc(c.lean.toolchain)}`):"—"],
     ["Data no-shortcut scan (consistent premises, no EFQ, no distractor shortcut)",c.data_no_shortcut?(c.data_no_shortcut.failing?`<b style="color:#c33">${esc(c.data_no_shortcut.failing)} failing</b> / ${esc(c.data_no_shortcut.rows)}`:`0 failing / ${esc(c.data_no_shortcut.rows)} rows`):"—"],
     ["Other findings",esc(Object.entries(f).map(([k,v])=>k+" "+v).join(", ")||"none")],
     ["Heartbeat",esc(c.heartbeat)]];
