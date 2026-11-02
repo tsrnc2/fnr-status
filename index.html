@@ -125,6 +125,21 @@
       </section>
     </div>
 
+    <section class="card" style="margin-top:1rem" id="card-quality">
+      <h2>Training quality — is the model getting better, which sessions help, how much is wasted <span style="font-size:.7em;color:var(--warn)">EXPERIMENTAL / not FNR-000 · t122u</span></h2>
+      <div id="tq_summary" style="font-size:.95em;margin:.4rem 0"></div>
+      <h3 style="font-size:1rem">1 · Hub score after each fold (Δ vs first hub · best so far) — vertical line = suite change; scores from different suites are not compared</h3>
+      <div id="tq_prog" style="overflow-x:auto"></div>
+      <div style="max-height:260px;overflow-y:auto"><table id="tq_prog_tbl" style="width:100%;font-size:.82em"></table></div>
+      <h3 style="font-size:1rem">2 · Every training session (candidate vs preview blend vs hub)</h3>
+      <div id="tq_runs_chart" style="overflow-x:auto"></div>
+      <div style="max-height:340px;overflow-y:auto"><table id="tq_runs" style="width:100%;font-size:.8em"></table></div>
+      <h3 style="font-size:1rem">3 · Wasted training (not folded) — share of runs, compute hours, dollars</h3>
+      <div style="overflow-x:auto"><table id="tq_waste" style="width:100%;font-size:.85em"></table></div>
+      <div id="tq_trend" style="overflow-x:auto"></div>
+      <div id="tq_notes" style="font-size:.8em;color:var(--muted)"></div>
+    </section>
+
     <section class="card" style="margin-top:1rem" id="card-gen">
       <h2>Generational improvement — problems solved per hub generation <span style="font-size:.7em;color:var(--warn)">EXPERIMENTAL / not FNR-000</span></h2>
       <div style="font-size:.85em;color:var(--muted)">x = lineage generation (ordered hub folds). y = % solved on frozen tiered suite (T1 60 · T2 60 · T3 110 · T4 80) + weighted composite; dashed = best composite so far. Hollow points = reconstructed / approximate time; red ✕ = scored but REJECTED by fold gate (not adopted). Hover for hub hash + source run.</div>
@@ -206,6 +221,7 @@
     function render(d) {
       try {
         try{renderGen(d.eval_history||{});}catch(e){console.error(e)}
+        try{renderQuality(d.training_quality||{});}catch(e){console.error(e)}
         try{renderDomains(d.eval_history||{}, d.domain_suite);}catch(e){console.error(e)}
         try{renderBudget(d.budget||{});}catch(e){console.error(e)}
         const te = d.tiered_eval || {}; const tn = te.tiers || {};
@@ -392,15 +408,16 @@ function renderGen(eh){
   const N=eh.tier_n||{T1:60,T2:60,T3:110,T4:80}; const pts=(eh.points||[]).slice().sort((a,b)=>a.t.slice(0,19)<b.t.slice(0,19)?-1:1);
   const gens=[], rej=[]; pts.forEach(p=>{ if(p.decision==="REJECTED") rej.push({p,g:gens.length}); else gens.push(p); });
   const W=Math.max(900,gens.length*44+80),H=320,L=46,R=16,T=12,B=70,x=i=>L+(gens.length<2?0:i*(W-L-R)/(gens.length-1));
-  const lo=40, y=v=>T+(100-v)*(H-T-B)/(100-lo); const col={T1:"#7dd3fc",T2:"#3ddc97",T3:"#f0c14b",T4:"#ff9f6b",composite:"#e8eefc"};
-  const val=(p,k)=>k==="composite"?p.composite:100*(p.solved||{})[k]/N[k]; let svg=`<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg" style="background:#0e1626;border-radius:8px">`;
+  const lo=40, y=v=>T+(100-v)*(H-T-B)/(100-lo); const col={T1:"#7dd3fc",T2:"#3ddc97",T3:"#f0c14b",T4:"#ff9f6b",T5:"#d58cff",composite:"#e8eefc"};
+  const val=(p,k)=>k==="composite"?p.composite:((p.solved||{})[k]==null?null:100*(p.solved||{})[k]/((p.tier_n||N)[k]||N[k])); let svg=`<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg" style="background:#0e1626;border-radius:8px">`;
   for(let v=lo;v<=100;v+=10) svg+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="#243047"/><text x="${L-6}" y="${y(v)+4}" fill="#9bb0d0" font-size="10" text-anchor="end">${v}%</text>`;
   gens.forEach((p,i)=>svg+=`<text transform="translate(${x(i)},${H-B+12}) rotate(55)" fill="#9bb0d0" font-size="9">${i}:${genLabel(p.run_id)}</text>`);
-  let best=-1,bp=[]; gens.forEach((p,i)=>{best=Math.max(best,p.composite);bp.push(`${x(i)},${y(best)}`)});
+  const sk=p=>(p.suite_sha256||"fd005cb2").slice(0,8); gens.forEach((p,i)=>{if(i&&sk(p)!==sk(gens[i-1]))svg+=`<line x1="${x(i)-8}" x2="${x(i)-8}" y1="${T}" y2="${H-B}" stroke="#f0c14b" stroke-width="2" stroke-dasharray="6,3"/><text x="${x(i)-4}" y="${T+12}" fill="#f0c14b" font-size="11">suite change → ${sk(p)} (scores not comparable across this line)</text>`;});
+  let best=-1,bp=[]; gens.forEach((p,i)=>{if(i&&sk(p)!==sk(gens[i-1]))best=-1;best=Math.max(best,p.composite);bp.push(`${x(i)},${y(best)}`)});
   svg+=`<polyline points="${bp.join(" ")}" fill="none" stroke="#e8eefc" stroke-dasharray="5,4" opacity=".55"/>`;
-  for(const k of ["T1","T2","T3","T4","composite"]){
-    svg+=`<polyline points="${gens.map((p,i)=>x(i)+","+y(val(p,k))).join(" ")}" fill="none" stroke="${col[k]}" stroke-width="${k==="composite"?2.5:1.6}"/>`;
-    gens.forEach((p,i)=>{const tip=`Gen ${i} ${genLabel(p.run_id)} — ${k} ${val(p,k).toFixed(1)}%\nhub ${p.hub_sha||"—"} · ${p.run_id} · ${p.decision}${p.reconstructed?" (reconstructed)":""}\nT1 ${p.solved.T1}/${N.T1} T2 ${p.solved.T2}/${N.T2} T3 ${p.solved.T3}/${N.T3} T4 ${p.solved.T4}/${N.T4} · composite ${p.composite} · FA ${p.fa}\n${p.t}`;
+  for(const k of ["T1","T2","T3","T4","T5","composite"]){
+    svg+=`<polyline points="${gens.map((p,i)=>val(p,k)==null?"":x(i)+","+y(val(p,k))).filter(Boolean).join(" ")}" fill="none" stroke="${col[k]}" stroke-width="${k==="composite"?2.5:1.6}"/>`;
+    gens.forEach((p,i)=>{if(val(p,k)==null)return;const tip=`Gen ${i} ${genLabel(p.run_id)} — ${k} ${val(p,k).toFixed(1)}%\nhub ${p.hub_sha||"—"} · ${p.run_id} · ${p.decision}${p.reconstructed?" (reconstructed)":""}\nT1 ${p.solved.T1}/${N.T1} T2 ${p.solved.T2}/${N.T2} T3 ${p.solved.T3}/${N.T3} T4 ${p.solved.T4}/${(p.tier_n||N).T4}${p.solved.T5!=null?` T5 ${p.solved.T5}/${(p.tier_n||{}).T5}`:""} · suite ${sk(p)} · composite ${p.composite} · FA ${p.fa}\n${p.t}`;
       svg+=`<circle cx="${x(i)}" cy="${y(val(p,k))}" r="3.5" fill="${p.reconstructed?"#0e1626":col[k]}" stroke="${col[k]}"><title>${tip}</title></circle>`;});}
   rej.forEach(({p,g})=>{const xx=x(Math.max(0,g-0.5)),yy=y(p.composite);svg+=`<text x="${xx}" y="${yy+4}" fill="#ff6b6b" font-size="13" text-anchor="middle">✕<title>REJECTED ${p.run_id} — preview composite ${p.composite} (hub ${p.hub_sha}) ${p.t}</title></text>`;});
   svg+="</svg>"; document.getElementById("gen_chart").innerHTML=svg;
@@ -448,5 +465,31 @@ fetch('status.json',{cache:'no-store'}).then(r=>r.json()).then(s=>{const g=s.hub
 const d=document.createElement('section');d.id='hub-github';d.style.cssText='margin:1em 0;padding:.8em;border:1px solid #888;border-radius:8px';
 d.innerHTML='<h3>Lineage hub — GitHub source of truth</h3><p>'+g.label+'</p><p>Current hub <code>'+g.tag+'</code>: <a href="'+g.release_url+'">'+g.release_url+'</a> (private repo; access required)</p><p>sha256 <code>'+g.sha256+'</code></p>';
 (document.querySelector('main')||document.body).prepend(d);}).catch(()=>{});</script>
+
+<script>/* t122u training quality */
+function renderQuality(q){
+  if(!q.runs){document.getElementById("tq_summary").textContent=q.error||"no data";return;}
+  const E=id=>document.getElementById(id), f=v=>v==null?"—":v, sg=v=>v==null?"—":`<span style="color:${v>0?"#3ddc97":v<0?"#ff6b6b":"#9bb0d0"}">${v>0?"+":""}${v}</span>`;
+  const P=q.hub_progress, W=q.waste, o=W.overall, last=P[P.length-1]||{};
+  E("tq_summary").innerHTML=`Current hub <code>${f(last.hub_sha)}</code> composite <b>${f(last.composite)}</b> (suite ${f(last.suite)}) · Δ vs first hub on this suite ${sg(last.delta_first)} · best so far ${f(last.best_so_far)} · `+
+    `wasted: <b>${f(o.pct_runs)}%</b> of runs, <b>${f(o.pct_hours)}%</b> of compute hours, <b>${f(o.pct_usd)}%</b> of known $ (${o.wasted_runs}/${o.runs} runs not folded)`;
+  const svg=(pts,series,lo,hi,marks,w)=>{const Wd=Math.max(640,pts.length*26),H=240,L=40,R=10,T=10,B=30,x=i=>L+i*(Wd-L-R)/Math.max(1,pts.length-1),y=v=>T+(hi-v)*(H-T-B)/(hi-lo);
+    let s=`<svg width="${Wd}" height="${H}" style="background:#0e1626;border-radius:8px">`;for(let v=lo;v<=hi;v+=(hi-lo)/5)s+=`<line x1="${L}" x2="${Wd-R}" y1="${y(v)}" y2="${y(v)}" stroke="#243047"/><text x="${L-4}" y="${y(v)+4}" fill="#9bb0d0" font-size="10" text-anchor="end">${v.toFixed(0)}</text>`;
+    (marks||[]).forEach(i=>s+=`<line x1="${x(i)-6}" x2="${x(i)-6}" y1="${T}" y2="${H-B}" stroke="#f0c14b" stroke-dasharray="4,3"/><text x="${x(i)-4}" y="${T+10}" fill="#f0c14b" font-size="10">suite → ${pts[i].suite}</text>`);
+    series.forEach(([k,c,fn])=>{s+=`<polyline points="${pts.map((p,i)=>fn(p)==null?"":x(i)+","+y(fn(p))).filter(Boolean).join(" ")}" fill="none" stroke="${c}" stroke-width="1.8"/>`;
+      pts.forEach((p,i)=>{const v=fn(p);if(v!=null)s+=`<circle cx="${x(i)}" cy="${y(v)}" r="3" fill="${w&&w(p)||c}"><title>${p.run_id} · ${k} ${v} · ${p.t}</title></circle>`});});
+    return s+"</svg>"+`<div style="font-size:.8em">${series.map(([k,c])=>`<span style="color:${c}">━ ${k}</span>`).join(" &nbsp; ")}</div>`;};
+  const marks=P.map((p,i)=>i&&p.suite!==P[i-1].suite?i:-1).filter(i=>i>0);
+  E("tq_prog").innerHTML=svg(P,[["composite","#e8eefc",p=>p.composite],["best so far","#888",p=>p.best_so_far],["T4 %","#ff9f6b",p=>p.solved&&p.solved.T4!=null&&p.n_T4?100*p.solved.T4/p.n_T4:null]],60,100,marks);
+  E("tq_prog_tbl").innerHTML="<tr><th>#</th><th>When</th><th>Source run</th><th>Hub</th><th>Suite</th><th>Composite</th><th>Δ first</th><th>Best</th><th>Tiers solved</th></tr>"+P.map((p,i)=>`<tr><td>${i}</td><td>${(p.t||"").slice(0,16)}</td><td>${p.run_id}</td><td><code>${f(p.hub_sha)}</code></td><td>${p.suite}</td><td>${p.composite}</td><td>${sg(p.delta_first)}</td><td>${p.best_so_far}</td><td>${Object.entries(p.solved||{}).map(([k,v])=>k+" "+v).join(" · ")}</td></tr>`).reverse().join("");
+  const R=q.runs, rm=R.map((r,i)=>i&&r.suite!==R[i-1].suite?i:-1).filter(i=>i>0);
+  E("tq_runs_chart").innerHTML=svg(R,[["candidate","#7dd3fc",r=>r.candidate],["preview blend","#3ddc97",r=>r.preview],["hub at gate","#e8eefc",r=>r.hub]],75,95,rm,r=>r.folded?null:"#ff6b6b");
+  E("tq_runs").innerHTML="<tr><th>Date</th><th>Provider</th><th>Run</th><th>Suite</th><th>Hours (est)</th><th>$ (est)</th><th>Candidate</th><th>Preview</th><th>Δ vs hub</th><th>Result</th><th>Why</th></tr>"+R.map(r=>`<tr><td>${r.t.slice(0,16)}</td><td>${r.provider}</td><td>${r.run_id}</td><td>${r.suite}</td><td>${f(r.hours_est&&+r.hours_est.toFixed(2))}</td><td>${f(r.usd_est)}</td><td>${f(r.candidate)}</td><td>${f(r.preview)}</td><td>${sg(r.delta_vs_hub)}</td><td style="color:${r.folded?"#3ddc97":"#ff6b6b"}">${r.folded?"FOLDED":"REJECTED"}</td><td>${r.why}</td></tr>`).reverse().join("");
+  const row=(k,w)=>`<tr><td>${k}</td><td>${w.wasted_runs}/${w.runs}</td><td><b>${f(w.pct_runs)}%</b></td><td>${w.wasted_hours}/${w.hours} h</td><td><b>${f(w.pct_hours)}%</b></td><td>$${w.wasted_usd}/$${w.usd}</td><td><b>${f(w.pct_usd)}%</b></td></tr>`;
+  E("tq_waste").innerHTML="<tr><th>Provider</th><th>Runs not folded</th><th>% runs</th><th>Hours wasted</th><th>% hours</th><th>$ wasted</th><th>% $</th></tr>"+row("ALL",o)+Object.entries(W.by_provider).map(([k,w])=>row(k,w)).join("");
+  E("tq_trend").innerHTML=svg(W.trend,[["% wasted (rolling 10 runs)","#ff6b6b",p=>p.pct_runs_rolling10],["% wasted (cumulative)","#f0c14b",p=>p.pct_runs_cum]],0,100,[]);
+  E("tq_notes").textContent=q.notes||"";
+}
+</script>
 </body>
 </html>

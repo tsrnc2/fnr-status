@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-11-01 22:07:14 PST (America/Los_Angeles)",
+  "last_updated_pt": "2026-11-01 23:42:18 PST (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -24,15 +24,15 @@
     "runtime_flag": "lanes/lineage-hub/ONE_LANE_POLICY.json"
   },
   "hub": {
-    "recommended_sha256": "e7b36e0a3e2f9c1cb40e79f5e81a536454d811728e310fc2d2e1a015073407b9",
-    "recommended_sha256_short": "e7b36e0a3e2f\u2026",
-    "last_publish_run_id": "e2b-lineage-t98u-g29",
-    "last_publish_pt": "2026-11-01 21:30:14 PST",
+    "recommended_sha256": "e6eb1eeed8dc4640b5820dd92d3b072a7d7ce93229d1ffc9164e8d49c523c3ef",
+    "recommended_sha256_short": "e6eb1eeed8dc\u2026",
+    "last_publish_run_id": "v14_full_lrp_skills_roles_cont_20261102-064828",
+    "last_publish_pt": "2026-11-01 23:39:30 PST",
     "w_old": 0.65,
     "w_new": 0.35,
-    "observed_at_pt": "2026-11-01 21:30:14 PST",
-    "observation_age_seconds": 1188,
-    "observation_age_human": "19m",
+    "observed_at_pt": "2026-11-01 23:39:30 PST",
+    "observation_age_seconds": 167,
+    "observation_age_human": "2m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
   "latest_letter_metrics": null,
@@ -64,8 +64,8 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 353234,
-      "observation_age_human": "4d 2h",
+      "observation_age_seconds": 358938,
+      "observation_age_human": "4d 3h",
       "label": "EXPERIMENTAL / not FNR-000"
     },
     "history": [
@@ -132,15 +132,15 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 353234,
-    "observation_age_human": "4d 2h"
+    "observation_age_seconds": 358938,
+    "observation_age_human": "4d 3h"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-11-01 22:07:14 PST (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-11-01 23:42:18 PST (America/Los_Angeles)",
     "hub_publish": {
-      "observed_at_pt": "2026-11-01 21:30:14 PST",
-      "age_human": "19m",
-      "age_seconds": 1188
+      "observed_at_pt": "2026-11-01 23:39:30 PST",
+      "age_human": "2m",
+      "age_seconds": 167
     },
     "latest_letter_metrics": {
       "letter": null,
@@ -151,13 +151,13 @@
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "4d 2h",
-      "age_seconds": 353234
+      "age_human": "4d 3h",
+      "age_seconds": 358938
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "4d 2h",
-      "age_seconds": 353234
+      "age_human": "4d 3h",
+      "age_seconds": 358938
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -738,6 +738,19 @@
           "T2": 60,
           "T3": 109,
           "T4": 55
+        },
+        "fa": 0
+      },
+      {
+        "t": "2026-11-01T23:40:25.449601",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-064828",
+        "hub_sha": "e6eb1eeed8dc\u2026",
+        "composite": 87.0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 54
         },
         "fa": 0
       }
@@ -2479,6 +2492,87 @@
         },
         "fa": 0,
         "hub_sha": "e7b36e0a3e2f"
+      },
+      {
+        "t": "2026-11-01T23:12:58.977229-08:00",
+        "run_id": "waypoint-hub-c5bd4065",
+        "decision": "REJECTED",
+        "composite": 84.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 49
+        },
+        "fa": 0,
+        "hub_sha": "e7b36e0a3e2f"
+      },
+      {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 0,
+            "n": 64,
+            "by_level": {
+              "easy": 0,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 13,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 7,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 3,
+            "n": 64,
+            "by_level": {
+              "easy": 3,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 27.91,
+        "t": "2026-11-01T23:39:28.810391-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-064828",
+        "decision": "FOLDED",
+        "composite": 87.0,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 54
+        },
+        "fa": 0,
+        "hub_sha": "e6eb1eeed8dc"
       }
     ]
   },
@@ -2553,11 +2647,1424 @@
       }
     }
   },
+  "training_quality": {
+    "label": "EXPERIMENTAL / not FNR-000 \u2014 training quality (t122u)",
+    "runs": [
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g8",
+        "t": "2026-10-29T02:21:51.419247",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 86.41,
+        "preview": 87.5,
+        "hub": 87.23,
+        "delta_vs_hub": 0.27,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 55
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g10",
+        "t": "2026-10-29T02:34:10.191871",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 87.0,
+        "preview": 85.5,
+        "hub": 85.5,
+        "delta_vs_hub": 0.0,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g11",
+        "t": "2026-10-29T02:36:04.951818",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 85.0,
+        "preview": 85.0,
+        "hub": 85.5,
+        "delta_vs_hub": -0.5,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 50
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g12",
+        "t": "2026-10-29T03:12:14.918796",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 86.73,
+        "preview": 86.0,
+        "hub": 85.0,
+        "delta_vs_hub": 1.0,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 52
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g13",
+        "t": "2026-10-29T03:14:15.970427",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 84.68,
+        "preview": 85.0,
+        "hub": 86.0,
+        "delta_vs_hub": -1.0,
+        "folded": false,
+        "why": "preview composite 85.0 < hub 86.0 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 50
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g14",
+        "t": "2026-10-29T03:26:51.537217-07:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 86.5,
+        "preview": 86.5,
+        "hub": 87.5,
+        "delta_vs_hub": -1.0,
+        "folded": false,
+        "why": "preview composite 86.5 < hub 87.5 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 53
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g15",
+        "t": "2026-10-29T03:27:30.424129-07:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 82.86,
+        "preview": 86.41,
+        "hub": 87.5,
+        "delta_vs_hub": -1.09,
+        "folded": false,
+        "why": "preview composite 86.41 < hub 87.5 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 55
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g16",
+        "t": "2026-10-29T03:36:44.921321-07:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 87.5,
+        "preview": 86.73,
+        "hub": 87.5,
+        "delta_vs_hub": -0.77,
+        "folded": false,
+        "why": "preview composite 86.73 < hub 87.5 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 54
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g17",
+        "t": "2026-10-29T03:39:58.342285-07:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 84.5,
+        "preview": 86.73,
+        "hub": 87.5,
+        "delta_vs_hub": -0.77,
+        "folded": false,
+        "why": "preview composite 86.73 < hub 87.5 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 54
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g18",
+        "t": "2026-10-29T03:52:23.616917-07:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 87.23,
+        "preview": 87.23,
+        "hub": 87.23,
+        "delta_vs_hub": 0.0,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g19",
+        "t": "2026-10-29T03:56:12.369040-07:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 86.45,
+        "preview": 86.73,
+        "hub": 87.23,
+        "delta_vs_hub": -0.5,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 54
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g20",
+        "t": "2026-10-29T04:07:02.569679-07:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 85.5,
+        "preview": 86.73,
+        "hub": 86.73,
+        "delta_vs_hub": 0.0,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 54
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g21",
+        "t": "2026-10-29T04:10:56.774277-07:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 86.73,
+        "preview": 87.23,
+        "hub": 86.73,
+        "delta_vs_hub": 0.5,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        }
+      },
+      {
+        "provider": "aws",
+        "run_id": "aws-next-1793593612",
+        "t": "2026-11-01T20:28:12.565390-08:00",
+        "suite": "fd005cb2",
+        "hours_est": 5.5,
+        "usd_est": 0.53,
+        "candidate": 83.41,
+        "preview": 85.59,
+        "hub": 87.23,
+        "delta_vs_hub": -1.64,
+        "folded": false,
+        "why": "preview composite 85.59 < hub 87.23 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 103,
+          "T4": 55
+        }
+      },
+      {
+        "provider": "aws",
+        "run_id": "aws-next-1793593700",
+        "t": "2026-11-01T20:30:35.928680-08:00",
+        "suite": "fd005cb2",
+        "hours_est": 5.5,
+        "usd_est": 0.53,
+        "candidate": 85.36,
+        "preview": 85.86,
+        "hub": 87.23,
+        "delta_vs_hub": -1.37,
+        "folded": false,
+        "why": "preview composite 85.86 < hub 87.23 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 55
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g23",
+        "t": "2026-11-01T20:37:42.803824-08:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 85.95,
+        "preview": 87.23,
+        "hub": 87.23,
+        "delta_vs_hub": 0.0,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g24",
+        "t": "2026-11-01T20:46:05.240147-08:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 85.0,
+        "preview": 85.5,
+        "hub": 87.23,
+        "delta_vs_hub": -1.73,
+        "folded": false,
+        "why": "preview composite 85.5 < hub 87.23 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g25",
+        "t": "2026-11-01T20:54:22.804905-08:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 84.5,
+        "preview": 84.23,
+        "hub": 87.23,
+        "delta_vs_hub": -3.0,
+        "folded": false,
+        "why": "preview composite 84.23 < hub 87.23 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 49
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g26",
+        "t": "2026-11-01T20:56:39.169536-08:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 86.95,
+        "preview": 87.5,
+        "hub": 87.23,
+        "delta_vs_hub": 0.27,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 55
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g27",
+        "t": "2026-11-01T21:05:14.627322-08:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 86.5,
+        "preview": 86.95,
+        "hub": 87.5,
+        "delta_vs_hub": -0.55,
+        "folded": false,
+        "why": "preview composite 86.95 < hub 87.5 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 108,
+          "T4": 55
+        }
+      },
+      {
+        "provider": "aws",
+        "run_id": "aws-next-1793595918",
+        "t": "2026-11-01T21:06:53.121714-08:00",
+        "suite": "fd005cb2",
+        "hours_est": 5.5,
+        "usd_est": 0.53,
+        "candidate": 81.64,
+        "preview": 82.59,
+        "hub": 87.5,
+        "delta_vs_hub": -4.91,
+        "folded": false,
+        "why": "preview T3 92 < floor 100",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 92,
+          "T4": 55
+        }
+      },
+      {
+        "provider": "aws",
+        "run_id": "aws-next-1793596118",
+        "t": "2026-11-01T21:09:02.118842-08:00",
+        "suite": "fd005cb2",
+        "hours_est": 5.5,
+        "usd_est": 0.53,
+        "candidate": 81.64,
+        "preview": 82.59,
+        "hub": 87.5,
+        "delta_vs_hub": -4.91,
+        "folded": false,
+        "why": "preview T3 92 < floor 100",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 92,
+          "T4": 55
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g28",
+        "t": "2026-11-01T21:14:23.388566-08:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 86.45,
+        "preview": 86.95,
+        "hub": 87.5,
+        "delta_vs_hub": -0.55,
+        "folded": false,
+        "why": "preview composite 86.95 < hub 87.5 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 108,
+          "T4": 55
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g29",
+        "t": "2026-11-01T21:30:13.338478-08:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 86.95,
+        "preview": 87.23,
+        "hub": 87.5,
+        "delta_vs_hub": -0.27,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        }
+      },
+      {
+        "provider": "aws",
+        "run_id": "aws-next-1793598439",
+        "t": "2026-11-01T21:49:02.263800-08:00",
+        "suite": "fd005cb2",
+        "hours_est": 5.5,
+        "usd_est": 0.53,
+        "candidate": 84.23,
+        "preview": 84.5,
+        "hub": 87.23,
+        "delta_vs_hub": -2.73,
+        "folded": false,
+        "why": "preview T3 99 < floor 100",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 99,
+          "T4": 55
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g31",
+        "t": "2026-11-01T21:51:32.228825-08:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 87.5,
+        "preview": 85.86,
+        "hub": 87.23,
+        "delta_vs_hub": -1.37,
+        "folded": false,
+        "why": "preview composite 85.86 < hub 87.23 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 55
+        }
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g32",
+        "t": "2026-11-01T21:52:53.060435-08:00",
+        "suite": "fd005cb2",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 89.09,
+        "preview": 86.41,
+        "hub": 87.23,
+        "delta_vs_hub": -0.82,
+        "folded": false,
+        "why": "preview composite 86.41 < hub 87.23 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 55
+        }
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "waypoint-hub-c5bd4065",
+        "t": "2026-11-01T23:12:58.977229-08:00",
+        "suite": "fd005cb2",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 87.5,
+        "preview": 84.5,
+        "hub": 87.23,
+        "delta_vs_hub": -2.73,
+        "folded": false,
+        "why": "preview composite 84.5 < hub 87.23 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 49
+        }
+      },
+      {
+        "provider": "other",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-064828",
+        "t": "2026-11-01T23:39:28.810391-08:00",
+        "suite": "fd005cb2",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 87.5,
+        "preview": 87.0,
+        "hub": 87.23,
+        "delta_vs_hub": -0.23,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 54
+        }
+      }
+    ],
+    "hub_progress": [
+      {
+        "t": "2026-10-27T18:40:49-07:00",
+        "run_id": "seed AWS-A v12",
+        "hub_sha": "ee42751f00ef",
+        "suite": "fd005cb2",
+        "composite": 84.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 49
+        },
+        "kind": "SEED",
+        "n_T4": 80,
+        "delta_first": 0.0,
+        "best_so_far": 84.5
+      },
+      {
+        "t": "2026-10-27T18:40:49-07:00",
+        "run_id": "seed AWS-B v13",
+        "hub_sha": "8c625e2eea79",
+        "suite": "fd005cb2",
+        "composite": 85.86,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 55
+        },
+        "kind": "SEED",
+        "n_T4": 80,
+        "delta_first": 1.36,
+        "best_so_far": 85.86
+      },
+      {
+        "t": "2026-10-27T18:40:49-07:00",
+        "run_id": "seed Linode v13",
+        "hub_sha": "6a7347ca97b0",
+        "suite": "fd005cb2",
+        "composite": 81.77,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 100,
+          "T4": 49
+        },
+        "kind": "SEED",
+        "n_T4": 80,
+        "delta_first": -2.73,
+        "best_so_far": 85.86
+      },
+      {
+        "t": "2026-10-27T18:40:49-07:00",
+        "run_id": "seed AWS-C v14",
+        "hub_sha": "bbe8cc4b6913",
+        "suite": "fd005cb2",
+        "composite": 85.91,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 54
+        },
+        "kind": "SEED",
+        "n_T4": 80,
+        "delta_first": 1.41,
+        "best_so_far": 85.91
+      },
+      {
+        "t": "2026-10-27T18:41:23-07:00",
+        "run_id": "hub equal A+B+C",
+        "hub_sha": "98fd7040c66c",
+        "suite": "fd005cb2",
+        "composite": 74.41,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 62,
+          "T4": 55
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": -10.09,
+        "best_so_far": 85.91
+      },
+      {
+        "t": "2026-10-27T18:41:23-07:00",
+        "run_id": "hub hard-weighted A+C",
+        "hub_sha": "34e73be55324",
+        "suite": "fd005cb2",
+        "composite": 72.18,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 52,
+          "T4": 56
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": -12.32,
+        "best_so_far": 85.91
+      },
+      {
+        "t": "2026-10-27T18:41:23-07:00",
+        "run_id": "hub hard-weighted all4",
+        "hub_sha": "8163ee05f4ec",
+        "suite": "fd005cb2",
+        "composite": 79.59,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 81,
+          "T4": 55
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": -4.91,
+        "best_so_far": 85.91
+      },
+      {
+        "t": "2026-10-27T20:38:10-07:00",
+        "run_id": "hub at AWS-F3 launch",
+        "hub_sha": "d4fc0392bbbb",
+        "suite": "fd005cb2",
+        "composite": 87.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 55
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 3.0,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-28T03:14:21-07:00",
+        "run_id": "hub post E+F",
+        "hub_sha": "992858cfa9aa",
+        "suite": "fd005cb2",
+        "composite": 86.45,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 108,
+          "T4": 54
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 1.95,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-28T08:37:02-07:00",
+        "run_id": "hub at AWS-I6 launch",
+        "hub_sha": "41251e71a27d",
+        "suite": "fd005cb2",
+        "composite": 87.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 55
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 3.0,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-28T09:10:02-07:00",
+        "run_id": "hub post H+I",
+        "hub_sha": "39a03049a362",
+        "suite": "fd005cb2",
+        "composite": 87.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 55
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 3.0,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-28T09:53:46-07:00",
+        "run_id": "hub post J+E2B t76u",
+        "hub_sha": "ac65a124793b",
+        "suite": "fd005cb2",
+        "composite": 87.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 55
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 3.0,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-28T14:58:59-07:00",
+        "run_id": "hub at X15 launch",
+        "hub_sha": "e708238503b3",
+        "suite": "fd005cb2",
+        "composite": 87.23,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 2.73,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-28T15:01:19-07:00",
+        "run_id": "hub X14 double-fold",
+        "hub_sha": "850e43b27976",
+        "suite": "fd005cb2",
+        "composite": 87.23,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 2.73,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-28T20:39:37-07:00",
+        "run_id": "hub at X22 launch",
+        "hub_sha": "31d9171b4c2e",
+        "suite": "fd005cb2",
+        "composite": 86.73,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 54
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 2.23,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-28T20:39:41-07:00",
+        "run_id": "after AWS X21 (reconstructed)",
+        "hub_sha": "b83d5288df7e",
+        "suite": "fd005cb2",
+        "composite": 85.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 1.0,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-28T20:56:21-07:00",
+        "run_id": "after E2B g6 (reconstructed)",
+        "hub_sha": "3cf44ddd1550",
+        "suite": "fd005cb2",
+        "composite": 85.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 1.0,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-29T01:55:03-07:00",
+        "run_id": "after E2B t101u-test1 (reconstructed)",
+        "hub_sha": "df2233fa6a16",
+        "suite": "fd005cb2",
+        "composite": 85.0,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 50
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 0.5,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-29T01:56:01-07:00",
+        "run_id": "after Daytona t101u-test1 (reconstructed)",
+        "hub_sha": "d32458460300",
+        "suite": "fd005cb2",
+        "composite": 85.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 1.0,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-29T01:57:00-07:00",
+        "run_id": "after AWS X22 (git 0fd9bff)",
+        "hub_sha": "cda8a1a968e1",
+        "suite": "fd005cb2",
+        "composite": 85.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 1.0,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-29T02:03:18-07:00",
+        "run_id": "after E2B g5",
+        "hub_sha": "f42395ce535f",
+        "suite": "fd005cb2",
+        "composite": 85.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 1.0,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-29T02:22:33-07:00",
+        "run_id": "after E2B g8 (current)",
+        "hub_sha": "15d42b2740b8",
+        "suite": "fd005cb2",
+        "composite": 85.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 1.0,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-29T02:34:10-07:00",
+        "run_id": "e2b-lineage-t98u-g10",
+        "hub_sha": "688e8aabd4b9",
+        "suite": "fd005cb2",
+        "composite": 85.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 51
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 1.0,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-29T02:36:04-07:00",
+        "run_id": "e2b-lineage-t98u-g11",
+        "hub_sha": "f618dbbb3236",
+        "suite": "fd005cb2",
+        "composite": 85.0,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 50
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 0.5,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-29T03:12:14-07:00",
+        "run_id": "e2b-lineage-t98u-g12",
+        "hub_sha": "f618dbbb3236",
+        "suite": "fd005cb2",
+        "composite": 86.0,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 52
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 1.5,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-29T03:52:23.616917-07:00",
+        "run_id": "e2b-lineage-t98u-g18",
+        "hub_sha": "2082b07d9593",
+        "suite": "fd005cb2",
+        "composite": 87.23,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 2.73,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-29T03:56:12.369040-07:00",
+        "run_id": "e2b-lineage-t98u-g19",
+        "hub_sha": "b311663a690b",
+        "suite": "fd005cb2",
+        "composite": 86.73,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 54
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 2.23,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-10-29T04:07:02.569679-07:00",
+        "run_id": "e2b-lineage-t98u-g20",
+        "hub_sha": "985a4067b74b",
+        "suite": "fd005cb2",
+        "composite": 86.73,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 54
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 2.23,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-11-01T20:40:00-08:00",
+        "run_id": "t113u checker-v2 rebaseline",
+        "hub_sha": "3e1eceef31a9",
+        "suite": "fd005cb2",
+        "composite": 87.23,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        },
+        "kind": "REBASELINE",
+        "n_T4": 80,
+        "delta_first": 2.73,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-11-01T20:37:42.803824-08:00",
+        "run_id": "e2b-lineage-t98u-g23",
+        "hub_sha": "ca14b6daad07",
+        "suite": "fd005cb2",
+        "composite": 87.23,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 2.73,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-11-01T20:56:39.169536-08:00",
+        "run_id": "e2b-lineage-t98u-g26",
+        "hub_sha": "821eb787dc51",
+        "suite": "fd005cb2",
+        "composite": 87.5,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 55
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 3.0,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-11-01T21:30:13.338478-08:00",
+        "run_id": "e2b-lineage-t98u-g29",
+        "hub_sha": "e7b36e0a3e2f",
+        "suite": "fd005cb2",
+        "composite": 87.23,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 109,
+          "T4": 55
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 2.73,
+        "best_so_far": 87.5
+      },
+      {
+        "t": "2026-11-01T23:39:28.810391-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-064828",
+        "hub_sha": "e6eb1eeed8dc",
+        "suite": "fd005cb2",
+        "composite": 87.0,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 110,
+          "T4": 54
+        },
+        "kind": "FOLDED",
+        "n_T4": 80,
+        "delta_first": 2.5,
+        "best_so_far": 87.5
+      }
+    ],
+    "waste": {
+      "overall": {
+        "runs": 29,
+        "wasted_runs": 17,
+        "pct_runs": 58.6,
+        "hours": 42.17,
+        "wasted_hours": 34.83,
+        "pct_hours": 82.6,
+        "usd": 2.65,
+        "wasted_usd": 2.65,
+        "pct_usd": 100.0
+      },
+      "by_provider": {
+        "e2b": {
+          "runs": 22,
+          "wasted_runs": 11,
+          "pct_runs": 50.0,
+          "hours": 14.67,
+          "wasted_hours": 7.33,
+          "pct_hours": 50.0,
+          "usd": 0,
+          "wasted_usd": 0,
+          "pct_usd": null
+        },
+        "aws": {
+          "runs": 5,
+          "wasted_runs": 5,
+          "pct_runs": 100.0,
+          "hours": 27.5,
+          "wasted_hours": 27.5,
+          "pct_hours": 100.0,
+          "usd": 2.65,
+          "wasted_usd": 2.65,
+          "pct_usd": 100.0
+        },
+        "waypoint": {
+          "runs": 1,
+          "wasted_runs": 1,
+          "pct_runs": 100.0,
+          "hours": 0,
+          "wasted_hours": 0,
+          "pct_hours": null,
+          "usd": 0,
+          "wasted_usd": 0,
+          "pct_usd": null
+        },
+        "other": {
+          "runs": 1,
+          "wasted_runs": 0,
+          "pct_runs": 0.0,
+          "hours": 0,
+          "wasted_hours": 0,
+          "pct_hours": null,
+          "usd": 0,
+          "wasted_usd": 0,
+          "pct_usd": null
+        }
+      },
+      "trend": [
+        {
+          "t": "2026-10-29T02:21:51.419247",
+          "run_id": "e2b-lineage-t98u-g8",
+          "pct_runs_rolling10": 0.0,
+          "pct_runs_cum": 0.0
+        },
+        {
+          "t": "2026-10-29T02:34:10.191871",
+          "run_id": "e2b-lineage-t98u-g10",
+          "pct_runs_rolling10": 0.0,
+          "pct_runs_cum": 0.0
+        },
+        {
+          "t": "2026-10-29T02:36:04.951818",
+          "run_id": "e2b-lineage-t98u-g11",
+          "pct_runs_rolling10": 0.0,
+          "pct_runs_cum": 0.0
+        },
+        {
+          "t": "2026-10-29T03:12:14.918796",
+          "run_id": "e2b-lineage-t98u-g12",
+          "pct_runs_rolling10": 0.0,
+          "pct_runs_cum": 0.0
+        },
+        {
+          "t": "2026-10-29T03:14:15.970427",
+          "run_id": "e2b-lineage-t98u-g13",
+          "pct_runs_rolling10": 20.0,
+          "pct_runs_cum": 20.0
+        },
+        {
+          "t": "2026-10-29T03:26:51.537217-07:00",
+          "run_id": "e2b-lineage-t98u-g14",
+          "pct_runs_rolling10": 33.3,
+          "pct_runs_cum": 33.3
+        },
+        {
+          "t": "2026-10-29T03:27:30.424129-07:00",
+          "run_id": "e2b-lineage-t98u-g15",
+          "pct_runs_rolling10": 42.9,
+          "pct_runs_cum": 42.9
+        },
+        {
+          "t": "2026-10-29T03:36:44.921321-07:00",
+          "run_id": "e2b-lineage-t98u-g16",
+          "pct_runs_rolling10": 50.0,
+          "pct_runs_cum": 50.0
+        },
+        {
+          "t": "2026-10-29T03:39:58.342285-07:00",
+          "run_id": "e2b-lineage-t98u-g17",
+          "pct_runs_rolling10": 55.6,
+          "pct_runs_cum": 55.6
+        },
+        {
+          "t": "2026-10-29T03:52:23.616917-07:00",
+          "run_id": "e2b-lineage-t98u-g18",
+          "pct_runs_rolling10": 50.0,
+          "pct_runs_cum": 50.0
+        },
+        {
+          "t": "2026-10-29T03:56:12.369040-07:00",
+          "run_id": "e2b-lineage-t98u-g19",
+          "pct_runs_rolling10": 50.0,
+          "pct_runs_cum": 45.5
+        },
+        {
+          "t": "2026-10-29T04:07:02.569679-07:00",
+          "run_id": "e2b-lineage-t98u-g20",
+          "pct_runs_rolling10": 50.0,
+          "pct_runs_cum": 41.7
+        },
+        {
+          "t": "2026-10-29T04:10:56.774277-07:00",
+          "run_id": "e2b-lineage-t98u-g21",
+          "pct_runs_rolling10": 50.0,
+          "pct_runs_cum": 38.5
+        },
+        {
+          "t": "2026-11-01T20:28:12.565390-08:00",
+          "run_id": "aws-next-1793593612",
+          "pct_runs_rolling10": 60.0,
+          "pct_runs_cum": 42.9
+        },
+        {
+          "t": "2026-11-01T20:30:35.928680-08:00",
+          "run_id": "aws-next-1793593700",
+          "pct_runs_rolling10": 60.0,
+          "pct_runs_cum": 46.7
+        },
+        {
+          "t": "2026-11-01T20:37:42.803824-08:00",
+          "run_id": "e2b-lineage-t98u-g23",
+          "pct_runs_rolling10": 50.0,
+          "pct_runs_cum": 43.8
+        },
+        {
+          "t": "2026-11-01T20:46:05.240147-08:00",
+          "run_id": "e2b-lineage-t98u-g24",
+          "pct_runs_rolling10": 50.0,
+          "pct_runs_cum": 47.1
+        },
+        {
+          "t": "2026-11-01T20:54:22.804905-08:00",
+          "run_id": "e2b-lineage-t98u-g25",
+          "pct_runs_rolling10": 50.0,
+          "pct_runs_cum": 50.0
+        },
+        {
+          "t": "2026-11-01T20:56:39.169536-08:00",
+          "run_id": "e2b-lineage-t98u-g26",
+          "pct_runs_rolling10": 40.0,
+          "pct_runs_cum": 47.4
+        },
+        {
+          "t": "2026-11-01T21:05:14.627322-08:00",
+          "run_id": "e2b-lineage-t98u-g27",
+          "pct_runs_rolling10": 50.0,
+          "pct_runs_cum": 50.0
+        },
+        {
+          "t": "2026-11-01T21:06:53.121714-08:00",
+          "run_id": "aws-next-1793595918",
+          "pct_runs_rolling10": 60.0,
+          "pct_runs_cum": 52.4
+        },
+        {
+          "t": "2026-11-01T21:09:02.118842-08:00",
+          "run_id": "aws-next-1793596118",
+          "pct_runs_rolling10": 70.0,
+          "pct_runs_cum": 54.5
+        },
+        {
+          "t": "2026-11-01T21:14:23.388566-08:00",
+          "run_id": "e2b-lineage-t98u-g28",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 56.5
+        },
+        {
+          "t": "2026-11-01T21:30:13.338478-08:00",
+          "run_id": "e2b-lineage-t98u-g29",
+          "pct_runs_rolling10": 70.0,
+          "pct_runs_cum": 54.2
+        },
+        {
+          "t": "2026-11-01T21:49:02.263800-08:00",
+          "run_id": "aws-next-1793598439",
+          "pct_runs_rolling10": 70.0,
+          "pct_runs_cum": 56.0
+        },
+        {
+          "t": "2026-11-01T21:51:32.228825-08:00",
+          "run_id": "e2b-lineage-t98u-g31",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 57.7
+        },
+        {
+          "t": "2026-11-01T21:52:53.060435-08:00",
+          "run_id": "e2b-lineage-t98u-g32",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 59.3
+        },
+        {
+          "t": "2026-11-01T23:12:58.977229-08:00",
+          "run_id": "waypoint-hub-c5bd4065",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 60.7
+        },
+        {
+          "t": "2026-11-01T23:39:28.810391-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-064828",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 58.6
+        }
+      ]
+    },
+    "notes": "hours/$ are per-run profile estimates (E2B 40 min, Daytona 100 min, AWS 5.5 h @ $0.0958/h; waypoint unknown). Suite changes are marked; scores from different suites are never compared."
+  },
   "hub_github": {
     "label": "EXPERIMENTAL / not FNR-000 \u2014 source of truth (t116u)",
-    "tag": "hub-e7b36e0a",
-    "sha256": "e7b36e0a3e2f9c1cb40e79f5e81a536454d811728e310fc2d2e1a015073407b9",
-    "release_url": "https://github.com/tsrnc2/multi-cloud-train/releases/tag/hub-e7b36e0a",
+    "tag": "hub-e6eb1eee",
+    "sha256": "e6eb1eeed8dc4640b5820dd92d3b072a7d7ce93229d1ffc9164e8d49c523c3ef",
+    "release_url": "https://github.com/tsrnc2/multi-cloud-train/releases/tag/hub-e6eb1eee",
     "repo_private": true
   }
 }
