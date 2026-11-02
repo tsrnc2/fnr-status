@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-11-02 07:12:10 PST (America/Los_Angeles)",
+  "last_updated_pt": "2026-11-02 08:28:44 PST (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -24,66 +24,28 @@
     "runtime_flag": "lanes/lineage-hub/ONE_LANE_POLICY.json"
   },
   "hub": {
-    "recommended_sha256": "fddb6c44d97c3ae17d46eac9eb9d05755be64f46aa89dd39c4b40eea793d4109",
-    "recommended_sha256_short": "fddb6c44d97c\u2026",
-    "last_publish_run_id": "aws-next-1793631696",
-    "last_publish_pt": "2026-11-02 07:07:22 PST",
+    "recommended_sha256": "69c8f34312f709ba98dc09e37b031f0e85ee95d2a45b5035a58f7956dc79613c",
+    "recommended_sha256_short": "69c8f34312f7\u2026",
+    "last_publish_run_id": "e2b-lineage-t98u-g59",
+    "last_publish_pt": "2026-11-02 08:24:10 PST",
     "w_old": 0.65,
     "w_new": 0.35,
-    "observed_at_pt": "2026-11-02 07:07:22 PST",
-    "observation_age_seconds": 287,
+    "observed_at_pt": "2026-11-02 08:24:10 PST",
+    "observation_age_seconds": 273,
     "observation_age_human": "4m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
-  "latest_letter_metrics": {
-    "letter": "X37",
-    "hard_neural": "91/110",
-    "hard_solve_rate": 0.8272727272727273,
-    "avg_nodes": 30.945454545454545,
-    "false_accept": "0/613",
-    "false_accept_rate": 0.0,
-    "val_acc": 0.5963855421686747,
-    "val_acc_pct": "59.64%",
-    "train_acc": 0.6172199702396224,
-    "train_acc_pct": "61.72%",
-    "fnr_000_admission": false,
-    "label": "EXPERIMENTAL / not FNR-000",
-    "producer_reported": true,
-    "observed_at_pt": "2026-11-02 06:59:01 PST",
-    "observation_age_seconds": 789,
-    "observation_age_human": "13m",
-    "artifact_dir": "v15_lineage_warm_x37"
-  },
+  "latest_letter_metrics": null,
   "validation_accuracy": {
-    "letter": "X37",
-    "val_acc": 0.5963855421686747,
-    "val_acc_pct": "59.64%",
+    "letter": null,
+    "val_acc": null,
+    "val_acc_pct": null,
     "producer_reported": true,
-    "observed_at_pt": "2026-11-02 06:59:01 PST",
-    "observation_age_human": "13m",
+    "observed_at_pt": null,
+    "observation_age_human": null,
     "note": "From train_metrics final_val_acc on published letter artifacts"
   },
-  "recent_letters": [
-    {
-      "letter": "X37",
-      "hard_neural": "91/110",
-      "hard_solve_rate": 0.8272727272727273,
-      "avg_nodes": 30.945454545454545,
-      "false_accept": "0/613",
-      "false_accept_rate": 0.0,
-      "val_acc": 0.5963855421686747,
-      "val_acc_pct": "59.64%",
-      "train_acc": 0.6172199702396224,
-      "train_acc_pct": "61.72%",
-      "fnr_000_admission": false,
-      "label": "EXPERIMENTAL / not FNR-000",
-      "producer_reported": true,
-      "observed_at_pt": "2026-11-02 06:59:01 PST",
-      "observation_age_seconds": 789,
-      "observation_age_human": "13m",
-      "artifact_dir": "v15_lineage_warm_x37"
-    }
-  ],
+  "recent_letters": [],
   "aws_burst": {
     "role": "optional_continue_only_burst_leq_1_ec2",
     "soft_cap": "\u22641 EC2",
@@ -102,8 +64,8 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 385930,
-      "observation_age_human": "4d 11h",
+      "observation_age_seconds": 390524,
+      "observation_age_human": "4d 12h",
       "label": "EXPERIMENTAL / not FNR-000"
     },
     "history": [
@@ -151,34 +113,12 @@
         "monitor": "done",
         "source": "t90u_continue_until_credits",
         "observed_at_pt": "2026-10-28 20:00 PDT"
-      },
-      {
-        "letter": "X37",
-        "instance_id": "i-00a2a4fee455f6260",
-        "run_id": "v15-lineage-warm-20261027-x37",
-        "state": "done_receipt",
-        "hard_neural": "91/110",
-        "val_acc_pct": "59.64%",
-        "false_accept": "0/613",
-        "source": "DONE.json",
-        "observed_at_pt": "2026-11-02 06:59:04 PST"
       }
     ],
-    "latest_DONE": {
-      "lane": "AWS-X",
-      "run": "v15-lineage-warm-20261027-x37",
-      "letter": "X37",
-      "finished_utc": "2026-11-02T14:59:02Z",
-      "instance_id": "i-00a2a4fee455f6260",
-      "label": "EXPERIMENTAL-not-FNR-000",
-      "observed_at_pt": "2026-11-02 06:59:04 PST",
-      "observation_age_seconds": 786,
-      "observation_age_human": "13m",
-      "note": "Completed fold receipt \u2014 not the live AWS letter unless current.state says running"
-    },
+    "latest_DONE": null,
     "stale_probe_suppressed": "Ignored stale probe letter X16 (probe @ 2026-10-28 16:25 PDT); current letter is X21",
-    "instance_id_file": "i-00a2a4fee455f6260",
-    "instance_id_file_observed_at_pt": "2026-11-02 06:36:24 PST",
+    "instance_id_file": "i-0ccf954143ecf9742",
+    "instance_id_file_observed_at_pt": "2026-11-02 08:21:05 PST",
     "registry_burn_updated_pt": "2026-10-28 20:00 PDT",
     "data_note": "aws_burst.current is the only live letter claim in this snapshot. history / latest_DONE are completed letters and must not be read as current AWS status. Snapshot \u2260 live EC2 DescribeInstances.",
     "label": "EXPERIMENTAL / not FNR-000"
@@ -192,32 +132,32 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 385930,
-    "observation_age_human": "4d 11h"
+    "observation_age_seconds": 390524,
+    "observation_age_human": "4d 12h"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-11-02 07:12:10 PST (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-11-02 08:28:44 PST (America/Los_Angeles)",
     "hub_publish": {
-      "observed_at_pt": "2026-11-02 07:07:22 PST",
+      "observed_at_pt": "2026-11-02 08:24:10 PST",
       "age_human": "4m",
-      "age_seconds": 287
+      "age_seconds": 273
     },
     "latest_letter_metrics": {
-      "letter": "X37",
-      "observed_at_pt": "2026-11-02 06:59:01 PST",
-      "age_human": "13m",
-      "age_seconds": 789
+      "letter": null,
+      "observed_at_pt": null,
+      "age_human": null,
+      "age_seconds": null
     },
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "4d 11h",
-      "age_seconds": 385930
+      "age_human": "4d 12h",
+      "age_seconds": 390524
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "4d 11h",
-      "age_seconds": 385930
+      "age_human": "4d 12h",
+      "age_seconds": 390524
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -309,11 +249,11 @@
   },
   "tiered_eval": {
     "label": "EXPERIMENTAL / not FNR-000 \u2014 tiered eval (checker-verified, frozen)",
-    "suite_sha256_12": "12c4c4f0a89c\u2026",
+    "suite_sha256_12": "1309941c4f2b\u2026",
     "tiers": {
       "T1": {
         "n": 60,
-        "avg_steps": 3.95
+        "avg_steps": 4.05
       },
       "T2": {
         "n": 60,
@@ -321,15 +261,15 @@
       },
       "T3": {
         "n": 110,
-        "avg_steps": 0.0
+        "avg_steps": 10.75
       },
       "T4": {
         "n": 188,
-        "avg_steps": 12.64
+        "avg_steps": 13.57
       },
       "T5": {
         "n": 100,
-        "avg_steps": 18.79
+        "avg_steps": 17.98
       }
     },
     "weights": {
@@ -339,102 +279,6 @@
       "T4": 0.4
     },
     "trend": [
-      {
-        "t": "baseline-t102u",
-        "run_id": "after AWS X21 (reconstructed)",
-        "hub_sha": "b83d5288df7e\u2026",
-        "composite": 85.5,
-        "tiers": {
-          "T1": 60,
-          "T2": 60,
-          "T3": 110,
-          "T4": 51
-        },
-        "fa": 0,
-        "adv_n": 2474,
-        "adv_by_type": {
-          "wrong_premise": [
-            0,
-            304
-          ],
-          "wrong_conclusion": [
-            0,
-            310
-          ],
-          "swap_neg": [
-            0,
-            310
-          ],
-          "capture_all_e": [
-            0,
-            310
-          ],
-          "bad_induction": [
-            0,
-            310
-          ],
-          "bad_list": [
-            0,
-            310
-          ],
-          "truncate": [
-            0,
-            310
-          ],
-          "bad_hyp_idx": [
-            0,
-            310
-          ]
-        }
-      },
-      {
-        "t": "baseline-t102u",
-        "run_id": "after E2B g6 (reconstructed)",
-        "hub_sha": "3cf44ddd1550\u2026",
-        "composite": 85.5,
-        "tiers": {
-          "T1": 60,
-          "T2": 60,
-          "T3": 110,
-          "T4": 51
-        },
-        "fa": 0,
-        "adv_n": 2474,
-        "adv_by_type": {
-          "wrong_premise": [
-            0,
-            304
-          ],
-          "wrong_conclusion": [
-            0,
-            310
-          ],
-          "swap_neg": [
-            0,
-            310
-          ],
-          "capture_all_e": [
-            0,
-            310
-          ],
-          "bad_induction": [
-            0,
-            310
-          ],
-          "bad_list": [
-            0,
-            310
-          ],
-          "truncate": [
-            0,
-            310
-          ],
-          "bad_hyp_idx": [
-            0,
-            310
-          ]
-        }
-      },
       {
         "t": "baseline-t102u",
         "run_id": "after E2B t101u-test1 (reconstructed)",
@@ -985,11 +829,39 @@
           "T5": 48
         },
         "fa": 0
+      },
+      {
+        "t": "2026-11-02T08:12:37.627004",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-145003",
+        "hub_sha": "5ef4f8e218d4\u2026",
+        "composite": 72.83,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 107,
+          "T4": 133,
+          "T5": 49
+        },
+        "fa": 0
+      },
+      {
+        "t": "2026-11-02T08:25:33.903917",
+        "run_id": "e2b-lineage-t98u-g59",
+        "hub_sha": "69c8f34312f7\u2026",
+        "composite": 72.79,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 134,
+          "T5": 50
+        },
+        "fa": 0
       }
     ]
   },
   "domain_suite": {
-    "suite_sha256_12": "019d34fda363\u2026",
+    "suite_sha256_12": "98d153cf5b1f\u2026",
     "levels": [
       "easy",
       "medium",
@@ -1005,7 +877,7 @@
           "hard": 16,
           "very_hard": 16
         },
-        "avg_steps": 6.27
+        "avg_steps": 7.06
       },
       "logic.first_order": {
         "n": 64,
@@ -4026,6 +3898,262 @@
         },
         "fa": 0,
         "hub_sha": "fddb6c44d97c"
+      },
+      {
+        "t": "2026-11-02T07:55:44.788309-08:00",
+        "run_id": "e2b-lineage-t98u-g53",
+        "decision": "REJECTED",
+        "composite": 71.13,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 94,
+          "T4": 135,
+          "T5": 50
+        },
+        "fa": 0,
+        "hub_sha": "fddb6c44d97c"
+      },
+      {
+        "t": "2026-11-02T07:58:07.246840-08:00",
+        "run_id": "e2b-lineage-t98u-g54",
+        "decision": "REJECTED",
+        "composite": 69.96,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 93,
+          "T4": 131,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "fddb6c44d97c"
+      },
+      {
+        "t": "2026-11-02T08:00:50.206006-08:00",
+        "run_id": "e2b-lineage-t98u-g55",
+        "decision": "REJECTED",
+        "composite": 70.15,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 93,
+          "T4": 130,
+          "T5": 50
+        },
+        "fa": 0,
+        "hub_sha": "fddb6c44d97c"
+      },
+      {
+        "t": "2026-11-02T08:03:13.970936-08:00",
+        "run_id": "e2b-lineage-t98u-g56",
+        "decision": "REJECTED",
+        "composite": 70.33,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 95,
+          "T4": 131,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "fddb6c44d97c"
+      },
+      {
+        "t": "2026-11-02T08:06:04.539760-08:00",
+        "run_id": "e2b-lineage-t98u-g57",
+        "decision": "REJECTED",
+        "composite": 69.99,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 94,
+          "T4": 130,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "fddb6c44d97c"
+      },
+      {
+        "t": "2026-11-02T08:08:34.115935-08:00",
+        "run_id": "e2b-lineage-t98u-g58",
+        "decision": "REJECTED",
+        "composite": 70.35,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 96,
+          "T4": 130,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "fddb6c44d97c"
+      },
+      {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 7,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 3,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 17,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 11,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 32.04,
+        "t": "2026-11-02T08:11:03.163786-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-145003",
+        "decision": "FOLDED",
+        "composite": 72.83,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 107,
+          "T4": 133,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "5ef4f8e218d4"
+      },
+      {
+        "t": "2026-11-02T08:18:38.680882-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-152811",
+        "decision": "REJECTED",
+        "composite": 72.01,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 129,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "5ef4f8e218d4"
+      },
+      {
+        "t": "2026-11-02T08:20:56.447863-08:00",
+        "run_id": "aws-next-1793632951",
+        "decision": "REJECTED",
+        "composite": 72.3,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 133,
+          "T5": 48
+        },
+        "fa": 0,
+        "hub_sha": "5ef4f8e218d4"
+      },
+      {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 10,
+            "n": 64,
+            "by_level": {
+              "easy": 5,
+              "medium": 5,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 17,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 11,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 4,
+            "n": 64,
+            "by_level": {
+              "easy": 4,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 32.98,
+        "t": "2026-11-02T08:24:09.158368-08:00",
+        "run_id": "e2b-lineage-t98u-g59",
+        "decision": "FOLDED",
+        "composite": 72.79,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 134,
+          "T5": 50
+        },
+        "fa": 0,
+        "hub_sha": "69c8f34312f7"
       }
     ]
   },
@@ -4033,7 +4161,7 @@
     "label": "EXPERIMENTAL / not FNR-000 \u2014 budget & burn plan (t115u)",
     "aws": {
       "credit_remaining_usd": 195.33,
-      "credit_checked": "2026-11-02T06:36:15.586449-08:00",
+      "credit_checked": "2026-11-02T08:20:58.715915-08:00",
       "instance_type": "m7i-flex.large",
       "cost_per_hr_usd": 0.0958,
       "burn_per_day_usd_1ec2": 2.3,
@@ -4117,20 +4245,20 @@
   },
   "checker_health": {
     "label": "EXPERIMENTAL / not FNR-000 \u2014 checker v2.1 continuous testing (t132u)",
-    "tests_passed": 106,
+    "tests_passed": 138,
     "tests_failed": 0,
     "reverify": "{\"rows\": 7371, \"new_accept\": 7371, \"old_accept\": 7371} changed: 0 crashes: 0",
-    "fuzz_hours": 1.446,
-    "cases_run": 5536150,
-    "kernel_accepts_checked": 1824361,
+    "fuzz_hours": 2.709,
+    "cases_run": 10934311,
+    "kernel_accepts_checked": 3529737,
     "findings": {
       "SLOW": 2,
-      "KERNEL_REJECT_REF_ACCEPT": 152,
+      "KERNEL_REJECT_REF_ACCEPT": 294,
       "FALSE_ACCEPT": 2
     },
     "soundness_findings_open": 2,
-    "fold_paused": true,
-    "alert_open": true,
+    "fold_paused": false,
+    "alert_open": false,
     "last_alert": {
       "t": "2026-11-02T07:10:43-08:00",
       "kind": "FALSE_ACCEPT",
@@ -4140,8 +4268,13 @@
     },
     "bugs_found": 3,
     "bugs_fixed": 2,
-    "heartbeat": "2026-11-02T06:48:43-08:00",
-    "updated": "2026-11-02T07:11:45-08:00"
+    "heartbeat": "2026-11-02T07:51:25-08:00",
+    "updated": "2026-11-02T08:28:17-08:00",
+    "data_no_shortcut": {
+      "rows": 3130,
+      "failing": 26,
+      "t": 1793634704.5605183
+    }
   },
   "training_quality": {
     "label": "EXPERIMENTAL / not FNR-000 \u2014 training quality (t122u)",
@@ -5611,6 +5744,236 @@
           "T5": 48
         },
         "useful_pct": 100.0
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g53",
+        "t": "2026-11-02T07:55:44.788309-08:00",
+        "suite": "1309941c",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 68.5,
+        "preview": 71.13,
+        "hub": 72.03,
+        "delta_vs_hub": -0.9,
+        "folded": false,
+        "why": "preview T3 94 < floor 100",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 94,
+          "T4": 135,
+          "T5": 50
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g54",
+        "t": "2026-11-02T07:58:07.246840-08:00",
+        "suite": "1309941c",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 70.17,
+        "preview": 69.96,
+        "hub": 72.03,
+        "delta_vs_hub": -2.07,
+        "folded": false,
+        "why": "preview T3 93 < floor 100",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 93,
+          "T4": 131,
+          "T5": 49
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g55",
+        "t": "2026-11-02T08:00:50.206006-08:00",
+        "suite": "1309941c",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 68.48,
+        "preview": 70.15,
+        "hub": 72.03,
+        "delta_vs_hub": -1.88,
+        "folded": false,
+        "why": "preview T3 93 < floor 100",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 93,
+          "T4": 130,
+          "T5": 50
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g56",
+        "t": "2026-11-02T08:03:13.970936-08:00",
+        "suite": "1309941c",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 70.48,
+        "preview": 70.33,
+        "hub": 72.03,
+        "delta_vs_hub": -1.7,
+        "folded": false,
+        "why": "preview T3 95 < floor 100",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 95,
+          "T4": 131,
+          "T5": 49
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g57",
+        "t": "2026-11-02T08:06:04.539760-08:00",
+        "suite": "1309941c",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 69.54,
+        "preview": 69.99,
+        "hub": 72.03,
+        "delta_vs_hub": -2.04,
+        "folded": false,
+        "why": "preview T3 94 < floor 100",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 94,
+          "T4": 130,
+          "T5": 49
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g58",
+        "t": "2026-11-02T08:08:34.115935-08:00",
+        "suite": "1309941c",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 68.56,
+        "preview": 70.35,
+        "hub": 72.03,
+        "delta_vs_hub": -1.68,
+        "folded": false,
+        "why": "preview T3 96 < floor 100",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 96,
+          "T4": 130,
+          "T5": 49
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-145003",
+        "t": "2026-11-02T08:11:03.163786-08:00",
+        "suite": "1309941c",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 73.62,
+        "preview": 72.83,
+        "hub": 72.03,
+        "delta_vs_hub": 0.8,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 107,
+          "T4": 133,
+          "T5": 49
+        },
+        "useful_pct": 100.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-152811",
+        "t": "2026-11-02T08:18:38.680882-08:00",
+        "suite": "1309941c",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 72.46,
+        "preview": 72.01,
+        "hub": 72.83,
+        "delta_vs_hub": -0.82,
+        "folded": false,
+        "why": "preview composite 72.01 < hub 72.83 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 129,
+          "T5": 49
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "aws",
+        "run_id": "aws-next-1793632951",
+        "t": "2026-11-02T08:20:56.447863-08:00",
+        "suite": "1309941c",
+        "hours_est": 0.85,
+        "usd_est": 0.08,
+        "candidate": 70.27,
+        "preview": 72.3,
+        "hub": 72.83,
+        "delta_vs_hub": -0.53,
+        "folded": false,
+        "why": "preview composite 72.3 < hub 72.83 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 133,
+          "T5": 48
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "e2b",
+        "run_id": "e2b-lineage-t98u-g59",
+        "t": "2026-11-02T08:24:09.158368-08:00",
+        "suite": "1309941c",
+        "hours_est": 0.6666666666666666,
+        "usd_est": null,
+        "candidate": 70.82,
+        "preview": 72.79,
+        "hub": 72.83,
+        "delta_vs_hub": -0.04,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 134,
+          "T5": 50
+        },
+        "useful_pct": 58.3
       }
     ],
     "hub_progress": [
@@ -6444,51 +6807,87 @@
         "n_T4": 188,
         "delta_first": 0.54,
         "best_so_far": 71.29
+      },
+      {
+        "t": "2026-11-02T08:11:03.163786-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-145003",
+        "hub_sha": "5ef4f8e218d4",
+        "suite": "1309941c",
+        "composite": 72.83,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 107,
+          "T4": 133,
+          "T5": 49
+        },
+        "kind": "FOLDED",
+        "n_T4": 188,
+        "delta_first": 0.0,
+        "best_so_far": 72.83
+      },
+      {
+        "t": "2026-11-02T08:24:09.158368-08:00",
+        "run_id": "e2b-lineage-t98u-g59",
+        "hub_sha": "69c8f34312f7",
+        "suite": "1309941c",
+        "composite": 72.79,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 104,
+          "T4": 134,
+          "T5": 50
+        },
+        "kind": "FOLDED",
+        "n_T4": 188,
+        "delta_first": -0.04,
+        "best_so_far": 72.83
       }
     ],
     "waste": {
       "overall": {
-        "useful_compute_pct": 38.5,
-        "runs": 65,
-        "wasted_runs": 41,
-        "pct_runs": 63.1,
-        "hours": 37.23,
-        "wasted_hours": 22.5,
-        "pct_hours": 60.4,
-        "usd": 1.12,
-        "wasted_usd": 0.8,
-        "pct_usd": 71.4
+        "useful_compute_pct": 34.4,
+        "runs": 75,
+        "wasted_runs": 49,
+        "pct_runs": 65.3,
+        "hours": 42.75,
+        "wasted_hours": 27.35,
+        "pct_hours": 64.0,
+        "usd": 1.2,
+        "wasted_usd": 0.88,
+        "pct_usd": 73.3
       },
       "by_provider": {
         "e2b": {
-          "useful_compute_pct": 43.1,
-          "runs": 38,
-          "wasted_runs": 21,
-          "pct_runs": 55.3,
-          "hours": 25.33,
-          "wasted_hours": 14.0,
-          "pct_hours": 55.3,
+          "useful_compute_pct": 37.7,
+          "runs": 45,
+          "wasted_runs": 27,
+          "pct_runs": 60.0,
+          "hours": 30.0,
+          "wasted_hours": 18.0,
+          "pct_hours": 60.0,
           "usd": 0,
           "wasted_usd": 0,
           "pct_usd": null
         },
         "aws": {
-          "useful_compute_pct": 28.6,
-          "runs": 14,
-          "wasted_runs": 10,
-          "pct_runs": 71.4,
-          "hours": 11.9,
-          "wasted_hours": 8.5,
-          "pct_hours": 71.4,
-          "usd": 1.12,
-          "wasted_usd": 0.8,
-          "pct_usd": 71.4
+          "useful_compute_pct": 26.7,
+          "runs": 15,
+          "wasted_runs": 11,
+          "pct_runs": 73.3,
+          "hours": 12.75,
+          "wasted_hours": 9.35,
+          "pct_hours": 73.3,
+          "usd": 1.2,
+          "wasted_usd": 0.88,
+          "pct_usd": 73.3
         },
         "waypoint": {
-          "useful_compute_pct": 23.1,
-          "runs": 13,
-          "wasted_runs": 10,
-          "pct_runs": 76.9,
+          "useful_compute_pct": 26.7,
+          "runs": 15,
+          "wasted_runs": 11,
+          "pct_runs": 73.3,
           "hours": 0,
           "wasted_hours": 0,
           "pct_hours": null,
@@ -6952,13 +7351,83 @@
           "pct_runs_rolling10": 80.0,
           "pct_runs_cum": 63.1,
           "useful_compute_pct_rolling10": 19.3
+        },
+        {
+          "t": "2026-11-02T07:55:44.788309-08:00",
+          "run_id": "e2b-lineage-t98u-g53",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 63.6,
+          "useful_compute_pct_rolling10": 17.3
+        },
+        {
+          "t": "2026-11-02T07:58:07.246840-08:00",
+          "run_id": "e2b-lineage-t98u-g54",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 64.2,
+          "useful_compute_pct_rolling10": 17.3
+        },
+        {
+          "t": "2026-11-02T08:00:50.206006-08:00",
+          "run_id": "e2b-lineage-t98u-g55",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 64.7,
+          "useful_compute_pct_rolling10": 17.3
+        },
+        {
+          "t": "2026-11-02T08:03:13.970936-08:00",
+          "run_id": "e2b-lineage-t98u-g56",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 65.2,
+          "useful_compute_pct_rolling10": 17.8
+        },
+        {
+          "t": "2026-11-02T08:06:04.539760-08:00",
+          "run_id": "e2b-lineage-t98u-g57",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 65.7,
+          "useful_compute_pct_rolling10": 17.8
+        },
+        {
+          "t": "2026-11-02T08:08:34.115935-08:00",
+          "run_id": "e2b-lineage-t98u-g58",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 66.2,
+          "useful_compute_pct_rolling10": 17.8
+        },
+        {
+          "t": "2026-11-02T08:11:03.163786-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-145003",
+          "pct_runs_rolling10": 70.0,
+          "pct_runs_cum": 65.3,
+          "useful_compute_pct_rolling10": 17.8
+        },
+        {
+          "t": "2026-11-02T08:18:38.680882-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-152811",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 65.8,
+          "useful_compute_pct_rolling10": 15.4
+        },
+        {
+          "t": "2026-11-02T08:20:56.447863-08:00",
+          "run_id": "aws-next-1793632951",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 66.2,
+          "useful_compute_pct_rolling10": 14.9
+        },
+        {
+          "t": "2026-11-02T08:24:09.158368-08:00",
+          "run_id": "e2b-lineage-t98u-g59",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 65.3,
+          "useful_compute_pct_rolling10": 7.0
         }
       ]
     },
     "notes": "hours/$ are per-run profile estimates (E2B 40 min, Daytona 100 min, AWS 0.85 h measured @ $0.0958/h; waypoint unknown). useful_compute_pct = folded share of compute (t124u). Suite changes are marked; scores from different suites are never compared."
   },
   "suite_t120u": {
-    "suite_sha256": "12c4c4f0a89c33cb93212ba793d03b1ed3d1ea7f3c240097485ca41e936f99cf",
+    "suite_sha256": "1309941c4f2b6bd1fc2dcb82b7deac615830928e5b48b20816d15b4f27197f5c",
     "tier_n": {
       "T1": 60,
       "T2": 60,
@@ -6974,7 +7443,7 @@
       "T5": 0.35
     },
     "new_t4_categories": [
-      "contra_efq_long",
+      "neg_chain_long",
       "dne_multi",
       "three_chain_and",
       "eq_trans_long",
@@ -7330,9 +7799,9 @@
   },
   "hub_github": {
     "label": "EXPERIMENTAL / not FNR-000 \u2014 source of truth (t116u)",
-    "tag": "hub-fddb6c44",
-    "sha256": "fddb6c44d97c3ae17d46eac9eb9d05755be64f46aa89dd39c4b40eea793d4109",
-    "release_url": "https://github.com/tsrnc2/multi-cloud-train/releases/tag/hub-fddb6c44",
+    "tag": "hub-69c8f343",
+    "sha256": "69c8f34312f709ba98dc09e37b031f0e85ee95d2a45b5035a58f7956dc79613c",
+    "release_url": "https://github.com/tsrnc2/multi-cloud-train/releases/tag/hub-69c8f343",
     "repo_private": true
   }
 }
