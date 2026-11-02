@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-11-02 00:59:49 PST (America/Los_Angeles)",
+  "last_updated_pt": "2026-11-02 01:03:57 PST (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -31,21 +31,59 @@
     "w_old": 0.65,
     "w_new": 0.35,
     "observed_at_pt": "2026-11-02 00:54:05 PST",
-    "observation_age_seconds": 343,
-    "observation_age_human": "5m",
+    "observation_age_seconds": 591,
+    "observation_age_human": "9m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
-  "latest_letter_metrics": null,
-  "validation_accuracy": {
-    "letter": null,
-    "val_acc": null,
-    "val_acc_pct": null,
+  "latest_letter_metrics": {
+    "letter": "X29",
+    "hard_neural": "77/110",
+    "hard_solve_rate": 0.7,
+    "avg_nodes": 33.86363636363637,
+    "false_accept": "0/613",
+    "false_accept_rate": 0.0,
+    "val_acc": 0.6159638554216867,
+    "val_acc_pct": "61.60%",
+    "train_acc": 0.6159371953409616,
+    "train_acc_pct": "61.59%",
+    "fnr_000_admission": false,
+    "label": "EXPERIMENTAL / not FNR-000",
     "producer_reported": true,
-    "observed_at_pt": null,
-    "observation_age_human": null,
+    "observed_at_pt": "2026-11-02 00:59:23 PST",
+    "observation_age_seconds": 274,
+    "observation_age_human": "4m",
+    "artifact_dir": "v15_lineage_warm_x29"
+  },
+  "validation_accuracy": {
+    "letter": "X29",
+    "val_acc": 0.6159638554216867,
+    "val_acc_pct": "61.60%",
+    "producer_reported": true,
+    "observed_at_pt": "2026-11-02 00:59:23 PST",
+    "observation_age_human": "4m",
     "note": "From train_metrics final_val_acc on published letter artifacts"
   },
-  "recent_letters": [],
+  "recent_letters": [
+    {
+      "letter": "X29",
+      "hard_neural": "77/110",
+      "hard_solve_rate": 0.7,
+      "avg_nodes": 33.86363636363637,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "val_acc": 0.6159638554216867,
+      "val_acc_pct": "61.60%",
+      "train_acc": 0.6159371953409616,
+      "train_acc_pct": "61.59%",
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "producer_reported": true,
+      "observed_at_pt": "2026-11-02 00:59:23 PST",
+      "observation_age_seconds": 274,
+      "observation_age_human": "4m",
+      "artifact_dir": "v15_lineage_warm_x29"
+    }
+  ],
   "aws_burst": {
     "role": "optional_continue_only_burst_leq_1_ec2",
     "soft_cap": "\u22641 EC2",
@@ -64,8 +102,8 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 363589,
-      "observation_age_human": "4d 4h",
+      "observation_age_seconds": 363837,
+      "observation_age_human": "4d 5h",
       "label": "EXPERIMENTAL / not FNR-000"
     },
     "history": [
@@ -113,9 +151,31 @@
         "monitor": "done",
         "source": "t90u_continue_until_credits",
         "observed_at_pt": "2026-10-28 20:00 PDT"
+      },
+      {
+        "letter": "X29",
+        "instance_id": "i-098ba40a7a4b419a9",
+        "run_id": "v15-lineage-warm-20261027-x29",
+        "state": "done_receipt",
+        "hard_neural": "77/110",
+        "val_acc_pct": "61.60%",
+        "false_accept": "0/613",
+        "source": "DONE.json",
+        "observed_at_pt": "2026-11-02 00:59:25 PST"
       }
     ],
-    "latest_DONE": null,
+    "latest_DONE": {
+      "lane": "AWS-X",
+      "run": "v15-lineage-warm-20261027-x29",
+      "letter": "X29",
+      "finished_utc": "2026-11-02T08:59:24Z",
+      "instance_id": "i-098ba40a7a4b419a9",
+      "label": "EXPERIMENTAL-not-FNR-000",
+      "observed_at_pt": "2026-11-02 00:59:25 PST",
+      "observation_age_seconds": 272,
+      "observation_age_human": "4m",
+      "note": "Completed fold receipt \u2014 not the live AWS letter unless current.state says running"
+    },
     "stale_probe_suppressed": "Ignored stale probe letter X16 (probe @ 2026-10-28 16:25 PDT); current letter is X21",
     "instance_id_file": "i-098ba40a7a4b419a9",
     "instance_id_file_observed_at_pt": "2026-11-02 00:31:22 PST",
@@ -132,32 +192,32 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 363589,
-    "observation_age_human": "4d 4h"
+    "observation_age_seconds": 363837,
+    "observation_age_human": "4d 5h"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-11-02 00:59:49 PST (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-11-02 01:03:57 PST (America/Los_Angeles)",
     "hub_publish": {
       "observed_at_pt": "2026-11-02 00:54:05 PST",
-      "age_human": "5m",
-      "age_seconds": 343
+      "age_human": "9m",
+      "age_seconds": 591
     },
     "latest_letter_metrics": {
-      "letter": null,
-      "observed_at_pt": null,
-      "age_human": null,
-      "age_seconds": null
+      "letter": "X29",
+      "observed_at_pt": "2026-11-02 00:59:23 PST",
+      "age_human": "4m",
+      "age_seconds": 274
     },
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "4d 4h",
-      "age_seconds": 363589
+      "age_human": "4d 5h",
+      "age_seconds": 363837
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "age_human": "4d 4h",
-      "age_seconds": 363589
+      "age_human": "4d 5h",
+      "age_seconds": 363837
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -3047,6 +3107,21 @@
         },
         "fa": 0,
         "hub_sha": "b8c355060f2e"
+      },
+      {
+        "t": "2026-11-02T01:03:13.258598-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-081414",
+        "decision": "REJECTED",
+        "composite": 69.39,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 103,
+          "T4": 116,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "b8c355060f2e"
       }
     ]
   },
@@ -3914,6 +3989,29 @@
           "T5": 49
         },
         "useful_pct": 100.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-081414",
+        "t": "2026-11-02T01:03:13.258598-08:00",
+        "suite": "12c4c4f0",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 68.39,
+        "preview": 69.39,
+        "hub": 70.78,
+        "delta_vs_hub": -1.39,
+        "folded": false,
+        "why": "preview composite 69.39 < hub 70.78 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 103,
+          "T4": 116,
+          "T5": 49
+        },
+        "useful_pct": 0.0
       }
     ],
     "hub_progress": [
@@ -4626,9 +4724,9 @@
     "waste": {
       "overall": {
         "useful_compute_pct": 45.4,
-        "runs": 35,
-        "wasted_runs": 18,
-        "pct_runs": 51.4,
+        "runs": 36,
+        "wasted_runs": 19,
+        "pct_runs": 52.8,
         "hours": 22.43,
         "wasted_hours": 12.25,
         "pct_hours": 54.6,
@@ -4662,10 +4760,10 @@
           "pct_usd": 83.3
         },
         "waypoint": {
-          "useful_compute_pct": 66.7,
-          "runs": 3,
-          "wasted_runs": 1,
-          "pct_runs": 33.3,
+          "useful_compute_pct": 50.0,
+          "runs": 4,
+          "wasted_runs": 2,
+          "pct_runs": 50.0,
           "hours": 0,
           "wasted_hours": 0,
           "pct_hours": null,
@@ -4919,6 +5017,13 @@
           "pct_runs_rolling10": 40.0,
           "pct_runs_cum": 51.4,
           "useful_compute_pct_rolling10": 58.8
+        },
+        {
+          "t": "2026-11-02T01:03:13.258598-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-081414",
+          "pct_runs_rolling10": 40.0,
+          "pct_runs_cum": 52.8,
+          "useful_compute_pct_rolling10": 68.1
         }
       ]
     },
