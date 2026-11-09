@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-11-09 09:53:25 PST (America/Los_Angeles)",
+  "last_updated_pt": "2026-11-09 09:58:43 PST (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -24,14 +24,14 @@
     "runtime_flag": "lanes/lineage-hub/ONE_LANE_POLICY.json"
   },
   "hub": {
-    "recommended_sha256": "37cb51d2f904a8a6691dde711a73ed94c62384988f34fb298e92be3e4c855f21",
-    "recommended_sha256_short": "37cb51d2f904\u2026",
-    "last_publish_run_id": "v14_full_lrp_skills_roles_cont_20261102-215128",
-    "last_publish_pt": "2026-11-09 09:50:06 PST",
+    "recommended_sha256": "3d7881ee167771db9cfc9ceb67e15fdee9a61ca0952c028344af5404184ee83f",
+    "recommended_sha256_short": "3d7881ee1677\u2026",
+    "last_publish_run_id": "v14_full_lrp_skills_roles_cont_20261102-222836",
+    "last_publish_pt": "2026-11-09 09:55:29 PST",
     "w_old": 0.65,
     "w_new": 0.35,
-    "observed_at_pt": "2026-11-09 09:50:06 PST",
-    "observation_age_seconds": 198,
+    "observed_at_pt": "2026-11-09 09:55:29 PST",
+    "observation_age_seconds": 193,
     "observation_age_human": "3m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
@@ -50,8 +50,8 @@
     "label": "EXPERIMENTAL / not FNR-000",
     "producer_reported": true,
     "observed_at_pt": "2026-11-09 09:30:29 PST",
-    "observation_age_seconds": 1376,
-    "observation_age_human": "22m",
+    "observation_age_seconds": 1694,
+    "observation_age_human": "28m",
     "artifact_dir": "v15_lineage_warm_x51"
   },
   "validation_accuracy": {
@@ -60,7 +60,7 @@
     "val_acc_pct": "61.90%",
     "producer_reported": true,
     "observed_at_pt": "2026-11-09 09:30:29 PST",
-    "observation_age_human": "22m",
+    "observation_age_human": "28m",
     "note": "From train_metrics final_val_acc on published letter artifacts"
   },
   "recent_letters": [
@@ -79,8 +79,8 @@
       "label": "EXPERIMENTAL / not FNR-000",
       "producer_reported": true,
       "observed_at_pt": "2026-11-09 09:30:29 PST",
-      "observation_age_seconds": 1376,
-      "observation_age_human": "22m",
+      "observation_age_seconds": 1694,
+      "observation_age_human": "28m",
       "artifact_dir": "v15_lineage_warm_x51"
     }
   ],
@@ -102,7 +102,7 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 1000405,
+      "observation_age_seconds": 1000723,
       "observation_age_human": "11d 13h",
       "label": "EXPERIMENTAL / not FNR-000"
     },
@@ -172,8 +172,8 @@
       "instance_id": "i-061cd1b64d751932c",
       "label": "EXPERIMENTAL-not-FNR-000",
       "observed_at_pt": "2026-11-09 09:30:33 PST",
-      "observation_age_seconds": 1372,
-      "observation_age_human": "22m",
+      "observation_age_seconds": 1690,
+      "observation_age_human": "28m",
       "note": "Completed fold receipt \u2014 not the live AWS letter unless current.state says running"
     },
     "stale_probe_suppressed": "Ignored stale probe letter X16 (probe @ 2026-10-28 16:25 PDT); current letter is X21",
@@ -192,32 +192,32 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 1000405,
+    "observation_age_seconds": 1000723,
     "observation_age_human": "11d 13h"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-11-09 09:53:25 PST (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-11-09 09:58:43 PST (America/Los_Angeles)",
     "hub_publish": {
-      "observed_at_pt": "2026-11-09 09:50:06 PST",
+      "observed_at_pt": "2026-11-09 09:55:29 PST",
       "age_human": "3m",
-      "age_seconds": 198
+      "age_seconds": 193
     },
     "latest_letter_metrics": {
       "letter": "X51",
       "observed_at_pt": "2026-11-09 09:30:29 PST",
-      "age_human": "22m",
-      "age_seconds": 1376
+      "age_human": "28m",
+      "age_seconds": 1694
     },
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
       "age_human": "11d 13h",
-      "age_seconds": 1000405
+      "age_seconds": 1000723
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
       "age_human": "11d 13h",
-      "age_seconds": 1000405
+      "age_seconds": 1000723
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -339,19 +339,6 @@
       "T4": 0.4
     },
     "trend": [
-      {
-        "t": "2026-10-29T02:34:51.826911",
-        "run_id": "e2b-lineage-t98u-g10",
-        "hub_sha": "688e8aabd4b9\u2026",
-        "composite": 85.5,
-        "tiers": {
-          "T1": 60,
-          "T2": 60,
-          "T3": 110,
-          "T4": 51
-        },
-        "fa": 0
-      },
       {
         "t": "2026-10-29T02:36:47.190719",
         "run_id": "e2b-lineage-t98u-g11",
@@ -744,6 +731,20 @@
           "T2": 60,
           "T3": 102,
           "T4": 130,
+          "T5": 49
+        },
+        "fa": 0
+      },
+      {
+        "t": "2026-11-09T09:56:44.685267",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-222836",
+        "hub_sha": "3d7881ee1677\u2026",
+        "composite": 71.69,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 127,
           "T5": 49
         },
         "fa": 0
@@ -4413,6 +4414,74 @@
         },
         "fa": 0,
         "hub_sha": "37cb51d2f904"
+      },
+      {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 1,
+            "n": 64,
+            "by_level": {
+              "easy": 1,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 17,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 11,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 3,
+            "n": 64,
+            "by_level": {
+              "easy": 3,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 29.85,
+        "t": "2026-11-09T09:55:29.019128-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-222836",
+        "decision": "FOLDED",
+        "composite": 71.69,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 127,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "3d7881ee1677"
       }
     ]
   },
@@ -6593,6 +6662,29 @@
           "T5": 49
         },
         "useful_pct": 100.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-222836",
+        "t": "2026-11-09T09:55:29.019128-08:00",
+        "suite": "5f6750cf",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 71.46,
+        "preview": 71.69,
+        "hub": 71.44,
+        "delta_vs_hub": 0.25,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 127,
+          "T5": 49
+        },
+        "useful_pct": 100.0
       }
     ],
     "hub_progress": [
@@ -7516,14 +7608,32 @@
         "n_T4": 188,
         "delta_first": 1.45,
         "best_so_far": 71.44
+      },
+      {
+        "t": "2026-11-09T09:55:29.019128-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-222836",
+        "hub_sha": "3d7881ee1677",
+        "suite": "5f6750cf",
+        "composite": 71.69,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 127,
+          "T5": 49
+        },
+        "kind": "FOLDED",
+        "n_T4": 188,
+        "delta_first": 1.7,
+        "best_so_far": 71.69
       }
     ],
     "waste": {
       "overall": {
         "useful_compute_pct": 35.3,
-        "runs": 90,
+        "runs": 91,
         "wasted_runs": 60,
-        "pct_runs": 66.7,
+        "pct_runs": 65.9,
         "hours": 46.45,
         "wasted_hours": 29.35,
         "pct_hours": 63.2,
@@ -7557,10 +7667,10 @@
           "pct_usd": 64.7
         },
         "waypoint": {
-          "useful_compute_pct": 24.0,
-          "runs": 25,
+          "useful_compute_pct": 26.9,
+          "runs": 26,
           "wasted_runs": 19,
-          "pct_runs": 76.0,
+          "pct_runs": 73.1,
           "hours": 0,
           "wasted_hours": 0,
           "pct_hours": null,
@@ -8199,6 +8309,13 @@
           "pct_runs_rolling10": 70.0,
           "pct_runs_cum": 66.7,
           "useful_compute_pct_rolling10": 100.0
+        },
+        {
+          "t": "2026-11-09T09:55:29.019128-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-222836",
+          "pct_runs_rolling10": 70.0,
+          "pct_runs_cum": 65.9,
+          "useful_compute_pct_rolling10": 30.0
         }
       ]
     },
@@ -8577,9 +8694,9 @@
   },
   "hub_github": {
     "label": "EXPERIMENTAL / not FNR-000 \u2014 source of truth (t116u)",
-    "tag": "hub-37cb51d2",
-    "sha256": "37cb51d2f904a8a6691dde711a73ed94c62384988f34fb298e92be3e4c855f21",
-    "release_url": "https://github.com/tsrnc2/multi-cloud-train/releases/tag/hub-37cb51d2",
+    "tag": "hub-3d7881ee",
+    "sha256": "3d7881ee167771db9cfc9ceb67e15fdee9a61ca0952c028344af5404184ee83f",
+    "release_url": "https://github.com/tsrnc2/multi-cloud-train/releases/tag/hub-3d7881ee",
     "repo_private": true
   }
 }
