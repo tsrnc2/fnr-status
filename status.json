@@ -12,7 +12,7 @@
     "client_poll_seconds": 60,
     "banner": "This page\u2019s timer only re-fetches the last published snapshot. It does not stream live training from AWS/Linode."
   },
-  "last_updated_pt": "2026-11-09 09:24:24 PST (America/Los_Angeles)",
+  "last_updated_pt": "2026-11-09 09:53:25 PST (America/Los_Angeles)",
   "source_repo": "tsrnc2/multi-cloud-train",
   "status_repo": "tsrnc2/fnr-status",
   "one_lane": {
@@ -24,28 +24,66 @@
     "runtime_flag": "lanes/lineage-hub/ONE_LANE_POLICY.json"
   },
   "hub": {
-    "recommended_sha256": "32f8fb13180713e1476bd41d0f631aea577ced2c401a8db908dbd350b4a0a5f9",
-    "recommended_sha256_short": "32f8fb131807\u2026",
-    "last_publish_run_id": "v14_full_lrp_skills_roles_cont_20261102-164256",
-    "last_publish_pt": "2026-11-09 09:20:49 PST",
+    "recommended_sha256": "37cb51d2f904a8a6691dde711a73ed94c62384988f34fb298e92be3e4c855f21",
+    "recommended_sha256_short": "37cb51d2f904\u2026",
+    "last_publish_run_id": "v14_full_lrp_skills_roles_cont_20261102-215128",
+    "last_publish_pt": "2026-11-09 09:50:06 PST",
     "w_old": 0.65,
     "w_new": 0.35,
-    "observed_at_pt": "2026-11-09 09:20:49 PST",
-    "observation_age_seconds": 214,
+    "observed_at_pt": "2026-11-09 09:50:06 PST",
+    "observation_age_seconds": 198,
     "observation_age_human": "3m",
     "label": "EXPERIMENTAL / not FNR-000"
   },
-  "latest_letter_metrics": null,
-  "validation_accuracy": {
-    "letter": null,
-    "val_acc": null,
-    "val_acc_pct": null,
+  "latest_letter_metrics": {
+    "letter": "X51",
+    "hard_neural": "95/110",
+    "hard_solve_rate": 0.8636363636363636,
+    "avg_nodes": 21.354545454545455,
+    "false_accept": "0/613",
+    "false_accept_rate": 0.0,
+    "val_acc": 0.6189759036144579,
+    "val_acc_pct": "61.90%",
+    "train_acc": 0.6397139713971397,
+    "train_acc_pct": "63.97%",
+    "fnr_000_admission": false,
+    "label": "EXPERIMENTAL / not FNR-000",
     "producer_reported": true,
-    "observed_at_pt": null,
-    "observation_age_human": null,
+    "observed_at_pt": "2026-11-09 09:30:29 PST",
+    "observation_age_seconds": 1376,
+    "observation_age_human": "22m",
+    "artifact_dir": "v15_lineage_warm_x51"
+  },
+  "validation_accuracy": {
+    "letter": "X51",
+    "val_acc": 0.6189759036144579,
+    "val_acc_pct": "61.90%",
+    "producer_reported": true,
+    "observed_at_pt": "2026-11-09 09:30:29 PST",
+    "observation_age_human": "22m",
     "note": "From train_metrics final_val_acc on published letter artifacts"
   },
-  "recent_letters": [],
+  "recent_letters": [
+    {
+      "letter": "X51",
+      "hard_neural": "95/110",
+      "hard_solve_rate": 0.8636363636363636,
+      "avg_nodes": 21.354545454545455,
+      "false_accept": "0/613",
+      "false_accept_rate": 0.0,
+      "val_acc": 0.6189759036144579,
+      "val_acc_pct": "61.90%",
+      "train_acc": 0.6397139713971397,
+      "train_acc_pct": "63.97%",
+      "fnr_000_admission": false,
+      "label": "EXPERIMENTAL / not FNR-000",
+      "producer_reported": true,
+      "observed_at_pt": "2026-11-09 09:30:29 PST",
+      "observation_age_seconds": 1376,
+      "observation_age_human": "22m",
+      "artifact_dir": "v15_lineage_warm_x51"
+    }
+  ],
   "aws_burst": {
     "role": "optional_continue_only_burst_leq_1_ec2",
     "soft_cap": "\u22641 EC2",
@@ -64,7 +102,7 @@
       "monitor": "armed",
       "source": "t90u_continue_until_credits",
       "observed_at_pt": "2026-10-28 20:00 PDT",
-      "observation_age_seconds": 998664,
+      "observation_age_seconds": 1000405,
       "observation_age_human": "11d 13h",
       "label": "EXPERIMENTAL / not FNR-000"
     },
@@ -113,9 +151,31 @@
         "monitor": "done",
         "source": "t90u_continue_until_credits",
         "observed_at_pt": "2026-10-28 20:00 PDT"
+      },
+      {
+        "letter": "X51",
+        "instance_id": "i-061cd1b64d751932c",
+        "run_id": "v15-lineage-warm-20261027-x51",
+        "state": "done_receipt",
+        "hard_neural": "95/110",
+        "val_acc_pct": "61.90%",
+        "false_accept": "0/613",
+        "source": "DONE.json",
+        "observed_at_pt": "2026-11-09 09:30:33 PST"
       }
     ],
-    "latest_DONE": null,
+    "latest_DONE": {
+      "lane": "AWS-X",
+      "run": "v15-lineage-warm-20261027-x51",
+      "letter": "X51",
+      "finished_utc": "2026-11-09T17:30:31Z",
+      "instance_id": "i-061cd1b64d751932c",
+      "label": "EXPERIMENTAL-not-FNR-000",
+      "observed_at_pt": "2026-11-09 09:30:33 PST",
+      "observation_age_seconds": 1372,
+      "observation_age_human": "22m",
+      "note": "Completed fold receipt \u2014 not the live AWS letter unless current.state says running"
+    },
     "stale_probe_suppressed": "Ignored stale probe letter X16 (probe @ 2026-10-28 16:25 PDT); current letter is X21",
     "instance_id_file": "i-061cd1b64d751932c",
     "instance_id_file_observed_at_pt": "2026-11-09 09:18:03 PST",
@@ -132,32 +192,32 @@
     "observed_at_pt": "2026-10-28 20:00 PDT",
     "note": "Point-in-time from last REGISTRY / Continue tip; published snapshot \u2260 sole live host health proof",
     "label": "EXPERIMENTAL / not FNR-000",
-    "observation_age_seconds": 998664,
+    "observation_age_seconds": 1000405,
     "observation_age_human": "11d 13h"
   },
   "observation_ages": {
-    "snapshot_built_at_pt": "2026-11-09 09:24:24 PST (America/Los_Angeles)",
+    "snapshot_built_at_pt": "2026-11-09 09:53:25 PST (America/Los_Angeles)",
     "hub_publish": {
-      "observed_at_pt": "2026-11-09 09:20:49 PST",
+      "observed_at_pt": "2026-11-09 09:50:06 PST",
       "age_human": "3m",
-      "age_seconds": 214
+      "age_seconds": 198
     },
     "latest_letter_metrics": {
-      "letter": null,
-      "observed_at_pt": null,
-      "age_human": null,
-      "age_seconds": null
+      "letter": "X51",
+      "observed_at_pt": "2026-11-09 09:30:29 PST",
+      "age_human": "22m",
+      "age_seconds": 1376
     },
     "aws_current": {
       "letter": "X21",
       "observed_at_pt": "2026-10-28 20:00 PDT",
       "age_human": "11d 13h",
-      "age_seconds": 998664
+      "age_seconds": 1000405
     },
     "linode": {
       "observed_at_pt": "2026-10-28 20:00 PDT",
       "age_human": "11d 13h",
-      "age_seconds": 998664
+      "age_seconds": 1000405
     },
     "note": "Ages are relative to snapshot_built_at_pt. Page auto-refresh only re-fetches this published JSON; it does not probe EC2/Linode live."
   },
@@ -279,102 +339,6 @@
       "T4": 0.4
     },
     "trend": [
-      {
-        "t": "baseline-t102u",
-        "run_id": "after E2B g5",
-        "hub_sha": "f42395ce535f\u2026",
-        "composite": 85.5,
-        "tiers": {
-          "T1": 60,
-          "T2": 60,
-          "T3": 110,
-          "T4": 51
-        },
-        "fa": 0,
-        "adv_n": 2474,
-        "adv_by_type": {
-          "wrong_premise": [
-            0,
-            304
-          ],
-          "wrong_conclusion": [
-            0,
-            310
-          ],
-          "swap_neg": [
-            0,
-            310
-          ],
-          "capture_all_e": [
-            0,
-            310
-          ],
-          "bad_induction": [
-            0,
-            310
-          ],
-          "bad_list": [
-            0,
-            310
-          ],
-          "truncate": [
-            0,
-            310
-          ],
-          "bad_hyp_idx": [
-            0,
-            310
-          ]
-        }
-      },
-      {
-        "t": "baseline-t102u",
-        "run_id": "after E2B g8 (current)",
-        "hub_sha": "15d42b2740b8\u2026",
-        "composite": 85.5,
-        "tiers": {
-          "T1": 60,
-          "T2": 60,
-          "T3": 110,
-          "T4": 51
-        },
-        "fa": 0,
-        "adv_n": 2474,
-        "adv_by_type": {
-          "wrong_premise": [
-            0,
-            304
-          ],
-          "wrong_conclusion": [
-            0,
-            310
-          ],
-          "swap_neg": [
-            0,
-            310
-          ],
-          "capture_all_e": [
-            0,
-            310
-          ],
-          "bad_induction": [
-            0,
-            310
-          ],
-          "bad_list": [
-            0,
-            310
-          ],
-          "truncate": [
-            0,
-            310
-          ],
-          "bad_hyp_idx": [
-            0,
-            310
-          ]
-        }
-      },
       {
         "t": "2026-10-29T02:34:51.826911",
         "run_id": "e2b-lineage-t98u-g10",
@@ -753,6 +717,34 @@
           "T3": 103,
           "T4": 120,
           "T5": 50
+        },
+        "fa": 0
+      },
+      {
+        "t": "2026-11-09T09:46:17.145268",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-215128",
+        "hub_sha": "811063bfaaa2\u2026",
+        "composite": 71.01,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 103,
+          "T4": 124,
+          "T5": 50
+        },
+        "fa": 0
+      },
+      {
+        "t": "2026-11-09T09:51:24.347802",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-215128",
+        "hub_sha": "37cb51d2f904\u2026",
+        "composite": 71.44,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 102,
+          "T4": 130,
+          "T5": 49
         },
         "fa": 0
       }
@@ -4248,6 +4240,179 @@
         },
         "fa": 0,
         "hub_sha": "32f8fb131807"
+      },
+      {
+        "t": "2026-11-09T09:26:30.425455-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-172104",
+        "decision": "REJECTED",
+        "composite": 69.27,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 105,
+          "T4": 113,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "32f8fb131807"
+      },
+      {
+        "t": "2026-11-09T09:28:38.231729-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-180442",
+        "decision": "REJECTED",
+        "composite": 69.56,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 98,
+          "T4": 125,
+          "T5": 48
+        },
+        "fa": 0,
+        "hub_sha": "32f8fb131807"
+      },
+      {
+        "t": "2026-11-09T09:31:31.465827-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-184219",
+        "decision": "REJECTED",
+        "composite": 68.13,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 98,
+          "T4": 116,
+          "T5": 48
+        },
+        "fa": 0,
+        "hub_sha": "32f8fb131807"
+      },
+      {
+        "t": "2026-11-09T09:36:00.992076-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-191927",
+        "decision": "REJECTED",
+        "composite": 69.58,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 116,
+          "T5": 48
+        },
+        "fa": 0,
+        "hub_sha": "32f8fb131807"
+      },
+      {
+        "t": "2026-11-09T09:38:22.890633-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-195805",
+        "decision": "REJECTED",
+        "composite": 69.87,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 103,
+          "T4": 119,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "32f8fb131807"
+      },
+      {
+        "t": "2026-11-09T09:40:34.170843-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-203613",
+        "decision": "REJECTED",
+        "composite": 68.92,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 105,
+          "T4": 113,
+          "T5": 48
+        },
+        "fa": 0,
+        "hub_sha": "32f8fb131807"
+      },
+      {
+        "t": "2026-11-09T09:42:42.059741-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-211350",
+        "decision": "REJECTED",
+        "composite": 68.47,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 96,
+          "T4": 116,
+          "T5": 50
+        },
+        "fa": 0,
+        "hub_sha": "32f8fb131807"
+      },
+      {
+        "domains": {
+          "logic.propositional": {
+            "solved": 64,
+            "n": 64,
+            "by_level": {
+              "easy": 16,
+              "medium": 16,
+              "hard": 16,
+              "very_hard": 16
+            }
+          },
+          "logic.first_order": {
+            "solved": 0,
+            "n": 64,
+            "by_level": {
+              "easy": 0,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "math.arithmetic": {
+            "solved": 4,
+            "n": 48,
+            "by_level": {
+              "easy": 0,
+              "medium": 1,
+              "hard": 2,
+              "very_hard": 1
+            }
+          },
+          "math.induction": {
+            "solved": 17,
+            "n": 49,
+            "by_level": {
+              "easy": 6,
+              "medium": 11,
+              "hard": 0,
+              "very_hard": 0
+            }
+          },
+          "cs.lists": {
+            "solved": 3,
+            "n": 64,
+            "by_level": {
+              "easy": 3,
+              "medium": 0,
+              "hard": 0,
+              "very_hard": 0
+            }
+          }
+        },
+        "domain_mean": 29.54,
+        "t": "2026-11-09T09:50:05.659736-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-215128",
+        "decision": "FOLDED",
+        "composite": 71.44,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 102,
+          "T4": 130,
+          "T5": 49
+        },
+        "fa": 0,
+        "hub_sha": "37cb51d2f904"
       }
     ]
   },
@@ -6244,6 +6409,190 @@
           "T5": 50
         },
         "useful_pct": 100.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-172104",
+        "t": "2026-11-09T09:26:30.425455-08:00",
+        "suite": "5f6750cf",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 73.05,
+        "preview": 69.27,
+        "hub": 70.38,
+        "delta_vs_hub": -1.11,
+        "folded": false,
+        "why": "preview composite 69.27 < hub 70.38 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 105,
+          "T4": 113,
+          "T5": 49
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-180442",
+        "t": "2026-11-09T09:28:38.231729-08:00",
+        "suite": "5f6750cf",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 72.26,
+        "preview": 69.56,
+        "hub": 70.38,
+        "delta_vs_hub": -0.82,
+        "folded": false,
+        "why": "preview T3 98 < floor 100",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 98,
+          "T4": 125,
+          "T5": 48
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-184219",
+        "t": "2026-11-09T09:31:31.465827-08:00",
+        "suite": "5f6750cf",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 72.3,
+        "preview": 68.13,
+        "hub": 70.38,
+        "delta_vs_hub": -2.25,
+        "folded": false,
+        "why": "preview T3 98 < floor 100",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 98,
+          "T4": 116,
+          "T5": 48
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-191927",
+        "t": "2026-11-09T09:36:00.992076-08:00",
+        "suite": "5f6750cf",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 69.51,
+        "preview": 69.58,
+        "hub": 70.38,
+        "delta_vs_hub": -0.8,
+        "folded": false,
+        "why": "preview composite 69.58 < hub 70.38 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 106,
+          "T4": 116,
+          "T5": 48
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-195805",
+        "t": "2026-11-09T09:38:22.890633-08:00",
+        "suite": "5f6750cf",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 70.12,
+        "preview": 69.87,
+        "hub": 70.38,
+        "delta_vs_hub": -0.51,
+        "folded": false,
+        "why": "preview composite 69.87 < hub 70.38 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 103,
+          "T4": 119,
+          "T5": 49
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-203613",
+        "t": "2026-11-09T09:40:34.170843-08:00",
+        "suite": "5f6750cf",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 72.26,
+        "preview": 68.92,
+        "hub": 70.38,
+        "delta_vs_hub": -1.46,
+        "folded": false,
+        "why": "preview composite 68.92 < hub 70.38 - 0.5",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 105,
+          "T4": 113,
+          "T5": 48
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-211350",
+        "t": "2026-11-09T09:42:42.059741-08:00",
+        "suite": "5f6750cf",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 70.85,
+        "preview": 68.47,
+        "hub": 70.38,
+        "delta_vs_hub": -1.91,
+        "folded": false,
+        "why": "preview T3 96 < floor 100",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 96,
+          "T4": 116,
+          "T5": 50
+        },
+        "useful_pct": 0.0
+      },
+      {
+        "provider": "waypoint",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-215128",
+        "t": "2026-11-09T09:50:05.659736-08:00",
+        "suite": "5f6750cf",
+        "hours_est": null,
+        "usd_est": null,
+        "candidate": 72.26,
+        "preview": 71.44,
+        "hub": 71.01,
+        "delta_vs_hub": 0.43,
+        "folded": true,
+        "why": "passes",
+        "fa": 0,
+        "tiers": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 102,
+          "T4": 130,
+          "T5": 49
+        },
+        "useful_pct": 100.0
       }
     ],
     "hub_progress": [
@@ -7149,14 +7498,32 @@
         "n_T4": 188,
         "delta_first": 0.39,
         "best_so_far": 70.38
+      },
+      {
+        "t": "2026-11-09T09:50:05.659736-08:00",
+        "run_id": "v14_full_lrp_skills_roles_cont_20261102-215128",
+        "hub_sha": "37cb51d2f904",
+        "suite": "5f6750cf",
+        "composite": 71.44,
+        "solved": {
+          "T1": 60,
+          "T2": 60,
+          "T3": 102,
+          "T4": 130,
+          "T5": 49
+        },
+        "kind": "FOLDED",
+        "n_T4": 188,
+        "delta_first": 1.45,
+        "best_so_far": 71.44
       }
     ],
     "waste": {
       "overall": {
         "useful_compute_pct": 35.3,
-        "runs": 82,
-        "wasted_runs": 53,
-        "pct_runs": 64.6,
+        "runs": 90,
+        "wasted_runs": 60,
+        "pct_runs": 66.7,
         "hours": 46.45,
         "wasted_hours": 29.35,
         "pct_hours": 63.2,
@@ -7190,10 +7557,10 @@
           "pct_usd": 64.7
         },
         "waypoint": {
-          "useful_compute_pct": 29.4,
-          "runs": 17,
-          "wasted_runs": 12,
-          "pct_runs": 70.6,
+          "useful_compute_pct": 24.0,
+          "runs": 25,
+          "wasted_runs": 19,
+          "pct_runs": 76.0,
           "hours": 0,
           "wasted_hours": 0,
           "pct_hours": null,
@@ -7776,6 +8143,62 @@
           "pct_runs_rolling10": 60.0,
           "pct_runs_cum": 64.6,
           "useful_compute_pct_rolling10": 40.0
+        },
+        {
+          "t": "2026-11-09T09:26:30.425455-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-172104",
+          "pct_runs_rolling10": 60.0,
+          "pct_runs_cum": 65.1,
+          "useful_compute_pct_rolling10": 40.0
+        },
+        {
+          "t": "2026-11-09T09:28:38.231729-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-180442",
+          "pct_runs_rolling10": 60.0,
+          "pct_runs_cum": 65.5,
+          "useful_compute_pct_rolling10": 47.8
+        },
+        {
+          "t": "2026-11-09T09:31:31.465827-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-184219",
+          "pct_runs_rolling10": 70.0,
+          "pct_runs_cum": 65.9,
+          "useful_compute_pct_rolling10": 45.9
+        },
+        {
+          "t": "2026-11-09T09:36:00.992076-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-191927",
+          "pct_runs_rolling10": 70.0,
+          "pct_runs_cum": 66.3,
+          "useful_compute_pct_rolling10": 56.0
+        },
+        {
+          "t": "2026-11-09T09:38:22.890633-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-195805",
+          "pct_runs_rolling10": 70.0,
+          "pct_runs_cum": 66.7,
+          "useful_compute_pct_rolling10": 56.0
+        },
+        {
+          "t": "2026-11-09T09:40:34.170843-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-203613",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 67.0,
+          "useful_compute_pct_rolling10": 38.9
+        },
+        {
+          "t": "2026-11-09T09:42:42.059741-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-211350",
+          "pct_runs_rolling10": 80.0,
+          "pct_runs_cum": 67.4,
+          "useful_compute_pct_rolling10": 56.0
+        },
+        {
+          "t": "2026-11-09T09:50:05.659736-08:00",
+          "run_id": "v14_full_lrp_skills_roles_cont_20261102-215128",
+          "pct_runs_rolling10": 70.0,
+          "pct_runs_cum": 66.7,
+          "useful_compute_pct_rolling10": 100.0
         }
       ]
     },
@@ -8154,9 +8577,9 @@
   },
   "hub_github": {
     "label": "EXPERIMENTAL / not FNR-000 \u2014 source of truth (t116u)",
-    "tag": "hub-32f8fb13",
-    "sha256": "32f8fb13180713e1476bd41d0f631aea577ced2c401a8db908dbd350b4a0a5f9",
-    "release_url": "https://github.com/tsrnc2/multi-cloud-train/releases/tag/hub-32f8fb13",
+    "tag": "hub-37cb51d2",
+    "sha256": "37cb51d2f904a8a6691dde711a73ed94c62384988f34fb298e92be3e4c855f21",
+    "release_url": "https://github.com/tsrnc2/multi-cloud-train/releases/tag/hub-37cb51d2",
     "repo_private": true
   }
 }
