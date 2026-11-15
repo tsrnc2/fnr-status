@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="FNR Observatory explains the Formal Neural Reasoner research project in everyday language: what the team is building, recent progress, and the work still ahead.">
+  <meta name="theme-color" content="#111b30">
+  <title>FNR Observatory — Making AI reasoning easier to trust</title>
+  <style>
+    :root{--ink:#132136;--muted:#566578;--blue:#14223c;--blue2:#1b3052;--teal:#1f927f;--aqua:#b9f2df;--sand:#fcf8ef;--coral:#fd8668;--line:#dfe6e9;--white:#fff;--shadow:0 22px 60px rgba(9,25,45,.09)}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;background:#f8f9f7;color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration-thickness:1px;text-underline-offset:4px}
+    a:focus-visible,summary:focus-visible{outline:3px solid var(--coral);outline-offset:4px;border-radius:4px}
+    .wrap{width:min(1160px,calc(100% - 44px));margin-inline:auto}
+    .skip{position:absolute;left:-9999px;top:8px;background:#fff;color:#000;padding:10px;z-index:10}.skip:focus{left:12px}
+    .top{background:var(--blue);color:white;position:relative;overflow:hidden}
+    .top:before{content:"";position:absolute;inset:0;background-image:linear-gradient(to right,rgba(204,236,239,.055) 1px,transparent 1px),linear-gradient(to bottom,rgba(204,236,239,.055) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to right,transparent 20%,#000 100%);pointer-events:none}
+    header{border-bottom:1px solid #ffffff20;position:relative;z-index:2}
+    .nav{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;gap:13px;align-items:center;font-weight:800;letter-spacing:.07em;text-decoration:none;font-size:15px}
+    .emblem{height:39px;width:39px;display:grid;place-items:center;border:1px solid #8de7cf7d;border-radius:12px;color:#aaf3d9;background:#b9f2df16;font-weight:900;letter-spacing:-.09em;font-size:17px;padding-right:2px}
+    .brand span:last-child small{display:block;font-size:10px;line-height:1.15;color:#aec4d3;letter-spacing:.22em;font-weight:650;margin-top:3px}
+    nav{display:flex;align-items:center;gap:28px;flex-wrap:wrap}nav a{color:#ccdae5;text-decoration:none;font-size:13px;font-weight:650}nav a:hover{color:#b7f2dc}
+    .nav-cta{border:1px solid #91b9c450;border-radius:100px;padding:8px 15px;color:white}
+    .hero{display:grid;grid-template-columns:1.04fr .96fr;gap:35px;align-items:center;min-height:596px;padding:77px 0 91px;position:relative}
+    .eyebrow{font-size:12px;font-weight:750;letter-spacing:.19em;text-transform:uppercase;color:#a9efda;display:flex;align-items:center;gap:11px;margin:0 0 22px}
+    .eyebrow:before{content:"";display:inline-block;width:27px;height:2px;background:var(--coral)}
+    h1,h2,h3,p{margin-top:0}h1,h2,h3{letter-spacing:-.04em;line-height:1.13}
+    h1{font-weight:770;font-size:clamp(46px,5.7vw,75px);max-width:760px;margin-bottom:24px}
+    h1 em{font-style:normal;color:#aaf0dc}
+    .hero .lead{font-size:19px;line-height:1.68;color:#c8d9e5;max-width:590px;margin-bottom:31px}
+    .actions{display:flex;align-items:center;gap:15px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:12px;border:1px solid transparent;text-decoration:none;border-radius:999px;padding:13px 21px;font-weight:750;font-size:14px;transition:transform .15s ease}
+    .btn:hover{transform:translateY(-2px)}.btn.primary{background:#baf0db;color:#173341}.btn.ghost{border-color:#718497;color:white}
+    .statusline{color:#b7c8d6;font-size:12px;margin-top:27px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .dot{width:8px;height:8px;background:#f7af6b;border-radius:50%;display:inline-block;flex-shrink:0}
+    .hero-art{position:relative;min-height:430px;display:grid;place-items:center}
+    .orbit{position:absolute;inset:17px;max-width:465px;max-height:465px;aspect-ratio:1;border:1px solid #76bea82a;border-radius:50%;margin:auto}
+    .orbit.o2{inset:62px;border-style:dashed;border-color:#a6e6e24a;transform:rotate(-22deg)}.orbit.o3{inset:117px;border-color:#f4c7ab33}
+    .node{position:absolute;width:11px;height:11px;border-radius:50%;background:#a9f1d9;box-shadow:0 0 0 9px #a8f4d715}.n1{top:7%;left:48%}.n2{right:3%;top:46%;background:#ffae8a;box-shadow:0 0 0 9px #ff9d7d18}.n3{left:5%;bottom:26%}
+    .art-card{width:min(354px,100%);background:#223550ed;border:1px solid #b7ecde35;border-radius:27px;box-shadow:0 25px 65px #04102070;padding:24px 25px;position:relative;z-index:1;transform:rotate(-3deg)}
+    .art-top{display:flex;align-items:center;justify-content:space-between;color:#adcfda;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:29px}
+    .live-dots{display:flex;gap:6px}.live-dots i{width:7px;height:7px;border-radius:50%;display:block;background:#5c7683}.live-dots i:first-child{background:#ff9477}.live-dots i:nth-child(2){background:#f5c47e}.live-dots i:last-child{background:#7ddfc2}
+    .logic{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;align-items:center;margin-bottom:20px}.logic>span{text-align:center;background:#ffffff0c;border:1px solid #ffffff26;border-radius:14px;padding:15px 2px;color:#eaf4f7;font-size:16px;font-weight:730}.logic>span:nth-child(2){color:#b9f2df}.logic>span:nth-child(3){border-color:#9be9c573}
+    .logic-caption{display:flex;justify-content:space-between;gap:10px;color:#c3d9e0;font-size:11px}.verified{display:inline-flex;align-items:center;gap:6px;color:#afe8cf;font-weight:750}.verified:before{content:"✓";display:inline-grid;place-items:center;background:#7fdbbe24;border-radius:50%;width:19px;height:19px}
+    section{padding:90px 0} .eyebrow.light{color:#238275;margin-bottom:12px}.eyebrow.light:before{background:var(--coral)}
+    h2{font-size:clamp(33px,4.1vw,51px);margin-bottom:20px}h3{font-size:23px;margin-bottom:13px}
+    .section-intro{font-size:18px;color:var(--muted);max-width:690px;margin:0 0 39px}
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .analogy{padding:34px;background:#eff4ec;border-radius:27px;border:1px solid #dbe8df}
+    .analogy .mini{font-size:11px;letter-spacing:.14em;font-weight:800;color:#278777;text-transform:uppercase;display:block;margin-bottom:20px}
+    .analogy .step{display:flex;gap:15px;align-items:flex-start;padding:19px 0;border-bottom:1px solid #d4e0d6}.analogy .step:last-child{border:0;padding-bottom:0}.analogy .step:first-of-type{padding-top:0}
+    .stepnum{background:#d8ebe1;color:#16816a;width:37px;height:37px;flex:0 0 auto;display:grid;place-items:center;border-radius:12px;font-size:13px;font-weight:800}
+    .analogy strong{display:block;font-size:16px}.analogy p{font-size:14px;color:#50605b;margin:3px 0 0}
+    .how-note{color:#58687b;font-size:15px;line-height:1.8}
+    .snapshot{background:#eff3f3;border-top:1px solid #e2e8e7;border-bottom:1px solid #e2e8e7;padding:57px 0}
+    .snap-top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:29px}.snap-top h2{font-size:31px;margin:0}.snap-top small{color:#62727e}
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .stat{border:1px solid #dce5e5;border-radius:20px;padding:28px 26px;background:#fff;box-shadow:0 6px 20px #0e2a3207}
+    .stat strong{display:block;font-size:clamp(30px,4vw,48px);letter-spacing:-.06em;line-height:1.1;color:#166a5e}.stat strong.label{font-size:30px;color:#995e3d}.stat b{display:block;font-size:15px;margin:9px 0 5px}.stat p{font-size:13px;color:var(--muted);margin:0;line-height:1.7}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}.card{background:#fff;border:1px solid var(--line);border-radius:23px;padding:28px;box-shadow:0 5px 12px #0b263107}.card .number{font:800 12px/1 system-ui;color:#228879;letter-spacing:.16em;display:block;margin-bottom:38px}.card h3{font-size:21px}.card p{color:#5d6a79;font-size:15px;margin:0}
+    .work{background:#fff}
+    .milestones{display:grid;grid-template-columns:1.25fr .75fr;gap:25px;align-items:start}
+    .timeline{background:#fff;border:1px solid var(--line);border-radius:25px;padding:28px 36px;box-shadow:var(--shadow)}
+    .event{display:grid;grid-template-columns:102px 1fr;gap:22px;position:relative;padding:16px 0 31px}.event:not(:last-child):after{content:"";position:absolute;left:110px;top:42px;bottom:-10px;width:1px;background:#d5dfdf}.event:not(:last-child){border-bottom:1px solid #ebeded}.event:last-child{padding-bottom:0}
+    .event time{font-size:12px;color:#537575;font-weight:780;padding-top:6px;letter-spacing:.05em;text-transform:uppercase}.event-body{position:relative;padding-left:20px}.event-body:before{content:"";position:absolute;left:0;top:11px;width:9px;height:9px;border-radius:50%;background:#4bb196;box-shadow:0 0 0 5px #d7f1e9}.event:nth-child(1) .event-body:before{background:#f9a07d;box-shadow:0 0 0 5px #fceddf}
+    .event-body h3{font-size:18px;margin-bottom:8px;letter-spacing:-.02em}.event-body p{color:#5b6b77;font-size:14px;line-height:1.72;margin:0}
+    .aside{padding:34px 31px;background:#e5f2eb;border:1px solid #cce4d8;border-radius:24px;position:sticky;top:20px}.aside .aside-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:#cae7db;color:#18846a;font-size:25px;margin-bottom:27px}.aside h3{font-size:24px}.aside p{color:#50675e;font-size:15px}.aside .smalllink{font-size:13px;font-weight:800;color:#176d60}
+    .roadmap{background:var(--sand)}.roadmap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}
+    .road-item{display:flex;gap:17px;padding:26px;background:#fff;border:1px solid #ede5d8;border-radius:19px}.r-icon{flex:0 0 38px;height:38px;display:grid;place-items:center;border-radius:12px;background:#f3f3ee;color:#4a766c;font-weight:850;font-size:14px}
+    .road-item h3{font-size:18px;letter-spacing:-.02em;margin-bottom:8px}.road-item p{font-size:14px;color:#5d6b74;margin:0}
+    .phase-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:37px}.phase{padding:17px 14px 18px;border-radius:14px;background:#fff9ef;border:1px solid #e5dccd}.phase b{display:block;font-size:13px;line-height:1.35;margin-bottom:6px}.phase span{font-size:11px;font-weight:800;letter-spacing:.07em;color:#73817b;text-transform:uppercase}.phase.done{background:#e9f4eb;border-color:#c4e1d0}.phase.active{background:#e5f4f1;border-color:#abe0d2}.phase.pending{background:#fff0e9;border-color:#efd5ca}
+    .faq{background:white}.faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:start}.faq-grid .section-intro{font-size:16px}
+    details{border-bottom:1px solid #dfe6e5;padding:20px 0}details:first-child{border-top:1px solid #dfe6e5}summary{display:flex;justify-content:space-between;gap:15px;align-items:center;cursor:pointer;list-style:none;font-weight:720;font-size:16px}summary::-webkit-details-marker{display:none}summary:after{content:"+";color:#148a78;font-size:26px;font-weight:400;line-height:1}details[open] summary:after{content:"−"}details p{color:#596a78;font-size:15px;margin:13px 45px 0 0}
+    .bottom{background:#15233a;color:#f0f6f7;padding:68px 0 29px}.bottom-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:80px;padding-bottom:57px}.bottom h2{font-size:33px}.bottom p{color:#b6c8d4;max-width:620px;font-size:15px}
+    .sources h3{font-size:16px;letter-spacing:-.01em}.sources p{font-size:13px}.sources a{color:#c1f4e2}
+    .footline{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;border-top:1px solid #ffffff20;padding-top:25px;font-size:12px;color:#a8bbc9}.footline a{color:#c0eadb}
+    @media(max-width:990px){nav{gap:15px}.hero{grid-template-columns:1fr .83fr}.hero-art{min-height:360px}.art-card{width:min(325px,100%)}.orbit{inset:8px}.orbit.o2{inset:55px}.orbit.o3{inset:100px}.intro-grid{gap:35px}.milestones{grid-template-columns:1.15fr .85fr}.faq-grid{gap:35px}}
+    @media(max-width:760px){.wrap{width:min(100% - 34px,640px)}.nav{min-height:77px}.nav nav{display:none}.hero{grid-template-columns:1fr;gap:4px;padding:64px 0 59px;min-height:auto}.hero-art{min-height:290px;max-width:410px;width:100%;margin:auto}.orbit{inset:0}.orbit.o2{inset:35px}.orbit.o3{inset:85px}.art-card{width:min(310px,78%);padding:20px}.logic>span{padding:12px 2px}.hero .lead{font-size:17px}section{padding:65px 0}.intro-grid,.milestones,.faq-grid,.bottom-grid{grid-template-columns:1fr;gap:25px}.stat-grid,.cards{grid-template-columns:1fr;gap:13px}.stat{padding:22px}.stat strong{font-size:39px}.card{padding:23px}.card .number{margin-bottom:20px}.snap-top{align-items:start;flex-direction:column}.timeline{padding:20px}.aside{position:static;padding:25px}.roadmap-grid{grid-template-columns:1fr}.phase-strip{grid-template-columns:repeat(2,1fr)}.event{grid-template-columns:75px 1fr;gap:12px}.event:not(:last-child):after{left:82px}.bottom{padding-top:55px}.bottom-grid{padding-bottom:35px}h1{font-size:clamp(42px,11vw,61px)}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="top">
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="#top" aria-label="FNR Observatory home"><span class="emblem" aria-hidden="true">F</span><span>FNR <small>OBSERVATORY</small></span></a>
+        <nav aria-label="Main navigation">
+          <a href="#about">The idea</a><a href="#work">Current work</a><a href="#recent">Recent progress</a><a href="#next">What's next</a><a class="nav-cta" href="#questions">Common questions</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <div class="wrap hero" id="top">
+        <div>
+          <p class="eyebrow">Formal Neural Reasoner · Research observatory</p>
+          <h1>Can AI learn to <em>show its work?</em></h1>
+          <p class="lead">The FNR project is teaching a computer to solve logic problems step by step—and using a separate checker to make sure those steps really add up.</p>
+          <div class="actions"><a class="btn primary" href="#about">Understand the project <span aria-hidden="true">↗</span></a><a class="btn ghost" href="#recent">See what's new <span aria-hidden="true">→</span></a></div>
+          <p class="statusline"><span class="dot" aria-hidden="true"></span><strong>Experimental research, not a finished product.</strong><span>Evidence reviewed November 14, 2026.</span></p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit"><i class="node n1"></i><i class="node n2"></i><i class="node n3"></i></div><div class="orbit o2"></div><div class="orbit o3"></div>
+          <div class="art-card"><div class="art-top"><span>THE REASONING LOOP</span><span class="live-dots"><i></i><i></i><i></i></span></div><div class="logic"><span>IF A</span><span>A → B</span><span>THEN B</span></div><div class="logic-caption"><span>PROPOSE A REASON</span><span class="verified">CHECK EACH STEP</span></div></div>
+        </div>
+      </div>
+  </div>
+
+  <section id="about" aria-labelledby="about-title">
+    <div class="wrap intro-grid">
+      <div>
+        <p class="eyebrow light">01 / In plain English</p>
+        <h2 id="about-title">A student, a teacher, and a very strict rulebook.</h2>
+        <p class="section-intro">Most AI systems can write an answer that sounds convincing. FNR explores something narrower and easier to test: can a model produce a correct chain of logical steps?</p>
+        <p class="how-note">Think of the AI as a student solving a puzzle. It suggests one step at a time. A separate, rule-based checker plays the teacher: it verifies the proof instead of trusting the student's confidence. If the proof fails, it is not counted as correct.</p>
+        <p class="how-note">The long-term hope is to develop AI tools that can reason more reliably and offer evidence for their answers. For now, this is a controlled research experiment using small, formal problems—not an AI that can solve any problem.</p>
+      </div>
+      <div class="analogy" aria-label="How FNR works">
+        <span class="mini">How a problem gets solved</span>
+        <div class="step"><span class="stepnum">01</span><div><strong>Give the system a logic puzzle</strong><p>A question with precise rules and an answer that can be checked.</p></div></div>
+        <div class="step"><span class="stepnum">02</span><div><strong>Let the model suggest steps</strong><p>It tries possible moves and builds a proof, much like showing work in math class.</p></div></div>
+        <div class="step"><span class="stepnum">03</span><div><strong>Check every step independently</strong><p>A separate checker accepts a valid proof or rejects it. Plausible wording is not enough.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="snapshot" aria-labelledby="snapshot-title"><div class="wrap">
+    <div class="snap-top"><div><p class="eyebrow light">The latest verified snapshot</p><h2 id="snapshot-title">What the tests are telling us</h2></div><small>Experimental training report · November 12, 2026</small></div>
+    <div class="stat-grid">
+      <div class="stat"><strong>25</strong><b>Training stages completed in the lab</b><p>Twenty-five carefully defined steps in the experimental learning curriculum had been admitted as of the last report.</p></div>
+      <div class="stat"><strong>1,500</strong><b>Fresh questions in the latest successful exam</b><p>The model solved three separate sets of 500 unseen problems for a newly completed logic lesson.</p></div>
+      <div class="stat"><strong class="label">Not released</strong><b>Research-only status</b><p>Passing a lab exam is not independent certification, general reasoning ability, or permission to use FNR in production.</p></div>
+    </div>
+  </div></div>
+
+  <section class="work" id="work" aria-labelledby="work-title"><div class="wrap">
+    <p class="eyebrow light">02 / On the workbench</p><h2 id="work-title">What the team is working on</h2>
+    <p class="section-intro">Several pieces have to come together before a research prototype can become a reliable tool.</p>
+    <div class="cards">
+      <article class="card"><span class="number">FOCUS 01</span><h3>Teach one skill at a time</h3><p>The model learns a specific logical move, faces new puzzles, then retakes old lessons to make sure it hasn't forgotten them.</p></article>
+      <article class="card"><span class="number">FOCUS 02</span><h3>Double-check the proofs</h3><p>Researchers are testing independent proof-checking methods, including an experimental connection to Lean, a mathematical proof system.</p></article>
+      <article class="card"><span class="number">FOCUS 03</span><h3>Make training dependable</h3><p>Training must survive memory problems, interruptions, restarts, and different computers without losing its verified progress.</p></article>
+    </div>
+  </div></section>
+
+  <section id="recent" aria-labelledby="recent-title" style="background:#f6f8f7"><div class="wrap">
+    <p class="eyebrow light">03 / Project journal</p><h2 id="recent-title">Recently completed & newly started</h2>
+    <p class="section-intro">These are documented results, not forecasts. Where work is still under review, we say so.</p>
+    <div class="milestones">
+      <div class="timeline">
+        <article class="event"><time datetime="2026-11-14">Nov 14, 2026</time><div class="event-body"><h3>New external proof-checking experiment drafted</h3><p>A small Lean-based checker was prepared with tests for invalid inputs and wrong answers. It is <strong>not yet independently reviewed or tested with the actual Lean program</strong>, so this is a new candidate—not a completed verification milestone.</p></div></article>
+        <article class="event"><time datetime="2026-11-12">Nov 12, 2026</time><div class="event-body"><h3>Training recovered from a memory stall</h3><p>A stalled training process was repaired, and two more training cycles completed cleanly. The next lesson remained in progress: its latest development score was 196 out of 200, below the required passing bar.</p></div></article>
+        <article class="event"><time datetime="2026-11-12">Nov 12, 2026</time><div class="event-body"><h3>Another logic lesson passed its exam</h3><p>A repair helped the model combine two related facts correctly. It then solved all 1,500 fresh exam problems, kept its earlier lessons on the sampled retention checks, and moved on to the next lesson.</p></div></article>
+        <article class="event"><time datetime="2026-11-11">Nov 11, 2026</time><div class="event-body"><h3>Longer chains of logic became more reliable</h3><p>A fix helped the model connect steps in a multi-part proof. Researchers also reduced memory use during exams so the training run could continue safely after an interruption.</p></div></article>
+      </div>
+      <aside class="aside"><div class="aside-icon" aria-hidden="true">↗</div><h3>Progress is more than a score.</h3><p>A useful milestone is one that holds up on new questions, survives older-skill checks, and can be reproduced by other reviewers. That's why the project records failed attempts and recovery work as carefully as successes.</p><p><strong>Important:</strong> the November 12 numbers are a documented snapshot, not a live feed.</p><a class="smalllink" href="#questions">Learn what the numbers mean →</a></aside>
+    </div>
+  </div></section>
+
+  <section class="roadmap" id="next" aria-labelledby="next-title"><div class="wrap">
+    <p class="eyebrow light">04 / The road ahead</p><h2 id="next-title">What still needs to be done</h2>
+    <p class="section-intro">FNR has shown promising results in controlled exercises. These are the main steps between research progress and a trustworthy working system.</p>
+    <div class="roadmap-grid">
+      <article class="road-item"><span class="r-icon">01</span><div><h3>Keep passing harder lessons</h3><p>Complete the remaining logic topics and difficulty levels while proving that earlier skills are retained.</p></div></article>
+      <article class="road-item"><span class="r-icon">02</span><div><h3>Get genuinely independent reviews</h3><p>Have separate reviewers run the proof tests, check source code, challenge weak spots, and record their conclusions.</p></div></article>
+      <article class="road-item"><span class="r-icon">03</span><div><h3>Finish external proof verification</h3><p>Run the Lean experiment against a real checker and verify that incorrect or manipulated proofs are rejected.</p></div></article>
+      <article class="road-item"><span class="r-icon">04</span><div><h3>Connect safely to other systems</h3><p>Test the proposed native checker and its connection to KITT, the project's AI coordinator, without granting unapproved access or actions.</p></div></article>
+      <article class="road-item"><span class="r-icon">05</span><div><h3>Prove reliable operation over time</h3><p>Repeat tests across machines, exercise recovery from failures, and confirm progress records remain accurate.</p></div></article>
+      <article class="road-item"><span class="r-icon">06</span><div><h3>Meet the formal release requirements</h3><p>Complete the project's acceptance checks and approvals before treating FNR as an approved or deployable system.</p></div></article>
+    </div>
+    <div class="phase-strip" aria-label="Project phase overview">
+      <div class="phase done"><b>Working prototype</b><span>Built and tested</span></div>
+      <div class="phase active"><b>Learning more skills</b><span>Active research</span></div>
+      <div class="phase pending"><b>Independent validation</b><span>Still required</span></div>
+      <div class="phase"><b>Approved real-world use</b><span>Not reached</span></div>
+    </div>
+  </div></section>
+
+  <section class="faq" id="questions" aria-labelledby="questions-title"><div class="wrap faq-grid">
+    <div><p class="eyebrow light">05 / Common questions</p><h2 id="questions-title">A few things worth knowing.</h2><p class="section-intro">No background in artificial intelligence or mathematics is needed to follow the project.</p></div>
+    <div>
+      <details><summary>Is FNR another chatbot?</summary><p>No. It's a focused experiment in teaching an AI model to find formal proofs. The goal isn't polished conversation; it's correct reasoning steps that independent software can check.</p></details>
+      <details><summary>What does “passed a lesson” mean?</summary><p>The model must solve several large batches of new, unseen test problems and still perform well on previously learned topics. Those are controlled lab results, not proof it can reason correctly about everything.</p></details>
+      <details><summary>Why use a second checker?</summary><p>AI can produce a confident but wrong answer. A separate proof checker enforces precise rules, so the model cannot earn credit just by sounding right. That checker also needs its own testing and review.</p></details>
+      <details><summary>Is it safe to use in real work now?</summary><p>Not yet. The core repository explicitly labels the system experimental and not accepted for production. Independent reviews, additional tests, and authorization are still required.</p></details>
+      <details><summary>What are KITT and LRP?</summary><p>KITT is the larger project's AI coordination system, while LRP is the reasoning-skills project. FNR aims to become one carefully controlled reasoning component inside that ecosystem, not a system with unrestricted powers.</p></details>
+      <details><summary>Are these updates live?</summary><p>No. This edition is a dated summary based on source records reviewed November 14, 2026, including training reports through November 12. New work may have happened afterward. The site should be regenerated when verified evidence changes.</p></details>
+    </div>
+  </div></section>
+  </main>
+
+  <footer class="bottom"><div class="wrap">
+    <div class="bottom-grid"><div><p class="eyebrow">The FNR Observatory</p><h2>Good reasoning should come with proof.</h2><p>A plain-English window into the work of building AI that can explain, check, and improve its reasoning. Clear progress, clear limitations, and no pretending the hard parts are finished.</p></div>
+    <div class="sources"><h3>Where this summary comes from</h3><p>Verified against the FNR prototype README, bounded mastery guide, the November 11–12 training reports, and experimental pull request 35. Internal GitHub links below may require project access.</p>
+      <p><a href="https://github.com/tsrnc2/formal-neural-reasoner/blob/main/README.md" rel="noopener noreferrer">Project overview</a> · <a href="https://github.com/tsrnc2/formal-neural-reasoner/blob/main/docs/MASTERY_TRAINING.md" rel="noopener noreferrer">How training is tested</a><br><a href="https://github.com/tsrnc2/formal-neural-reasoner/pull/33" rel="noopener noreferrer">Completed lesson report</a> · <a href="https://github.com/tsrnc2/formal-neural-reasoner/pull/34" rel="noopener noreferrer">Recovery report</a> · <a href="https://github.com/tsrnc2/formal-neural-reasoner/pull/35" rel="noopener noreferrer">Lean draft</a></p>
+    </div></div>
+    <div class="footline"><span>© 2026 FNR Observatory · Research progress, explained for everyone.</span><span>Source snapshot: November 14, 2026 · <a href="#top">Back to top ↑</a></span></div>
+  </div></footer>
+</body>
+</html>
